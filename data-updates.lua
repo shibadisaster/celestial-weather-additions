@@ -131,38 +131,86 @@ vesta_thick_clouds.name = "vesta_thick_clouds"
 vesta_thick_clouds.color = {0.843, 0.757, 0.824, 0.2}
 vesta_thick_clouds.start_scale = 4.0
 vesta_thick_clouds.end_scale = 4.0
-vesta_thick_clouds.animation.filename = "__celestial-weather-extensions__/graphics/vfx/cloud.png"
+vesta_thick_clouds.duration = 240
+vesta_thick_clouds.fade_in_duration = 120
+vesta_thick_clouds.fade_away_duration = 120
+vesta_thick_clouds.animation.filename = "__celestial-weather-extensions__/graphics/vfx/diffuse-cloud.png"
 vesta_thick_clouds.animation.frame_count = 1
 vesta_thick_clouds.animation.size = 512
 data:extend({vesta_thick_clouds})
 
-local vesta_thick_clouds_white = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
-vesta_thick_clouds_white.name = "vesta_thick_clouds_white"
-vesta_thick_clouds_white.color = {1.0, 1.0, 1.0, 0.2}
-vesta_thick_clouds_white.start_scale = 3.0
-vesta_thick_clouds_white.end_scale = 3.0
-vesta_thick_clouds_white.animation.filename = "__celestial-weather-extensions__/graphics/vfx/cloud.png"
-vesta_thick_clouds_white.animation.frame_count = 1
-vesta_thick_clouds_white.animation.size = 512
-data:extend({vesta_thick_clouds_white})
+local vesta_thick_clouds_white_a = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
+vesta_thick_clouds_white_a.name = "vesta_clouds_white_a"
+vesta_thick_clouds_white_a.color = {0.3, 0.3, 0.3, 0.1}
+vesta_thick_clouds_white_a.start_scale = 3.0
+vesta_thick_clouds_white_a.end_scale = 3.0
+vesta_thick_clouds_white_a.duration = 240
+vesta_thick_clouds_white_a.fade_in_duration = 120
+vesta_thick_clouds_white_a.fade_away_duration = 120
+vesta_thick_clouds_white_a.animation.filename = "__celestial-weather-extensions__/graphics/vfx/cloud-a.png"
+vesta_thick_clouds_white_a.animation.frame_count = 1
+vesta_thick_clouds_white_a.animation.size = 512
+data:extend({vesta_thick_clouds_white_a})
+
+local vesta_thick_clouds_white_b = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
+vesta_thick_clouds_white_b.name = "vesta_clouds_white_b"
+vesta_thick_clouds_white_b.color = {0.3, 0.3, 0.3, 0.1}
+vesta_thick_clouds_white_b.start_scale = 3.0
+vesta_thick_clouds_white_b.end_scale = 3.0
+vesta_thick_clouds_white_b.duration = 240
+vesta_thick_clouds_white_b.fade_in_duration = 120
+vesta_thick_clouds_white_b.fade_away_duration = 120
+vesta_thick_clouds_white_b.animation.filename = "__celestial-weather-extensions__/graphics/vfx/cloud-b.png"
+vesta_thick_clouds_white_b.animation.frame_count = 1
+vesta_thick_clouds_white_b.animation.size = 512
+data:extend({vesta_thick_clouds_white_b})
+
+local vesta_thick_clouds_white_c = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
+vesta_thick_clouds_white_c.name = "vesta_clouds_white_c"
+vesta_thick_clouds_white_c.color = {0.3, 0.3, 0.3, 0.1}
+vesta_thick_clouds_white_c.start_scale = 3.0
+vesta_thick_clouds_white_c.end_scale = 3.0
+vesta_thick_clouds_white_c.duration = 240
+vesta_thick_clouds_white_c.fade_in_duration = 120
+vesta_thick_clouds_white_c.fade_away_duration = 120
+vesta_thick_clouds_white_c.animation.filename = "__celestial-weather-extensions__/graphics/vfx/cloud-c.png"
+vesta_thick_clouds_white_c.animation.frame_count = 1
+vesta_thick_clouds_white_c.animation.size = 512
+data:extend({vesta_thick_clouds_white_c})
 
 
 local vesta_weather_thick_clouds = table.deepcopy(direct_particles)
 vesta_weather_thick_clouds.action_delivery.source_effects.smoke_name = "vesta_thick_clouds"
 vesta_weather_thick_clouds.action_delivery.source_effects.speed = {0.0, 0.0}
 vesta_weather_thick_clouds.action_delivery.source_effects.speed_multiplier = 0.0
-vesta_weather_thick_clouds.action_delivery.source_effects.probability = 0.2
+vesta_weather_thick_clouds.action_delivery.source_effects.probability = 0.4
 vesta_weather_thick_clouds.action_delivery.source_effects.movement_slow_down_factor = 0.0
 
-local vesta_weather_thick_clouds_white = table.deepcopy(direct_particles)
-vesta_weather_thick_clouds_white.action_delivery.source_effects.smoke_name = "vesta_thick_clouds_white"
-vesta_weather_thick_clouds_white.action_delivery.source_effects.speed = {0.0, 0.0}
-vesta_weather_thick_clouds_white.action_delivery.source_effects.speed_multiplier = 0.0
-vesta_weather_thick_clouds_white.action_delivery.source_effects.probability = 0.2
-vesta_weather_thick_clouds_white.action_delivery.source_effects.movement_slow_down_factor = 0.0
+local vesta_weather_thick_clouds_white_a = table.deepcopy(direct_particles)
+vesta_weather_thick_clouds_white_a.action_delivery.source_effects.smoke_name = "vesta_clouds_white_a"
+vesta_weather_thick_clouds_white_a.action_delivery.source_effects.speed = {0.0, 0.0}
+vesta_weather_thick_clouds_white_a.action_delivery.source_effects.speed_multiplier = 0.0
+vesta_weather_thick_clouds_white_a.action_delivery.source_effects.probability = 0.2
+vesta_weather_thick_clouds_white_a.action_delivery.source_effects.movement_slow_down_factor = 0.0
+
+local vesta_weather_thick_clouds_white_b = table.deepcopy(direct_particles)
+vesta_weather_thick_clouds_white_b.action_delivery.source_effects.smoke_name = "vesta_clouds_white_b"
+vesta_weather_thick_clouds_white_b.action_delivery.source_effects.speed = {0.0, 0.0}
+vesta_weather_thick_clouds_white_b.action_delivery.source_effects.speed_multiplier = 0.0
+vesta_weather_thick_clouds_white_b.action_delivery.source_effects.probability = 0.2
+vesta_weather_thick_clouds_white_b.action_delivery.source_effects.movement_slow_down_factor = 0.0
+
+local vesta_weather_thick_clouds_white_c = table.deepcopy(direct_particles)
+vesta_weather_thick_clouds_white_c.action_delivery.source_effects.smoke_name = "vesta_clouds_white_c"
+vesta_weather_thick_clouds_white_c.action_delivery.source_effects.speed = {0.0, 0.0}
+vesta_weather_thick_clouds_white_c.action_delivery.source_effects.speed_multiplier = 0.0
+vesta_weather_thick_clouds_white_c.action_delivery.source_effects.probability = 0.2
+vesta_weather_thick_clouds_white_c.action_delivery.source_effects.movement_slow_down_factor = 0.0
 
 table.insert(vesta_effects, vesta_weather_thick_clouds)
-table.insert(vesta_effects, vesta_weather_thick_clouds_white)
+table.insert(vesta_effects, vesta_weather_thick_clouds_white_a)
+table.insert(vesta_effects, vesta_weather_thick_clouds_white_b)
+table.insert(vesta_effects, vesta_weather_thick_clouds_white_c)
 
 data.raw["planet"]["vesta"].player_effects = vesta_effects
 
