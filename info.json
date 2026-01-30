@@ -13,6 +13,6 @@
         "?skewer_planet_vesta",
         "?linox"
     ],
-    "description": "Factorio modpack made with the goal of creating a Space Age experience with a focus on intermod cohesion and interplanetary logistics!",
+    "description": "Addon for Celestial Weather that adds more weather VFX for some newer modded planets!",
     "license": "MIT"
 }

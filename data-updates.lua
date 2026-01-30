@@ -45,6 +45,7 @@ local cluster_particles = {
     type = "cluster",
     distance = 8,
     distance_deviation = 8,
+    cluster_count = 10,
     action_delivery = {
         type = "instant",
         source_effects = {
@@ -65,44 +66,68 @@ local cluster_particles = {
 
 
 ------ RUBIA ------
--- change particle appearance
+-- change rubia's built-in weather effects
 local rubia_rain_lines = data.raw["trivial-smoke"]["rubia-rain-lines"]
 rubia_rain_lines.color = {0.822, 0.700, 0.564, 1.0}
-rubia_rain_lines.start_scale = 2.5
-rubia_rain_lines.end_scale = 2.5
+rubia_rain_lines.start_scale = 3.5
+rubia_rain_lines.end_scale = 3.5
 rubia_rain_lines.fade_in_duration = 10
 rubia_rain_lines.fade_away_duration = 10
 rubia_rain_lines.duration = 80
 
 local rubia_sand = data.raw["trivial-smoke"]["rubia-sand"]
 rubia_sand.color = {0.822, 0.700, 0.564, 1.0}
-rubia_sand.start_scale = 4.0
-rubia_sand.end_scale = 4.0
+rubia_sand.start_scale = 6.0
+rubia_sand.end_scale = 6.0
 rubia_sand.fade_in_duration = 10
 rubia_sand.fade_away_duration = 10
 rubia_sand.duration = 80
 
-
--- change speed of effect
+-- change speed of built-in effects
 local rubia_effects = table.deepcopy(data.raw["planet"]["rubia"].player_effects)
 
 for _, effect in ipairs(rubia_effects) do
     effect.action_delivery.source_effects.speed_multiplier = 10
 end
 
-data.raw["planet"]["rubia"].player_effects = rubia_effects
+
 
 
 -- add overlay fog
-local rubia_fog = table.deepcopy(fog)
-rubia_fog.color1 = {0.822, 0.700, 0.564, 0.5}
-rubia_fog.color2 = {0.822, 0.700, 0.564, 0.5}
-rubia_fog.tick_factor = 0.003
-rubia_fog.detail_noise_texture.filename = "__celestial-weather__/graphics/entity/dense-clouds.png"
+-- local rubia_fog = table.deepcopy(fog)
+-- rubia_fog.color1 = {0.822, 0.700, 0.564, 0.5}
+-- rubia_fog.color2 = {0.822, 0.700, 0.564, 0.5}
+-- rubia_fog.tick_factor = 0.003
+-- rubia_fog.detail_noise_texture.filename = "__celestial-weather__/graphics/entity/dense-clouds.png"
 
-data.raw["planet"]["rubia"].surface_render_parameters["fog"] = rubia_fog
+-- data.raw["planet"]["rubia"].surface_render_parameters["fog"] = rubia_fog
 
 
+local rubia_clouds = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
+rubia_clouds.name = "rubia_clouds"
+rubia_clouds.color = {0.622, 0.500, 0.364, 0.5}
+rubia_clouds.start_scale = 4.0
+rubia_clouds.end_scale = 6.0
+rubia_clouds.duration = 60
+rubia_clouds.fade_in_duration = 30
+rubia_clouds.fade_away_duration = 30
+rubia_clouds.render_layer = "air-entity-info-icon"
+rubia_clouds.animation.filename = "__celestial-weather-extensions__/graphics/vfx/diffuse-cloud.png"
+rubia_clouds.animation.frame_count = 1
+rubia_clouds.animation.size = 512
+data:extend({rubia_clouds})
+
+local rubia_weather_clouds = table.deepcopy(cluster_particles)
+rubia_weather_clouds.action_delivery.source_effects.smoke_name = "rubia_clouds"
+rubia_weather_clouds.action_delivery.source_effects.speed = {0.3, 0.0}
+rubia_weather_clouds.action_delivery.source_effects.speed_multiplier = 6.25
+rubia_weather_clouds.action_delivery.source_effects.probability = 0.05
+rubia_weather_clouds.action_delivery.source_effects.offset_deviation = {{-160, -48}, {96, 48}}
+rubia_weather_clouds.action_delivery.source_effects.movement_slow_down_factor = 0.0
+
+table.insert(rubia_effects, rubia_weather_clouds)
+
+data.raw["planet"]["rubia"].player_effects = rubia_effects
 
 
 
@@ -134,6 +159,7 @@ vesta_thick_clouds.end_scale = 4.0
 vesta_thick_clouds.duration = 240
 vesta_thick_clouds.fade_in_duration = 120
 vesta_thick_clouds.fade_away_duration = 120
+vesta_thick_clouds.render_layer = "air-entity-info-icon"
 vesta_thick_clouds.animation.filename = "__celestial-weather-extensions__/graphics/vfx/diffuse-cloud.png"
 vesta_thick_clouds.animation.frame_count = 1
 vesta_thick_clouds.animation.size = 512
@@ -141,12 +167,13 @@ data:extend({vesta_thick_clouds})
 
 local vesta_thick_clouds_white_a = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
 vesta_thick_clouds_white_a.name = "vesta_clouds_white_a"
-vesta_thick_clouds_white_a.color = {0.3, 0.3, 0.3, 0.1}
+vesta_thick_clouds_white_a.color = {0.35, 0.35, 0.35, 0.1}
 vesta_thick_clouds_white_a.start_scale = 3.0
 vesta_thick_clouds_white_a.end_scale = 3.0
-vesta_thick_clouds_white_a.duration = 240
+vesta_thick_clouds_white_a.duration = 480
 vesta_thick_clouds_white_a.fade_in_duration = 120
 vesta_thick_clouds_white_a.fade_away_duration = 120
+vesta_thick_clouds_white_a.render_layer = "smoke"
 vesta_thick_clouds_white_a.animation.filename = "__celestial-weather-extensions__/graphics/vfx/cloud-a.png"
 vesta_thick_clouds_white_a.animation.frame_count = 1
 vesta_thick_clouds_white_a.animation.size = 512
@@ -154,12 +181,13 @@ data:extend({vesta_thick_clouds_white_a})
 
 local vesta_thick_clouds_white_b = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
 vesta_thick_clouds_white_b.name = "vesta_clouds_white_b"
-vesta_thick_clouds_white_b.color = {0.3, 0.3, 0.3, 0.1}
+vesta_thick_clouds_white_b.color = {0.35, 0.35, 0.35, 0.1}
 vesta_thick_clouds_white_b.start_scale = 3.0
 vesta_thick_clouds_white_b.end_scale = 3.0
-vesta_thick_clouds_white_b.duration = 240
+vesta_thick_clouds_white_b.duration = 480
 vesta_thick_clouds_white_b.fade_in_duration = 120
 vesta_thick_clouds_white_b.fade_away_duration = 120
+vesta_thick_clouds_white_b.render_layer = "smoke"
 vesta_thick_clouds_white_b.animation.filename = "__celestial-weather-extensions__/graphics/vfx/cloud-b.png"
 vesta_thick_clouds_white_b.animation.frame_count = 1
 vesta_thick_clouds_white_b.animation.size = 512
@@ -167,12 +195,13 @@ data:extend({vesta_thick_clouds_white_b})
 
 local vesta_thick_clouds_white_c = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
 vesta_thick_clouds_white_c.name = "vesta_clouds_white_c"
-vesta_thick_clouds_white_c.color = {0.3, 0.3, 0.3, 0.1}
+vesta_thick_clouds_white_c.color = {0.35, 0.35, 0.35, 0.1}
 vesta_thick_clouds_white_c.start_scale = 3.0
 vesta_thick_clouds_white_c.end_scale = 3.0
-vesta_thick_clouds_white_c.duration = 240
+vesta_thick_clouds_white_c.duration = 480
 vesta_thick_clouds_white_c.fade_in_duration = 120
 vesta_thick_clouds_white_c.fade_away_duration = 120
+vesta_thick_clouds_white_c.render_layer = "smoke"
 vesta_thick_clouds_white_c.animation.filename = "__celestial-weather-extensions__/graphics/vfx/cloud-c.png"
 vesta_thick_clouds_white_c.animation.frame_count = 1
 vesta_thick_clouds_white_c.animation.size = 512
@@ -280,4 +309,4 @@ data.raw["planet"]["muria"].player_effects.action_delivery = muria_effects
 local paracelsin_snow = data.raw["trivial-smoke"]["pa_snow"]
 paracelsin_snow.color = {0.188, 0.188, 0.188, 1.0}
 paracelsin_snow.start_scale = 0.8
-paracelsin_snow.end_scale = 0.8
+paracelsin_snow.end_scale = 1.2
