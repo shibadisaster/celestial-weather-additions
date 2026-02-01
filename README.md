@@ -12,3 +12,6 @@ newer modded planets! Currently adds the following VFX to planets:
 - Cubium has small cubes that float up from the ground
 - (TWEAK) Paracelsin, being a cryovolcanic planet, has ashy snowfall to
   differentiate it from other frozen planets
+
+  Certain effects made using [mebiusbox's
+  EffectTextureMaker]{https://mebiusbox.github.io/contents/EffectTextureMaker/}

@@ -115,10 +115,6 @@ rubia_clouds.render_layer = "air-entity-info-icon"
 rubia_clouds.animation.filename = "__celestial-weather-extensions__/graphics/vfx/diffuse-cloud.png"
 rubia_clouds.animation.frame_count = 1
 rubia_clouds.animation.size = 512
--- rubia_clouds.animation.animation_speed = 0.5
--- rubia_clouds.animation.line_length = 3
--- rubia_clouds.animation.frame_count = 9
--- rubia_clouds.animation.size = math.floor(512 / 3)
 data:extend({rubia_clouds})
 
 local rubia_weather_clouds = table.deepcopy(cluster_particles)
@@ -130,6 +126,32 @@ rubia_weather_clouds.action_delivery.source_effects.offset_deviation = {{-160, -
 rubia_weather_clouds.action_delivery.source_effects.movement_slow_down_factor = 0.0
 
 table.insert(rubia_effects, rubia_weather_clouds)
+
+
+local rubia_clouds_b = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
+rubia_clouds_b.name = "rubia_clouds_b"
+rubia_clouds_b.color = {0.310, 0.250, 0.180, 0.25}
+rubia_clouds_b.start_scale = 5.0
+rubia_clouds_b.end_scale = 3.0
+rubia_clouds_b.duration = 60
+rubia_clouds_b.fade_in_duration = 30
+rubia_clouds_b.fade_away_duration = 30
+rubia_clouds_b.render_layer = "air-entity-info-icon"
+rubia_clouds_b.animation.filename = "__celestial-weather-extensions__/graphics/vfx/cloud-c.png"
+rubia_clouds_b.animation.frame_count = 1
+rubia_clouds_b.animation.size = 512
+data:extend({rubia_clouds_b})
+
+local rubia_weather_clouds_b = table.deepcopy(cluster_particles)
+rubia_weather_clouds_b.action_delivery.source_effects.smoke_name = "rubia_clouds_b"
+rubia_weather_clouds_b.action_delivery.source_effects.speed = {0.3, 0.0}
+rubia_weather_clouds_b.action_delivery.source_effects.speed_multiplier = 7.8
+rubia_weather_clouds_b.action_delivery.source_effects.probability = 0.01
+rubia_weather_clouds_b.action_delivery.source_effects.offset_deviation = {{-160, -48}, {96, 48}}
+rubia_weather_clouds_b.action_delivery.source_effects.movement_slow_down_factor = 0.0
+
+table.insert(rubia_effects, rubia_weather_clouds_b)
+
 
 data.raw["planet"]["rubia"].player_effects = rubia_effects
 
@@ -172,7 +194,7 @@ data:extend({vesta_thick_clouds})
 
 local vesta_thick_clouds_white_a = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
 vesta_thick_clouds_white_a.name = "vesta_clouds_white_a"
-vesta_thick_clouds_white_a.color = {0.15, 0.2, 0.2, 0.2}
+vesta_thick_clouds_white_a.color = {0.015, 0.02, 0.02, 0.01}
 vesta_thick_clouds_white_a.start_scale = 3.0
 vesta_thick_clouds_white_a.end_scale = 3.0
 vesta_thick_clouds_white_a.duration = 480
@@ -186,7 +208,7 @@ data:extend({vesta_thick_clouds_white_a})
 
 local vesta_thick_clouds_white_b = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
 vesta_thick_clouds_white_b.name = "vesta_clouds_white_b"
-vesta_thick_clouds_white_b.color = {0.2, 0.15, 0.2, 0.2}
+vesta_thick_clouds_white_b.color = {0.02, 0.015, 0.02, 0.01}
 vesta_thick_clouds_white_b.start_scale = 3.0
 vesta_thick_clouds_white_b.end_scale = 3.0
 vesta_thick_clouds_white_b.duration = 480
@@ -200,7 +222,7 @@ data:extend({vesta_thick_clouds_white_b})
 
 local vesta_thick_clouds_white_c = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
 vesta_thick_clouds_white_c.name = "vesta_clouds_white_c"
-vesta_thick_clouds_white_c.color = {0.2, 0.2, 0.2, 0.2}
+vesta_thick_clouds_white_c.color = {0.02, 0.02, 0.02, 0.01}
 vesta_thick_clouds_white_c.start_scale = 3.0
 vesta_thick_clouds_white_c.end_scale = 3.0
 vesta_thick_clouds_white_c.duration = 480
@@ -317,69 +339,83 @@ paracelsin_snow.color = {0.188, 0.188, 0.188, 1.0}
 paracelsin_snow.start_scale = 0.8
 paracelsin_snow.end_scale = 1.2
 
+-- what the hell happens with the lighting when i dont do this
+-- someone who knows please tell me
+-- OKAY note to whoever, the tint/lamp colors are based on the lookup at 0.0
+data.raw["planet"]["paracelsin"].surface_render_parameters.day_night_cycle_color_lookup = {
+    {0.0000000, "identity"},
+    {0.0000001, "__celestial-weather-extensions__/graphics/luts/cryovolcanic_paracelsin_night.png"},
+    {0.9999999, "__celestial-weather-extensions__/graphics/luts/cryovolcanic_paracelsin_night.png"}
+}
 
 
 
 
------- RABBASCA ------
-local rabbasca_effects = table.deepcopy(data.raw["planet"]["rabbasca"].player_effects or {})
 
--- ground fissures
-local rabbasca_electric_sparks = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
-rabbasca_electric_sparks.name = "rabbasca_electric_sparks"
-rabbasca_electric_sparks.color = {1.0, 0.8, 1.0, 1.0}
-rabbasca_electric_sparks.animation.filename = "__celestial-weather-extensions__/graphics/vfx/animated-electric-a.png"
-rabbasca_electric_sparks.animation.frame_count = 9
-rabbasca_electric_sparks.animation.line_length = 3
-rabbasca_electric_sparks.animation.size = math.floor(512 / 3)
-rabbasca_electric_sparks.animation.animation_speed = 0.5
-rabbasca_electric_sparks.start_scale = 1.25
-rabbasca_electric_sparks.end_scale = 1.25
-rabbasca_electric_sparks.duration = 15
-rabbasca_electric_sparks.fade_in_duration = 0
-rabbasca_electric_sparks.fade_away_duration = 0
-rabbasca_electric_sparks.render_layer = "floor"
-data:extend({rabbasca_electric_sparks})
+-- ------ RABBASCA ------
+-- local rabbasca_effects = table.deepcopy(data.raw["planet"]["rabbasca"].player_effects or {})
 
-local rabbasca_weather_electric_sparks = table.deepcopy(direct_particles)
-rabbasca_weather_electric_sparks.action_delivery.source_effects.smoke_name = "rabbasca_electric_sparks"
-rabbasca_weather_electric_sparks.action_delivery.source_effects.speed = {0.0, 0.0}
-rabbasca_weather_electric_sparks.action_delivery.source_effects.speed_multiplier = 0.0
-rabbasca_weather_electric_sparks.action_delivery.source_effects.repeat_count = 1
-rabbasca_weather_electric_sparks.action_delivery.source_effects.probability = 0.01
-rabbasca_weather_electric_sparks.action_delivery.source_effects.movement_slow_down_factor = 0.0
+-- -- ground fissures
+-- local rabbasca_electric_sparks = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
+-- rabbasca_electric_sparks.name = "rabbasca_electric_sparks"
+-- rabbasca_electric_sparks.color = {1.0, 0.5, 1.0, 1.0}
+-- rabbasca_electric_sparks.animation.filename = "__celestial-weather-extensions__/graphics/vfx/animated-electric-large-a.png"
+-- rabbasca_electric_sparks.animation.frame_count = 70
+-- rabbasca_electric_sparks.animation.line_length = 9
+-- rabbasca_electric_sparks.animation.size = math.floor(2048 / 9)
+-- rabbasca_electric_sparks.animation.animation_speed = 2.0
+-- rabbasca_electric_sparks.animation.blend_mode = "additive"
+-- rabbasca_electric_sparks.start_scale = 0.02
+-- rabbasca_electric_sparks.end_scale = 0.02
+-- rabbasca_electric_sparks.duration = 35
+-- rabbasca_electric_sparks.spread_duration = 0
+-- rabbasca_electric_sparks.fade_in_duration = 5
+-- rabbasca_electric_sparks.fade_away_duration = 5
+-- rabbasca_electric_sparks.render_layer = "smoke"
+-- data:extend({rabbasca_electric_sparks})
 
-table.insert(rabbasca_effects, rabbasca_weather_electric_sparks)
+-- local rabbasca_weather_electric_sparks = table.deepcopy(direct_particles)
+-- rabbasca_weather_electric_sparks.action_delivery.source_effects.smoke_name = "rabbasca_electric_sparks"
+-- rabbasca_weather_electric_sparks.action_delivery.source_effects.speed = {0.0, 0.0}
+-- rabbasca_weather_electric_sparks.action_delivery.source_effects.speed_multiplier = 0.0
+-- rabbasca_weather_electric_sparks.action_delivery.source_effects.repeat_count = 1
+-- rabbasca_weather_electric_sparks.action_delivery.source_effects.probability = 0.05
+-- rabbasca_weather_electric_sparks.action_delivery.source_effects.movement_slow_down_factor = 0.0
 
-data.raw["planet"]["rabbasca"].ticks_between_player_effects = 1
-data.raw["planet"]["rabbasca"].player_effects = rabbasca_effects
+-- table.insert(rabbasca_effects, rabbasca_weather_electric_sparks)
+
+
+-- local rabbasca_shimmer = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
+-- rabbasca_shimmer.name = "rabbasca_shimmer"
+-- rabbasca_shimmer.color = {1.0, 0.5, 1.0, 1.0}
+-- rabbasca_shimmer.animation.filename = "__celestial-weather-extensions__/graphics/vfx/star-a.png"
+-- rabbasca_shimmer.animation.frame_count = 1
+-- rabbasca_shimmer.animation.size = 512
+-- rabbasca_shimmer.animation.blend_mode = "additive"
+-- rabbasca_shimmer.start_scale = 0.1
+-- rabbasca_shimmer.end_scale = 0.1
+-- rabbasca_shimmer.duration = 40
+-- rabbasca_shimmer.spread_duration = 0
+-- rabbasca_shimmer.fade_in_duration = 10
+-- rabbasca_shimmer.fade_away_duration = 30
+-- rabbasca_shimmer.render_layer = "smoke"
+-- data:extend({rabbasca_shimmer})
+
+-- local rabbasca_weather_shimmer = table.deepcopy(direct_particles)
+-- rabbasca_weather_shimmer.action_delivery.source_effects.smoke_name = "rabbasca_shimmer"
+-- rabbasca_weather_shimmer.action_delivery.source_effects.speed = {0.0, 0.0}
+-- rabbasca_weather_shimmer.action_delivery.source_effects.speed_multiplier = 0.0
+-- rabbasca_weather_shimmer.action_delivery.source_effects.repeat_count = 1
+-- rabbasca_weather_shimmer.action_delivery.source_effects.probability = 0.1
+-- rabbasca_weather_shimmer.action_delivery.source_effects.movement_slow_down_factor = 0.0
+
+-- table.insert(rabbasca_effects, rabbasca_weather_shimmer)
+
+-- data.raw["planet"]["rabbasca"].ticks_between_player_effects = 1
+-- data.raw["planet"]["rabbasca"].player_effects = rabbasca_effects
 
 
 
 
 
 ------ CUBIUM ------
-local cubium_effects = table.deepcopy(data.raw["planet"]["cubium"].player_effects or {})
-
--- ground fissures
-local cubium_electric_sparks = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
-cubium_electric_sparks.name = "cubium_electric_sparks"
-cubium_electric_sparks.color = {0.5, 0.5, 0.5, 1.0}
--- cubium_electric_sparks.animation.filename = "__celestial-weather-extensions__/graphics/vfx/animated-electric-a.png"
--- cubium_electric_sparks.animation.frame_count = 9
--- cubium_electric_sparks.animation.line_length = 3
--- cubium_electric_sparks.animation.size = math.floor(512 / 3)
--- cubium_electric_sparks.animation.animation_speed = 0.01
-
-data:extend({cubium_electric_sparks})
-
-local cubium_weather_electric_sparks = table.deepcopy(direct_particles)
-cubium_weather_electric_sparks.action_delivery.source_effects.smoke_name = "cubium_electric_sparks"
-cubium_weather_electric_sparks.action_delivery.source_effects.speed = {0.0, 0.0}
-cubium_weather_electric_sparks.action_delivery.source_effects.speed_multiplier = 1.0
-cubium_weather_electric_sparks.action_delivery.source_effects.repeat_count = 1
-cubium_weather_electric_sparks.action_delivery.source_effects.probability = 1.0
-
-table.insert(cubium_effects, cubium_weather_electric_sparks)
-
-data.raw["planet"]["cubium"].player_effects = cubium_effects
