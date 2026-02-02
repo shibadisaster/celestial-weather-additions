@@ -10,10 +10,8 @@
         "celestial-weather",
         "?rubia",
         "?Muria",
-        "?skewer_planet_vesta",
-        "?linox",
-        "?planet-rabbasca",
-        "?cubium"
+        "?Paracelsin",
+        "?skewer_planet_vesta"
     ],
     "description": "Addon for Celestial Weather that adds more weather VFX for some newer modded planets!",
     "license": "MIT"
