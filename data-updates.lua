@@ -341,11 +341,11 @@ paracelsin_snow.end_scale = 1.2
 
 -- what the hell happens with the lighting when i dont do this
 -- someone who knows please tell me
--- OKAY note to whoever, the tint/lamp colors are based on the lookup at 0.0
+-- OKAY note to whoever, the tint/lamp colors are based on the lookup at 0.0, so we can actually set custom lamp colors by changing 0.0
 data.raw["planet"]["paracelsin"].surface_render_parameters.day_night_cycle_color_lookup = {
-    {0.0000000, "identity"},
-    {0.0000001, "__celestial-weather-extensions__/graphics/luts/cryovolcanic_paracelsin_night.png"},
-    {0.9999999, "__celestial-weather-extensions__/graphics/luts/cryovolcanic_paracelsin_night.png"}
+    {0.00000000, "identity"},
+    {0.00000001, "__celestial-weather-extensions__/graphics/luts/cryovolcanic_paracelsin_night.png"},
+    {0.99999999, "__celestial-weather-extensions__/graphics/luts/cryovolcanic_paracelsin_night.png"}
 }
 
 
