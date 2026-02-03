@@ -179,7 +179,7 @@ if mods["skewer_planet_vesta"] and settings.startup["shibadisaster-cwe-enable-ve
     -- note to self/whoever is reading this: since vesta didn't have existing player_effects, we can just add to player_effects like normal
     local vesta_effects = data.raw["planet"]["vesta"].player_effects or {}
 
-    -- note to self: okay! so i get colors now, by premultiplied alpha it means {r, g, b, a} should be {ar, ag, ab, a}
+    -- note to self: okay! so i think i get colors now, by premultiplied alpha it means {r, g, b, a} should be {ar, ag, ab, a}
     -- vesta thick clouds
     local vesta_thick_clouds = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
     vesta_thick_clouds.name = "vesta_thick_clouds"
@@ -284,56 +284,83 @@ end
 
 ------ MURIA ------
 if mods["Muria"] and settings.startup["shibadisaster-cwe-enable-muria-changes"].value then
-    local muria_fog = table.deepcopy(fog)
-    muria_fog.color1 = {0.65, 0.8, 0.0, 0.8}
-    muria_fog.color2 = {0.65, 0.8, 0.0, 0.8}
-    muria_fog.tick_factor = 0.00003
-    muria_fog.detail_noise_texture.filename = "__celestial-weather__/graphics/entity/dense-clouds.png"
+    if settings.startup["shibadisaster-cwe-muria-enable-fog"].value then
+        local muria_fog = table.deepcopy(fog)
+        muria_fog.color1 = {0.65, 0.8, 0.0, 0.8}
+        muria_fog.color2 = {0.65, 0.8, 0.0, 0.8}
+        muria_fog.tick_factor = 0.00003
+        muria_fog.detail_noise_texture.filename = "__celestial-weather__/graphics/entity/dense-clouds.png"
 
-    data.raw["planet"]["muria"].surface_render_parameters["fog"] = muria_fog
+        data.raw["planet"]["muria"].surface_render_parameters["fog"] = muria_fog
+    end
 
 
     -- note to self/whoever is reading this: since muria already has an existing effect (rain), idk how to add my effect on top elegantly, if anyone knows how please leave something on the discussions page
     --     this was the first way i figured out to do this that worked, but refer to vesta effects to see a better way to do this
     local muria_effects_action_delivery = {table.deepcopy(data.raw["planet"]["muria"].player_effects.action_delivery)}
-
+    local muria_effects = {table.deepcopy(data.raw["planet"]["muria"].player_effects)}
 
     -- acid spores
-    local muria_large_acid_spore = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
-    muria_large_acid_spore.name = "muria_large_acid_spore"
-    muria_large_acid_spore.color = {0.83, 0.35, 0.52}
-    if settings.startup["shibadisaster-cwe-muria-green-spores"].value then muria_large_acid_spore.color = {0.65, 0.8, 0.0} end
-    muria_large_acid_spore.animation.filename = "__celestial-weather__/graphics/entity/fire-particles.png"
-    muria_large_acid_spore.start_scale = 0.0
-    muria_large_acid_spore.end_scale = 2.0
-    data:extend({muria_large_acid_spore})
+    if settings.startup["shibadisaster-cwe-muria-enable-spores"].value then
+        local muria_large_acid_spore = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
+        muria_large_acid_spore.name = "muria_large_acid_spore"
+        muria_large_acid_spore.color = settings.startup["shibadisaster-cwe-muria-spore-color"].value
+        muria_large_acid_spore.animation.filename = "__celestial-weather__/graphics/entity/fire-particles.png"
+        muria_large_acid_spore.start_scale = 0.0
+        muria_large_acid_spore.end_scale = 2.0
+        data:extend({muria_large_acid_spore})
 
-    local muria_small_acid_spore = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
-    muria_small_acid_spore.name = "muria_small_acid_spore"
-    muria_small_acid_spore.color = {0.83, 0.35, 0.52}
-    if settings.startup["shibadisaster-cwe-muria-green-spores"].value then muria_small_acid_spore.color = {0.65, 0.8, 0.0} end
-    muria_small_acid_spore.animation.filename = "__celestial-weather__/graphics/entity/fire-particles.png"
-    muria_small_acid_spore.start_scale = 0.0
-    muria_small_acid_spore.end_scale = 1.0
-    data:extend({muria_small_acid_spore})
+        local muria_small_acid_spore = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
+        muria_small_acid_spore.name = "muria_small_acid_spore"
+        muria_small_acid_spore.color = settings.startup["shibadisaster-cwe-muria-spore-color"].value
+        muria_small_acid_spore.animation.filename = "__celestial-weather__/graphics/entity/fire-particles.png"
+        muria_small_acid_spore.start_scale = 0.0
+        muria_small_acid_spore.end_scale = 1.0
+        data:extend({muria_small_acid_spore})
 
 
-    local muria_weather_large_acid = table.deepcopy(direct_particles)
-    muria_weather_large_acid.action_delivery.source_effects.smoke_name = "muria_large_acid_spore"
-    muria_weather_large_acid.action_delivery.source_effects.speed = {0.0, 0.0}
-    muria_weather_large_acid.action_delivery.source_effects.speed_multiplier = 5.0
-    muria_weather_large_acid.action_delivery.source_effects.repeat_count = 1
-    muria_weather_large_acid.action_delivery.source_effects.probability = 0.5
+        local muria_weather_large_acid = table.deepcopy(direct_particles)
+        muria_weather_large_acid.action_delivery.source_effects.smoke_name = "muria_large_acid_spore"
+        muria_weather_large_acid.action_delivery.source_effects.speed = {0.0, 0.0}
+        muria_weather_large_acid.action_delivery.source_effects.speed_multiplier = 5.0
+        muria_weather_large_acid.action_delivery.source_effects.repeat_count = 1
+        muria_weather_large_acid.action_delivery.source_effects.probability = 0.5
 
-    local muria_weather_small_acid = table.deepcopy(direct_particles)
-    muria_weather_small_acid.action_delivery.source_effects.smoke_name = "muria_small_acid_spore"
-    muria_weather_small_acid.action_delivery.source_effects.speed = {0.0, 0.0}
-    muria_weather_small_acid.action_delivery.source_effects.speed_multiplier = 5.0
-    muria_weather_small_acid.action_delivery.source_effects.repeat_count = 1
-    muria_weather_small_acid.action_delivery.source_effects.probability = 0.5
+        local muria_weather_small_acid = table.deepcopy(direct_particles)
+        muria_weather_small_acid.action_delivery.source_effects.smoke_name = "muria_small_acid_spore"
+        muria_weather_small_acid.action_delivery.source_effects.speed = {0.0, 0.0}
+        muria_weather_small_acid.action_delivery.source_effects.speed_multiplier = 5.0
+        muria_weather_small_acid.action_delivery.source_effects.repeat_count = 1
+        muria_weather_small_acid.action_delivery.source_effects.probability = 0.5
 
-    table.insert(muria_effects_action_delivery, muria_weather_large_acid.action_delivery)
-    table.insert(muria_effects_action_delivery, muria_weather_small_acid.action_delivery)
+        table.insert(muria_effects_action_delivery, muria_weather_large_acid.action_delivery)
+        table.insert(muria_effects_action_delivery, muria_weather_small_acid.action_delivery)
+    end
+
+
+    if settings.startup["shibadisaster-cwe-muria-enable-clouds"].value then
+        local muria_cloud = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
+        muria_cloud.name = "muria_cloud"
+        muria_cloud.color = {0.075, 0.1, 0.0, 0.2}
+        muria_cloud.animation.filename = "__celestial-weather-extensions__/graphics/vfx/cloud-a.png"
+        muria_cloud.animation.frame_count = 1
+        muria_cloud.animation.size = 512
+        muria_cloud.start_scale = 3.0
+        muria_cloud.end_scale = 5.0
+        muria_cloud.duration = 240
+        muria_cloud.fade_in_duration = 60
+        muria_cloud.fade_away_duration = 60
+        data:extend({muria_cloud})
+
+        local muria_weather_cloud = table.deepcopy(direct_particles)
+        muria_weather_cloud.action_delivery.source_effects.smoke_name = "muria_cloud"
+        muria_weather_cloud.action_delivery.source_effects.speed = {0.0, 0.0}
+        muria_weather_cloud.action_delivery.source_effects.speed_multiplier = 1.0
+        muria_weather_cloud.action_delivery.source_effects.repeat_count = 1
+        muria_weather_cloud.action_delivery.source_effects.probability = 0.01
+
+        table.insert(muria_effects_action_delivery, muria_weather_cloud.action_delivery)
+    end
 
     data.raw["planet"]["muria"].ticks_between_player_effects = 1
     data.raw["planet"]["muria"].player_effects.action_delivery = muria_effects_action_delivery

@@ -95,10 +95,40 @@ data:extend({
 data:extend({
     {
         type = "bool-setting",
-        name = "shibadisaster-cwe-muria-green-spores",
+        name = "shibadisaster-cwe-muria-enable-clouds",
         setting_type = "startup",
-        default_value = false,
+        default_value = true,
         order = "c1"
+    }
+})
+
+data:extend({
+    {
+        type = "bool-setting",
+        name = "shibadisaster-cwe-muria-enable-fog",
+        setting_type = "startup",
+        default_value = true,
+        order = "c2"
+    }
+})
+
+data:extend({
+    {
+        type = "bool-setting",
+        name = "shibadisaster-cwe-muria-enable-spores",
+        setting_type = "startup",
+        default_value = true,
+        order = "c3"
+    }
+})
+
+data:extend({
+    {
+        type = "color-setting",
+        name = "shibadisaster-cwe-muria-spore-color",
+        setting_type = "startup",
+        default_value = {0.83, 0.35, 0.52},
+        order = "c4"
     }
 })
 
