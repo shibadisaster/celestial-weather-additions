@@ -1,7 +1,7 @@
 data:extend({
     {
         type = "bool-setting",
-        name = "shibadisaster-cwe-enable-rubia-changes",
+        name = "shibadisaster-cwa-enable-rubia-changes",
         setting_type = "startup",
         default_value = true,
         order = "a0"
@@ -11,7 +11,7 @@ data:extend({
 data:extend({
     {
         type = "double-setting",
-        name = "shibadisaster-cwe-rubia-particle-speed",
+        name = "shibadisaster-cwa-rubia-particle-speed",
         setting_type = "startup",
         default_value = 1.0,
         minimum_value = 0.1,
@@ -23,7 +23,17 @@ data:extend({
 data:extend({
     {
         type = "bool-setting",
-        name = "shibadisaster-cwe-enable-vesta-changes",
+        name = "shibadisaster-cwa-rubia-enable-clouds",
+        setting_type = "startup",
+        default_value = true,
+        order = "a2"
+    }
+})
+
+data:extend({
+    {
+        type = "bool-setting",
+        name = "shibadisaster-cwa-enable-vesta-changes",
         setting_type = "startup",
         default_value = true,
         order = "b0"
@@ -33,7 +43,7 @@ data:extend({
 data:extend({
     {
         type = "color-setting",
-        name = "shibadisaster-cwe-vesta-fog-color",
+        name = "shibadisaster-cwa-vesta-fog-color",
         setting_type = "startup",
         default_value = {0.682, 0.500, 0.635, 1.0},
         order = "b1"
@@ -43,7 +53,7 @@ data:extend({
 data:extend({
     {
         type = "color-setting",
-        name = "shibadisaster-cwe-vesta-thick-cloud-color",
+        name = "shibadisaster-cwa-vesta-thick-cloud-color",
         setting_type = "startup",
         default_value = {0.839, 0.757, 0.824, 0.5},
         order = "b2"
@@ -53,7 +63,7 @@ data:extend({
 data:extend({
     {
         type = "color-setting",
-        name = "shibadisaster-cwe-vesta-cloud-color",
+        name = "shibadisaster-cwa-vesta-cloud-color",
         setting_type = "startup",
         default_value = {0.173, 0.173, 0.173, 0.086},
         order = "b3"
@@ -63,7 +73,7 @@ data:extend({
 data:extend({
     {
         type = "bool-setting",
-        name = "shibadisaster-cwe-vesta-reduce-cloud-cover",
+        name = "shibadisaster-cwa-vesta-reduce-cloud-cover",
         setting_type = "startup",
         default_value = false,
         order = "b4"
@@ -73,7 +83,7 @@ data:extend({
 data:extend({
     {
         type = "double-setting",
-        name = "shibadisaster-cwe-vesta-cloud-duration-multiplier",
+        name = "shibadisaster-cwa-vesta-cloud-duration-multiplier",
         setting_type = "startup",
         default_value = 1.0,
         minimum_value = 0.1,
@@ -85,7 +95,7 @@ data:extend({
 data:extend({
     {
         type = "bool-setting",
-        name = "shibadisaster-cwe-enable-muria-changes",
+        name = "shibadisaster-cwa-enable-muria-changes",
         setting_type = "startup",
         default_value = true,
         order = "c0"
@@ -95,7 +105,7 @@ data:extend({
 data:extend({
     {
         type = "bool-setting",
-        name = "shibadisaster-cwe-muria-enable-clouds",
+        name = "shibadisaster-cwa-muria-enable-clouds",
         setting_type = "startup",
         default_value = true,
         order = "c1"
@@ -105,7 +115,7 @@ data:extend({
 data:extend({
     {
         type = "bool-setting",
-        name = "shibadisaster-cwe-muria-enable-fog",
+        name = "shibadisaster-cwa-muria-enable-fog",
         setting_type = "startup",
         default_value = true,
         order = "c2"
@@ -115,7 +125,7 @@ data:extend({
 data:extend({
     {
         type = "bool-setting",
-        name = "shibadisaster-cwe-muria-enable-spores",
+        name = "shibadisaster-cwa-muria-enable-spores",
         setting_type = "startup",
         default_value = true,
         order = "c3"
@@ -125,7 +135,7 @@ data:extend({
 data:extend({
     {
         type = "color-setting",
-        name = "shibadisaster-cwe-muria-spore-color",
+        name = "shibadisaster-cwa-muria-spore-color",
         setting_type = "startup",
         default_value = {0.83, 0.35, 0.52},
         order = "c4"
@@ -135,7 +145,7 @@ data:extend({
 data:extend({
     {
         type = "bool-setting",
-        name = "shibadisaster-cwe-enable-paracelsin-changes",
+        name = "shibadisaster-cwa-enable-paracelsin-changes",
         setting_type = "startup",
         default_value = true,
         order = "d0"
@@ -145,7 +155,7 @@ data:extend({
 data:extend({
     {
         type = "bool-setting",
-        name = "shibadisaster-cwe-paracelsin-ash-snow",
+        name = "shibadisaster-cwa-paracelsin-ash-snow",
         setting_type = "startup",
         default_value = true,
         order = "d1"
@@ -155,7 +165,7 @@ data:extend({
 data:extend({
     {
         type = "bool-setting",
-        name = "shibadisaster-cwe-paracelsin-always-dark",
+        name = "shibadisaster-cwa-paracelsin-always-dark",
         setting_type = "startup",
         default_value = true,
         order = "d2"
