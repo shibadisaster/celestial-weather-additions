@@ -78,14 +78,14 @@ if mods["rubia"] and settings.startup["shibadisaster-cwa-enable-rubia-changes"].
 
     local rubia_sand = data.raw["trivial-smoke"]["rubia-sand"]
     rubia_sand.color = {0.822, 0.700, 0.564, 1.0}
-    rubia_sand.start_scale = 6.0
-    rubia_sand.end_scale = 6.0
+    rubia_sand.start_scale = 4.0
+    rubia_sand.end_scale = 4.0
     rubia_sand.fade_in_duration = 10
     rubia_sand.fade_away_duration = 10
     rubia_sand.duration = 80
 
     -- change speed of built-in effects
-    local rubia_effects = table.deepcopy(data.raw["planet"]["rubia"].player_effects)
+    local rubia_effects = table.deepcopy(data.raw["planet"]["rubia"].player_effects) or {}
 
     for _, effect in ipairs(rubia_effects) do
         effect.action_delivery.source_effects.speed_multiplier = 10.0 * settings.startup["shibadisaster-cwa-rubia-particle-speed"].value
@@ -178,7 +178,7 @@ if mods["skewer_planet_vesta"] and settings.startup["shibadisaster-cwa-enable-ve
 
 
     -- note to self/whoever is reading this: since vesta didn't have existing player_effects, we can just add to player_effects like normal
-    local vesta_effects = data.raw["planet"]["vesta"].player_effects or {}
+    local vesta_effects = table.deepcopy(data.raw["planet"]["vesta"].player_effects) or {}
 
     -- note to self: okay! so i think i get colors now, by premultiplied alpha it means {r, g, b, a} should be {ar, ag, ab, a}
     -- vesta thick clouds
@@ -299,7 +299,7 @@ if mods["Muria"] and settings.startup["shibadisaster-cwa-enable-muria-changes"].
     -- note to self/whoever is reading this: since muria already has an existing effect (rain), idk how to add my effect on top elegantly, if anyone knows how please leave something on the discussions page
     --     this was the first way i figured out to do this that worked, but refer to vesta effects to see a better way to do this
     local muria_effects_action_delivery = {table.deepcopy(data.raw["planet"]["muria"].player_effects.action_delivery)}
-    local muria_effects = {table.deepcopy(data.raw["planet"]["muria"].player_effects)}
+    local muria_effects = {table.deepcopy(data.raw["planet"]["muria"].player_effects)} or {}
 
     -- acid spores
     if settings.startup["shibadisaster-cwa-muria-enable-spores"].value then
@@ -412,7 +412,7 @@ end
 
 
 ------ RABBASCA ------
-local rabbasca_effects = table.deepcopy(data.raw["planet"]["rabbasca"].player_effects or {})
+local rabbasca_effects = table.deepcopy(data.raw["planet"]["rabbasca"].player_effects) or {}
 
 if true then
     local rabbasca_fog = table.deepcopy(fog)
@@ -563,6 +563,26 @@ if true then
     table.insert(rabbasca_effects, rabbasca_weather_sparks_large)
 end
 
+
+if true then
+    local rabbasca_dust = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
+    rabbasca_dust.name = "rabbasca_dust"
+    rabbasca_dust.color = {1.0, 0.5, 1.0}
+    rabbasca_dust.start_scale = 2.0
+    rabbasca_dust.end_scale = 2.0
+    rabbasca_dust.animation.filename = "__celestial-weather__/graphics/entity/sand-particles.png"
+    data.extend({rabbasca_dust})
+
+    local rabbasca_weather_dust = table.deepcopy(cluster_particles)
+    rabbasca_weather_dust.cluster_count = 2
+    rabbasca_weather_dust.action_delivery.source_effects.smoke_name= "rabbasca_dust"
+    rabbasca_weather_dust.action_delivery.source_effects.speed = {-0.35, 0.0}
+    rabbasca_weather_dust.action_delivery.source_effects.speed_multiplier = 1.0
+
+    table.insert(rabbasca_effects, rabbasca_weather_dust)
+end
+
+
 data.raw["planet"]["rabbasca"].ticks_between_player_effects = 1
 data.raw["planet"]["rabbasca"].player_effects = rabbasca_effects
 
@@ -571,7 +591,7 @@ data.raw["planet"]["rabbasca"].player_effects = rabbasca_effects
 
 
 ------ CUBIUM ------
-local cubium_effects = table.deepcopy(data.raw["planet"]["cubium"].player_effects or {})
+local cubium_effects = table.deepcopy(data.raw["planet"]["cubium"].player_effects) or {}
 
 if true then
     local cubium_cloud_a = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
@@ -660,7 +680,7 @@ data.raw["planet"]["cubium"].player_effects = cubium_effects
 
 ------ IGRYS ------
 if true then
-    local igrys_effects = table.deepcopy(data.raw["planet"]["igrys"].player_effects or {})
+    local igrys_effects = table.deepcopy(data.raw["planet"]["igrys"].player_effects) or {}
 
 
     if true then
@@ -825,7 +845,7 @@ end
 
 ------ PANGLIA ------
 if true then
-    local panglia_effects = table.deepcopy(data.raw["planet"]["panglia"].player_effects or {})
+    local panglia_effects = table.deepcopy(data.raw["planet"]["panglia"].player_effects) or {}
 
     if true then
         local panglia_sparks = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
