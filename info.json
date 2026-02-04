@@ -14,8 +14,8 @@
         "?skewer_planet_vesta",
         "?cubium",
         "?planet-rabbasca",
-        "?apia",
-        "?panglia_planet"
+        "?panglia_planet",
+        "?Igrys"
     ],
     "description": "Addon for Celestial Weather that adds more weather VFX for some newer modded planets!",
     "license": "MIT"

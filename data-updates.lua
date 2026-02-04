@@ -430,21 +430,21 @@ if true then
     local rabbasca_cloud_a = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
     rabbasca_cloud_a.name = "rabbasca_cloud_a"
     -- rabbasca_cloud_a.color = {64.0/255.0 * 0.25, 31.0/255.0 * 0.25, 126.0/255.0 * 0.25, 1.0 * 0.25}
-    rabbasca_cloud_a.color = {255.0/255.0 * 0.05, 255.0/255.0 * 0.05, 255.0/255.0 * 0.05, 1.0 * 0.05}
+    rabbasca_cloud_a.color = {34.0/255.0 * 0.5, 25.0/255.0 * 0.5, 63.0/255.0 * 0.5, 1.0 * 0.5}
     rabbasca_cloud_a.animation.filename = "__celestial-weather-additions__/graphics/vfx/cloud-c.png"
     rabbasca_cloud_a.animation.frame_count = 1
     rabbasca_cloud_a.animation.size = 512
     rabbasca_cloud_a.animation.blend_mode = "additive"
     rabbasca_cloud_a.start_scale = 3.0
     rabbasca_cloud_a.end_scale = 5.0
-    rabbasca_cloud_a.duration = 180
-    rabbasca_cloud_a.fade_in_duration = 60
-    rabbasca_cloud_a.fade_away_duration = 60
+    rabbasca_cloud_a.duration = 120
+    rabbasca_cloud_a.fade_in_duration = 40
+    rabbasca_cloud_a.fade_away_duration = 40
     data:extend({rabbasca_cloud_a})
 
     local rabbasca_weather_cloud_a = table.deepcopy(direct_particles)
     rabbasca_weather_cloud_a.action_delivery.source_effects.smoke_name = "rabbasca_cloud_a"
-    rabbasca_weather_cloud_a.action_delivery.source_effects.speed = {0.08, 0.0}
+    rabbasca_weather_cloud_a.action_delivery.source_effects.speed = {-0.16, 0.04}
     rabbasca_weather_cloud_a.action_delivery.source_effects.speed_multiplier = 1.0
     rabbasca_weather_cloud_a.action_delivery.source_effects.repeat_count = 1
     rabbasca_weather_cloud_a.action_delivery.source_effects.probability = 0.1
@@ -454,21 +454,21 @@ if true then
     local rabbasca_cloud_b = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
     rabbasca_cloud_b.name = "rabbasca_cloud_b"
     -- rabbasca_cloud_b.color = {41.0/255.0 * 0.25, 31.0/255.0 * 0.25, 126.0/255.0 * 0.25, 1.0 * 0.25}
-    rabbasca_cloud_b.color = {255.0/255.0 * 0.05, 255.0/255.0 * 0.05, 255.0/255.0 * 0.05, 1.0 * 0.05}
+    rabbasca_cloud_b.color = {57.0/255.0 * 0.5, 48.0/255.0 * 0.5, 63.0/255.0 * 0.5, 1.0 * 0.5}
     rabbasca_cloud_b.animation.filename = "__celestial-weather-additions__/graphics/vfx/cloud-a.png"
     rabbasca_cloud_b.animation.frame_count = 1
     rabbasca_cloud_b.animation.size = 512
     rabbasca_cloud_b.animation.blend_mode = "additive"
     rabbasca_cloud_b.start_scale = 3.0
     rabbasca_cloud_b.end_scale = 5.0
-    rabbasca_cloud_b.duration = 180
-    rabbasca_cloud_b.fade_in_duration = 60
-    rabbasca_cloud_b.fade_away_duration = 60
+    rabbasca_cloud_b.duration = 120
+    rabbasca_cloud_b.fade_in_duration = 40
+    rabbasca_cloud_b.fade_away_duration = 40
     data:extend({rabbasca_cloud_b})
 
     local rabbasca_weather_cloud_b = table.deepcopy(direct_particles)
     rabbasca_weather_cloud_b.action_delivery.source_effects.smoke_name = "rabbasca_cloud_b"
-    rabbasca_weather_cloud_b.action_delivery.source_effects.speed = {0.11, 0.0}
+    rabbasca_weather_cloud_b.action_delivery.source_effects.speed = {-0.21, -0.03}
     rabbasca_weather_cloud_b.action_delivery.source_effects.speed_multiplier = 1.0
     rabbasca_weather_cloud_b.action_delivery.source_effects.repeat_count = 1
     rabbasca_weather_cloud_b.action_delivery.source_effects.probability = 0.1
@@ -500,7 +500,7 @@ if true then
     rabbasca_weather_sparks.action_delivery.source_effects.speed = {0.0, 0.0}
     rabbasca_weather_sparks.action_delivery.source_effects.speed_multiplier = 1.0
     rabbasca_weather_sparks.action_delivery.source_effects.repeat_count = 1
-    rabbasca_weather_sparks.action_delivery.source_effects.probability = 0.1
+    rabbasca_weather_sparks.action_delivery.source_effects.probability = 0.15
 
     table.insert(rabbasca_effects, rabbasca_weather_sparks)
 end
@@ -529,7 +529,7 @@ if true then
     rabbasca_weather_sparks_small.action_delivery.source_effects.speed = {0.0, 0.0}
     rabbasca_weather_sparks_small.action_delivery.source_effects.speed_multiplier = 1.0
     rabbasca_weather_sparks_small.action_delivery.source_effects.repeat_count = 1
-    rabbasca_weather_sparks_small.action_delivery.source_effects.probability = 0.6
+    rabbasca_weather_sparks_small.action_delivery.source_effects.probability = 0.3
 
     table.insert(rabbasca_effects, rabbasca_weather_sparks_small)
 end
@@ -558,7 +558,7 @@ if true then
     rabbasca_weather_sparks_large.action_delivery.source_effects.speed = {0.0, 0.0}
     rabbasca_weather_sparks_large.action_delivery.source_effects.speed_multiplier = 1.0
     rabbasca_weather_sparks_large.action_delivery.source_effects.repeat_count = 1
-    rabbasca_weather_sparks_large.action_delivery.source_effects.probability = 0.1
+    rabbasca_weather_sparks_large.action_delivery.source_effects.probability = 0.15
 
     table.insert(rabbasca_effects, rabbasca_weather_sparks_large)
 end
@@ -653,3 +653,161 @@ end
 
 data.raw["planet"]["cubium"].ticks_between_player_effects = 1
 data.raw["planet"]["cubium"].player_effects = cubium_effects
+
+
+
+
+
+------ IGRYS ------
+if true then
+    local igrys_effects = table.deepcopy(data.raw["planet"]["igrys"].player_effects or {})
+
+
+    if true then
+        local igrys_cloud_a = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
+        igrys_cloud_a.name = "igrys_cloud_a"
+        igrys_cloud_a.color = {177.0/255.0 * 0.4, 99.0/255.0 * 0.4, 20.0/255.0 * 0.4, 1.0 * 0.4}
+        igrys_cloud_a.animation.filename = "__celestial-weather-additions__/graphics/vfx/cloud-c.png"
+        igrys_cloud_a.animation.frame_count = 1
+        igrys_cloud_a.animation.size = 512
+        igrys_cloud_a.animation.blend_mode = "additive"
+        igrys_cloud_a.start_scale = 3.0
+        igrys_cloud_a.end_scale = 5.0
+        igrys_cloud_a.duration = 120
+        igrys_cloud_a.fade_in_duration = 60
+        igrys_cloud_a.fade_away_duration = 60
+        data:extend({igrys_cloud_a})
+
+        local igrys_weather_cloud_a = table.deepcopy(direct_particles)
+        igrys_weather_cloud_a.action_delivery.source_effects.smoke_name = "igrys_cloud_a"
+        igrys_weather_cloud_a.action_delivery.source_effects.speed = {0.42, 0.0}
+        igrys_weather_cloud_a.action_delivery.source_effects.speed_multiplier = 1.0
+        igrys_weather_cloud_a.action_delivery.source_effects.repeat_count = 1
+        igrys_weather_cloud_a.action_delivery.source_effects.probability = 0.1
+
+        table.insert(igrys_effects, igrys_weather_cloud_a)
+
+        local igrys_cloud_b = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
+        igrys_cloud_b.name = "igrys_cloud_b"
+        igrys_cloud_b.color = {177.0/255.0 * 0.4, 138.0/255.0 * 0.4, 81.0/255.0 * 0.4, 1.0 * 0.4}
+        igrys_cloud_b.animation.filename = "__celestial-weather-additions__/graphics/vfx/cloud-a.png"
+        igrys_cloud_b.animation.frame_count = 1
+        igrys_cloud_b.animation.size = 512
+        igrys_cloud_b.animation.blend_mode = "additive"
+        igrys_cloud_b.start_scale = 3.0
+        igrys_cloud_b.end_scale = 5.0
+        igrys_cloud_b.duration = 120
+        igrys_cloud_b.fade_in_duration = 60
+        igrys_cloud_b.fade_away_duration = 60
+        data:extend({igrys_cloud_b})
+
+        local igrys_weather_cloud_b = table.deepcopy(direct_particles)
+        igrys_weather_cloud_b.action_delivery.source_effects.smoke_name = "igrys_cloud_b"
+        igrys_weather_cloud_b.action_delivery.source_effects.speed = {0.68, 0.0}
+        igrys_weather_cloud_b.action_delivery.source_effects.speed_multiplier = 1.0
+        igrys_weather_cloud_b.action_delivery.source_effects.repeat_count = 1
+        igrys_weather_cloud_b.action_delivery.source_effects.probability = 0.1
+
+        table.insert(igrys_effects, igrys_weather_cloud_b)
+    end
+
+
+    if true then
+        local igrys_sparks = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
+        igrys_sparks.name = "igrys_sparks"
+        igrys_sparks.color = {1.0, 0.75, 0.5}
+        igrys_sparks.start_scale = 0.25
+        igrys_sparks.end_scale = 0.25
+        igrys_sparks.duration = 60
+        igrys_sparks.fade_in_duration = 20
+        igrys_sparks.fade_away_duration = 20
+        igrys_sparks.render_layer = "smoke"
+        igrys_sparks.animation.filename = "__celestial-weather-additions__/graphics/vfx/star-a.png"
+        igrys_sparks.animation.frame_count = 1
+        igrys_sparks.animation.line_length = 1
+        igrys_sparks.animation.size = 512
+        igrys_sparks.animation.blend_mode = "additive"
+        data:extend({igrys_sparks})
+
+        local igrys_weather_sparks = table.deepcopy(direct_particles)
+        igrys_weather_sparks.action_delivery.source_effects.smoke_name = "igrys_sparks"
+        igrys_weather_sparks.action_delivery.source_effects.speed = {0.0, 0.0}
+        igrys_weather_sparks.action_delivery.source_effects.speed_multiplier = 1.0
+        igrys_weather_sparks.action_delivery.source_effects.repeat_count = 1
+        igrys_weather_sparks.action_delivery.source_effects.probability = 0.2
+
+        table.insert(igrys_effects, igrys_weather_sparks)
+    end
+
+
+    if true then
+        local igrys_sparks_small = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
+        igrys_sparks_small.name = "igrys_sparks_small"
+        igrys_sparks_small.color = {1.0, 0.85, 0.5}
+        igrys_sparks_small.start_scale = 0.1
+        igrys_sparks_small.end_scale = 0.1
+        igrys_sparks_small.duration = 60
+        igrys_sparks_small.fade_in_duration = 20
+        igrys_sparks_small.fade_away_duration = 20
+        igrys_sparks_small.render_layer = "smoke"
+        igrys_sparks_small.animation.filename = "__celestial-weather-additions__/graphics/vfx/star-a.png"
+        igrys_sparks_small.animation.frame_count = 1
+        igrys_sparks_small.animation.line_length = 1
+        igrys_sparks_small.animation.size = 512
+        igrys_sparks_small.animation.blend_mode = "additive"
+        data:extend({igrys_sparks_small})
+
+        local igrys_weather_sparks_small = table.deepcopy(direct_particles)
+        igrys_weather_sparks_small.action_delivery.source_effects.smoke_name = "igrys_sparks_small"
+        igrys_weather_sparks_small.action_delivery.source_effects.speed = {0.0, 0.0}
+        igrys_weather_sparks_small.action_delivery.source_effects.speed_multiplier = 1.0
+        igrys_weather_sparks_small.action_delivery.source_effects.repeat_count = 1
+        igrys_weather_sparks_small.action_delivery.source_effects.probability = 0.4
+
+        table.insert(igrys_effects, igrys_weather_sparks_small)
+    end
+
+
+    if true then
+        local igrys_sparks_large = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
+        igrys_sparks_large.name = "igrys_sparks_large"
+        igrys_sparks_large.color = {1.0, 0.65, 0.5}
+        igrys_sparks_large.start_scale = 0.5
+        igrys_sparks_large.end_scale = 0.5
+        igrys_sparks_large.duration = 60
+        igrys_sparks_large.fade_in_duration = 20
+        igrys_sparks_large.fade_away_duration = 20
+        igrys_sparks_large.render_layer = "smoke"
+        igrys_sparks_large.animation.filename = "__celestial-weather-additions__/graphics/vfx/star-a.png"
+        igrys_sparks_large.animation.frame_count = 1
+        igrys_sparks_large.animation.line_length = 1
+        igrys_sparks_large.animation.size = 512
+        igrys_sparks_large.animation.blend_mode = "additive"
+        data:extend({igrys_sparks_large})
+
+        local igrys_weather_sparks_large = table.deepcopy(direct_particles)
+        igrys_weather_sparks_large.action_delivery.source_effects.smoke_name = "igrys_sparks_large"
+        igrys_weather_sparks_large.action_delivery.source_effects.speed = {0.0, 0.0}
+        igrys_weather_sparks_large.action_delivery.source_effects.speed_multiplier = 1.0
+        igrys_weather_sparks_large.action_delivery.source_effects.repeat_count = 1
+        igrys_weather_sparks_large.action_delivery.source_effects.probability = 0.2
+
+        table.insert(igrys_effects, igrys_weather_sparks_large)
+    end
+
+
+    data.raw["planet"]["igrys"].ticks_between_player_effects = 1
+    data.raw["planet"]["igrys"].player_effects = igrys_effects
+end
+
+
+
+
+
+------ PANGLIA ------
+if true then
+    local panglia_effects = table.deepcopy(data.raw["planet"]["panglia"].player_effects or {})
+
+    data.raw["planet"]["panglia"].ticks_between_player_effects = 1
+    -- data.raw["planet"]["panglia"].player_effects = panglia_effects
+end
