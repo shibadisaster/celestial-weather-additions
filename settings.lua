@@ -147,7 +147,7 @@ data:extend({
         type = "bool-setting",
         name = "shibadisaster-cwa-enable-paracelsin-changes",
         setting_type = "startup",
-        default_value = true,
+        default_value = false,
         order = "d0"
     }
 })

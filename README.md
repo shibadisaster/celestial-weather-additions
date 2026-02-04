@@ -16,8 +16,9 @@ settings. Currently adds the following VFX to modded planets:
 - Muria has acidic green fog with magenta spores (from the acidophile lichens)
   floating around
 - (DISABLED BY DEFAULT) Paracelsin, being a cryovolcanic planet, is now subject
-  to a volcanic winter to differentiate it from other frozen planets, meaning it
-  has black ashy snowfall and is always dark
+  to a volcanic winter to differentiate it from other frozen planets (and to
+  further justify its 0% solar power in atmosphere), meaning it has black ashy
+  snowfall and is always dark
 
 Certain effects made using
 [mebiusbox's EffectTextureMaker](https://mebiusbox.github.io/contents/EffectTextureMaker/)
