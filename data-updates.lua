@@ -416,10 +416,10 @@ local rabbasca_effects = table.deepcopy(data.raw["planet"]["rabbasca"].player_ef
 
 if true then
     local rabbasca_fog = table.deepcopy(fog)
-    rabbasca_fog.color1 = {193.0/255.0 * 1.0, 98.0/255.0 * 1.0, 55.0/255.0 * 1.0, 1.0 * 1.0}
-    rabbasca_fog.color2 = {193.0/255.0 * 1.0, 98.0/255.0 * 1.0, 55.0/255.0 * 1.0, 1.0 * 1.0}
-    rabbasca_fog.color1 = {255.0/255.0 * 0.5, 255.0/255.0 * 0.5, 255.0/255.0 * 0.5, 1.0 * 0.5}
-    rabbasca_fog.color2 = {255.0/255.0 * 0.5, 255.0/255.0 * 0.5, 255.0/255.0 * 0.5, 1.0 * 0.5}
+    rabbasca_fog.color1 = {64.0/255.0 * 1.0, 31.0/255.0 * 1.0, 126.0/255.0 * 1.0, 1.0 * 1.0}
+    rabbasca_fog.color2 = {64.0/255.0 * 1.0, 31.0/255.0 * 1.0, 126.0/255.0 * 1.0, 1.0 * 1.0}
+    -- rabbasca_fog.color1 = {255.0/255.0 * 0.5, 255.0/255.0 * 0.5, 255.0/255.0 * 0.5, 1.0 * 0.5}
+    -- rabbasca_fog.color2 = {255.0/255.0 * 0.5, 255.0/255.0 * 0.5, 255.0/255.0 * 0.5, 1.0 * 0.5}
     rabbasca_fog.tick_factor = 0.00003
     rabbasca_fog.detail_noise_texture.filename = "__celestial-weather__/graphics/entity/dense-clouds.png"
 
@@ -429,16 +429,17 @@ end
 if true then
     local rabbasca_cloud_a = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
     rabbasca_cloud_a.name = "rabbasca_cloud_a"
-    rabbasca_cloud_a.color = {64.0/255.0 * 0.25, 31.0/255.0 * 0.25, 126.0/255.0 * 0.25, 1.0 * 0.25}
+    -- rabbasca_cloud_a.color = {64.0/255.0 * 0.25, 31.0/255.0 * 0.25, 126.0/255.0 * 0.25, 1.0 * 0.25}
+    rabbasca_cloud_a.color = {255.0/255.0 * 0.05, 255.0/255.0 * 0.05, 255.0/255.0 * 0.05, 1.0 * 0.05}
     rabbasca_cloud_a.animation.filename = "__celestial-weather-additions__/graphics/vfx/cloud-c.png"
     rabbasca_cloud_a.animation.frame_count = 1
     rabbasca_cloud_a.animation.size = 512
     rabbasca_cloud_a.animation.blend_mode = "additive"
     rabbasca_cloud_a.start_scale = 3.0
     rabbasca_cloud_a.end_scale = 5.0
-    rabbasca_cloud_a.duration = 300
-    rabbasca_cloud_a.fade_in_duration = 150
-    rabbasca_cloud_a.fade_away_duration = 150
+    rabbasca_cloud_a.duration = 180
+    rabbasca_cloud_a.fade_in_duration = 60
+    rabbasca_cloud_a.fade_away_duration = 60
     data:extend({rabbasca_cloud_a})
 
     local rabbasca_weather_cloud_a = table.deepcopy(direct_particles)
@@ -452,16 +453,17 @@ if true then
 
     local rabbasca_cloud_b = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
     rabbasca_cloud_b.name = "rabbasca_cloud_b"
-    rabbasca_cloud_b.color = {41.0/255.0 * 0.25, 31.0/255.0 * 0.25, 126.0/255.0 * 0.25, 1.0 * 0.25}
+    -- rabbasca_cloud_b.color = {41.0/255.0 * 0.25, 31.0/255.0 * 0.25, 126.0/255.0 * 0.25, 1.0 * 0.25}
+    rabbasca_cloud_b.color = {255.0/255.0 * 0.05, 255.0/255.0 * 0.05, 255.0/255.0 * 0.05, 1.0 * 0.05}
     rabbasca_cloud_b.animation.filename = "__celestial-weather-additions__/graphics/vfx/cloud-a.png"
     rabbasca_cloud_b.animation.frame_count = 1
     rabbasca_cloud_b.animation.size = 512
     rabbasca_cloud_b.animation.blend_mode = "additive"
     rabbasca_cloud_b.start_scale = 3.0
     rabbasca_cloud_b.end_scale = 5.0
-    rabbasca_cloud_b.duration = 300
-    rabbasca_cloud_b.fade_in_duration = 150
-    rabbasca_cloud_b.fade_away_duration = 150
+    rabbasca_cloud_b.duration = 180
+    rabbasca_cloud_b.fade_in_duration = 60
+    rabbasca_cloud_b.fade_away_duration = 60
     data:extend({rabbasca_cloud_b})
 
     local rabbasca_weather_cloud_b = table.deepcopy(direct_particles)
@@ -618,6 +620,36 @@ if true then
 
     table.insert(cubium_effects, cubium_weather_cloud_b)
 end
+
+
+if true then
+    local cubium_sparks_small = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
+    cubium_sparks_small.name = "cubium_sparks_small"
+    cubium_sparks_small.color = {47.0/255.0 * 1.0, 63.0/255.0 * 1.0, 119.0/255.0 * 1.0, 1.0 * 1.0}
+    cubium_sparks_small.start_scale = 0.2
+    cubium_sparks_small.end_scale = 0.3
+    cubium_sparks_small.duration = 120
+    cubium_sparks_small.fade_in_duration = 40
+    cubium_sparks_small.fade_away_duration = 40
+    cubium_sparks_small.render_layer = "smoke"
+    cubium_sparks_small.animation.filename = "__celestial-weather-additions__/graphics/vfx/pointy-spark-a.png"
+    cubium_sparks_small.animation.frame_count = 100
+    cubium_sparks_small.animation.line_length = 10
+    cubium_sparks_small.animation.size = math.floor(2048 / 10)
+    cubium_sparks_small.animation.animation_speed = 20.0
+    cubium_sparks_small.animation.blend_mode = "additive"
+    data:extend({cubium_sparks_small})
+
+    local cubium_weather_sparks_small = table.deepcopy(direct_particles)
+    cubium_weather_sparks_small.action_delivery.source_effects.smoke_name = "cubium_sparks_small"
+    cubium_weather_sparks_small.action_delivery.source_effects.speed = {0.2, 0.0}
+    cubium_weather_sparks_small.action_delivery.source_effects.speed_multiplier = 1.0
+    cubium_weather_sparks_small.action_delivery.source_effects.repeat_count = 1
+    cubium_weather_sparks_small.action_delivery.source_effects.probability = 1.0
+
+    table.insert(cubium_effects, cubium_weather_sparks_small)
+end
+
 
 data.raw["planet"]["cubium"].ticks_between_player_effects = 1
 data.raw["planet"]["cubium"].player_effects = cubium_effects
