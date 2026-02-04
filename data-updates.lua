@@ -358,27 +358,49 @@ if mods["Muria"] and settings.startup["shibadisaster-cwa-enable-muria-changes"].
 
 
     if settings.startup["shibadisaster-cwa-muria-enable-clouds"].value then
-        local muria_cloud = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
-        muria_cloud.name = "muria_cloud"
-        muria_cloud.color = {0.075, 0.1, 0.0, 0.15}
-        muria_cloud.animation.filename = "__celestial-weather-additions__/graphics/vfx/cloud-a.png"
-        muria_cloud.animation.frame_count = 1
-        muria_cloud.animation.size = 512
-        muria_cloud.start_scale = 3.0
-        muria_cloud.end_scale = 5.0
-        muria_cloud.duration = 240
-        muria_cloud.fade_in_duration = 60
-        muria_cloud.fade_away_duration = 60
-        data:extend({muria_cloud})
+        local muria_cloud_a = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
+        muria_cloud_a.name = "muria_cloud_a"
+        muria_cloud_a.color = {0.075, 0.1, 0.0, 0.15}
+        muria_cloud_a.animation.filename = "__celestial-weather-additions__/graphics/vfx/cloud-a.png"
+        muria_cloud_a.animation.frame_count = 1
+        muria_cloud_a.animation.size = 512
+        muria_cloud_a.start_scale = 3.0
+        muria_cloud_a.end_scale = 5.0
+        muria_cloud_a.duration = 240
+        muria_cloud_a.fade_in_duration = 60
+        muria_cloud_a.fade_away_duration = 60
+        data:extend({muria_cloud_a})
 
-        local muria_weather_cloud = table.deepcopy(direct_particles)
-        muria_weather_cloud.action_delivery.source_effects.smoke_name = "muria_cloud"
-        muria_weather_cloud.action_delivery.source_effects.speed = {0.0, 0.0}
-        muria_weather_cloud.action_delivery.source_effects.speed_multiplier = 1.0
-        muria_weather_cloud.action_delivery.source_effects.repeat_count = 1
-        muria_weather_cloud.action_delivery.source_effects.probability = 0.03
+        local muria_weather_cloud_a = table.deepcopy(direct_particles)
+        muria_weather_cloud_a.action_delivery.source_effects.smoke_name = "muria_cloud_a"
+        muria_weather_cloud_a.action_delivery.source_effects.speed = {0.0, 0.0}
+        muria_weather_cloud_a.action_delivery.source_effects.speed_multiplier = 1.0
+        muria_weather_cloud_a.action_delivery.source_effects.repeat_count = 1
+        muria_weather_cloud_a.action_delivery.source_effects.probability = 0.03
 
-        table.insert(muria_effects, muria_weather_cloud)
+        table.insert(muria_effects, muria_weather_cloud_a)
+
+        local muria_cloud_b = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
+        muria_cloud_b.name = "muria_cloud_b"
+        muria_cloud_b.color = {0.075, 0.1, 0.0, 0.15}
+        muria_cloud_b.animation.filename = "__celestial-weather-additions__/graphics/vfx/cloud-b.png"
+        muria_cloud_b.animation.frame_count = 1
+        muria_cloud_b.animation.size = 512
+        muria_cloud_b.start_scale = 3.0
+        muria_cloud_b.end_scale = 5.0
+        muria_cloud_b.duration = 240
+        muria_cloud_b.fade_in_duration = 60
+        muria_cloud_b.fade_away_duration = 60
+        data:extend({muria_cloud_b})
+
+        local muria_weather_cloud_b = table.deepcopy(direct_particles)
+        muria_weather_cloud_b.action_delivery.source_effects.smoke_name = "muria_cloud_b"
+        muria_weather_cloud_b.action_delivery.source_effects.speed = {0.0, 0.0}
+        muria_weather_cloud_b.action_delivery.source_effects.speed_multiplier = 1.0
+        muria_weather_cloud_b.action_delivery.source_effects.repeat_count = 1
+        muria_weather_cloud_b.action_delivery.source_effects.probability = 0.03
+
+        table.insert(muria_effects, muria_weather_cloud_b)
     end
 
 
