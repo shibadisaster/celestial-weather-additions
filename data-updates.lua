@@ -666,7 +666,7 @@ if true then
     if true then
         local igrys_cloud_a = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
         igrys_cloud_a.name = "igrys_cloud_a"
-        igrys_cloud_a.color = {177.0/255.0 * 0.4, 99.0/255.0 * 0.4, 20.0/255.0 * 0.4, 1.0 * 0.4}
+        igrys_cloud_a.color = {177.0/255.0 * 0.2, 99.0/255.0 * 0.2, 20.0/255.0 * 0.2, 1.0 * 0.2}
         igrys_cloud_a.animation.filename = "__celestial-weather-additions__/graphics/vfx/cloud-c.png"
         igrys_cloud_a.animation.frame_count = 1
         igrys_cloud_a.animation.size = 512
@@ -689,7 +689,7 @@ if true then
 
         local igrys_cloud_b = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
         igrys_cloud_b.name = "igrys_cloud_b"
-        igrys_cloud_b.color = {177.0/255.0 * 0.4, 138.0/255.0 * 0.4, 81.0/255.0 * 0.4, 1.0 * 0.4}
+        igrys_cloud_b.color = {177.0/255.0 * 0.2, 138.0/255.0 * 0.2, 81.0/255.0 * 0.2, 1.0 * 0.2}
         igrys_cloud_b.animation.filename = "__celestial-weather-additions__/graphics/vfx/cloud-a.png"
         igrys_cloud_b.animation.frame_count = 1
         igrys_cloud_b.animation.size = 512
@@ -796,6 +796,25 @@ if true then
     end
 
 
+    if true then
+        local igrys_dust = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
+        igrys_dust.name = "igrys_dust"
+        igrys_dust.color = {1.0, 0.875, 0.75}
+        igrys_dust.start_scale = 2.0
+        igrys_dust.end_scale = 2.0
+        igrys_dust.animation.filename = "__celestial-weather__/graphics/entity/sand-particles.png"
+        data.extend({igrys_dust})
+
+        local igrys_weather_dust = table.deepcopy(cluster_particles)
+        igrys_weather_dust.cluster_count = 2
+        igrys_weather_dust.action_delivery.source_effects.smoke_name= "igrys_dust"
+        igrys_weather_dust.action_delivery.source_effects.speed = {0.65, 0.0}
+        igrys_weather_dust.action_delivery.source_effects.speed_multiplier = 1.0
+
+        table.insert(igrys_effects, igrys_weather_dust)
+    end
+
+
     data.raw["planet"]["igrys"].ticks_between_player_effects = 1
     data.raw["planet"]["igrys"].player_effects = igrys_effects
 end
@@ -808,6 +827,157 @@ end
 if true then
     local panglia_effects = table.deepcopy(data.raw["planet"]["panglia"].player_effects or {})
 
+    if true then
+        local panglia_sparks = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
+        panglia_sparks.name = "panglia_sparks"
+        panglia_sparks.color = {126.0/255.0, 255.0/255.0, 236.0/255.0}
+        panglia_sparks.start_scale = 0.5
+        panglia_sparks.end_scale = 1.0
+        panglia_sparks.duration = 180
+        panglia_sparks.fade_in_duration = 60
+        panglia_sparks.fade_away_duration = 60
+        panglia_sparks.render_layer = "smoke"
+        panglia_sparks.animation.filename = "__celestial-weather__/graphics/entity/fire-particles.png"
+        -- panglia_sparks.animation.frame_count = 1
+        -- panglia_sparks.animation.line_length = 1
+        -- panglia_sparks.animation.size = 512
+        panglia_sparks.animation.blend_mode = "additive"
+        data:extend({panglia_sparks})
+
+        local panglia_weather_sparks = table.deepcopy(cluster_particles)
+        panglia_weather_sparks.action_delivery.source_effects.smoke_name = "panglia_sparks"
+        panglia_weather_sparks.action_delivery.source_effects.speed = {0.0, -0.1}
+        panglia_weather_sparks.action_delivery.source_effects.speed_multiplier = 1.0
+        panglia_weather_sparks.action_delivery.source_effects.repeat_count = 1
+        panglia_weather_sparks.action_delivery.source_effects.probability = 0.4
+
+        table.insert(panglia_effects, panglia_weather_sparks)
+    end
+
+
+    if true then
+        local panglia_sparks_small = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
+        panglia_sparks_small.name = "panglia_sparks_small"
+        panglia_sparks_small.color = {126.0/255.0, 255.0/255.0, 166.0/255.0}
+        panglia_sparks_small.start_scale = 0.25
+        panglia_sparks_small.end_scale = 0.5
+        panglia_sparks_small.duration = 180
+        panglia_sparks_small.fade_in_duration = 60
+        panglia_sparks_small.fade_away_duration = 60
+        panglia_sparks_small.render_layer = "smoke"
+        panglia_sparks_small.animation.filename = "__celestial-weather__/graphics/entity/fire-particles.png"
+        -- panglia_sparks_small.animation.frame_count = 1
+        -- panglia_sparks_small.animation.line_length = 1
+        -- panglia_sparks_small.animation.size = 512
+        panglia_sparks_small.animation.blend_mode = "additive"
+        data:extend({panglia_sparks_small})
+
+        local panglia_weather_sparks_small = table.deepcopy(cluster_particles)
+        panglia_weather_sparks_small.action_delivery.source_effects.smoke_name = "panglia_sparks_small"
+        panglia_weather_sparks_small.action_delivery.source_effects.speed = {0.0, -0.15}
+        panglia_weather_sparks_small.action_delivery.source_effects.speed_multiplier = 1.0
+        panglia_weather_sparks_small.action_delivery.source_effects.repeat_count = 1
+        panglia_weather_sparks_small.action_delivery.source_effects.probability = 0.8
+
+        table.insert(panglia_effects, panglia_weather_sparks_small)
+    end
+
+
+    if true then
+        local panglia_sparks_large = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
+        panglia_sparks_large.name = "panglia_sparks_large"
+        panglia_sparks_large.color = {126.0/255.0, 182.0/255.0, 255.0/255.0}
+        panglia_sparks_large.start_scale = 1.0
+        panglia_sparks_large.end_scale = 2.0
+        panglia_sparks_large.duration = 180
+        panglia_sparks_large.fade_in_duration = 60
+        panglia_sparks_large.fade_away_duration = 60
+        panglia_sparks_large.render_layer = "smoke"
+        panglia_sparks_large.animation.filename = "__celestial-weather__/graphics/entity/fire-particles.png"
+        -- panglia_sparks_large.animation.frame_count = 1
+        -- panglia_sparks_large.animation.line_length = 1
+        -- panglia_sparks_large.animation.size = 512
+        panglia_sparks_large.animation.blend_mode = "additive"
+        data:extend({panglia_sparks_large})
+
+        local panglia_weather_sparks_large = table.deepcopy(cluster_particles)
+        panglia_weather_sparks_large.action_delivery.source_effects.smoke_name = "panglia_sparks_large"
+        panglia_weather_sparks_large.action_delivery.source_effects.speed = {0.0, -0.05}
+        panglia_weather_sparks_large.action_delivery.source_effects.speed_multiplier = 1.0
+        panglia_weather_sparks_large.action_delivery.source_effects.repeat_count = 1
+        panglia_weather_sparks_large.action_delivery.source_effects.probability = 0.4
+
+        table.insert(panglia_effects, panglia_weather_sparks_large)
+    end
+
+
+    if true then
+        local panglia_cloud_a = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
+        panglia_cloud_a.name = "panglia_cloud_a"
+        panglia_cloud_a.color = {191.0/255.0 * 0.1, 255.0/255.0 * 0.1, 126.0/255.0 * 0.1, 1.0 * 0.1}
+        panglia_cloud_a.animation.filename = "__celestial-weather-additions__/graphics/vfx/cloud-a.png"
+        panglia_cloud_a.animation.frame_count = 1
+        panglia_cloud_a.animation.size = 512
+        panglia_cloud_a.animation.blend_mode = "additive"
+        panglia_cloud_a.start_scale = 3.0
+        panglia_cloud_a.end_scale = 5.0
+        panglia_cloud_a.duration = 300
+        panglia_cloud_a.fade_in_duration = 60
+        panglia_cloud_a.fade_away_duration = 60
+        data:extend({panglia_cloud_a})
+
+        local panglia_weather_cloud_a = table.deepcopy(direct_particles)
+        panglia_weather_cloud_a.action_delivery.source_effects.smoke_name = "panglia_cloud_a"
+        panglia_weather_cloud_a.action_delivery.source_effects.speed = {0.0, -0.06}
+        panglia_weather_cloud_a.action_delivery.source_effects.speed_multiplier = 1.0
+        panglia_weather_cloud_a.action_delivery.source_effects.repeat_count = 1
+        panglia_weather_cloud_a.action_delivery.source_effects.probability = 0.1
+
+        table.insert(panglia_effects, panglia_weather_cloud_a)
+
+
+        local panglia_cloud_b = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
+        panglia_cloud_b.name = "panglia_cloud_b"
+        panglia_cloud_b.color = {191.0/255.0 * 0.1, 255.0/255.0 * 0.1, 126.0/255.0 * 0.1, 1.0 * 0.1}
+        panglia_cloud_b.animation.filename = "__celestial-weather-additions__/graphics/vfx/cloud-b.png"
+        panglia_cloud_b.animation.frame_count = 1
+        panglia_cloud_b.animation.size = 512
+        panglia_cloud_b.animation.blend_mode = "additive"
+        panglia_cloud_b.start_scale = 3.0
+        panglia_cloud_b.end_scale = 5.0
+        panglia_cloud_b.duration = 300
+        panglia_cloud_b.fade_in_duration = 60
+        panglia_cloud_b.fade_away_duration = 60
+        data:extend({panglia_cloud_b})
+
+        local panglia_weather_cloud_b = table.deepcopy(direct_particles)
+        panglia_weather_cloud_b.action_delivery.source_effects.smoke_name = "panglia_cloud_b"
+        panglia_weather_cloud_b.action_delivery.source_effects.speed = {0.0, -0.08}
+        panglia_weather_cloud_b.action_delivery.source_effects.speed_multiplier = 1.0
+        panglia_weather_cloud_b.action_delivery.source_effects.repeat_count = 1
+        panglia_weather_cloud_b.action_delivery.source_effects.probability = 0.1
+
+        table.insert(panglia_effects, panglia_weather_cloud_b)
+    end
+
+    
+    if true then
+        local panglia_dust = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
+        panglia_dust.name = "panglia_dust"
+        panglia_dust.color = {126.0/255.0, 255.0/255.0, 236.0/255.0}
+        panglia_dust.animation.filename = "__celestial-weather__/graphics/entity/sand-particles.png"
+        data.extend({panglia_dust})
+
+        local panglia_weather_dust = table.deepcopy(cluster_particles)
+        panglia_weather_dust.cluster_count = 2
+        panglia_weather_dust.action_delivery.source_effects.smoke_name= "panglia_dust"
+        panglia_weather_dust.action_delivery.source_effects.speed = {0.0, -0.32}
+        panglia_weather_dust.action_delivery.source_effects.speed_multiplier = 1.0
+
+        table.insert(panglia_effects, panglia_weather_dust)
+    end
+
+
     data.raw["planet"]["panglia"].ticks_between_player_effects = 1
-    -- data.raw["planet"]["panglia"].player_effects = panglia_effects
+    data.raw["planet"]["panglia"].player_effects = panglia_effects
 end
