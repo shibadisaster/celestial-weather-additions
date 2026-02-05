@@ -15,7 +15,8 @@
         "?cubium",
         "?planet-rabbasca",
         "?panglia_planet",
-        "?Igrys"
+        "?Igrys",
+        "?alchemy-khemia"
     ],
     "description": "Addon for Celestial Weather that adds more weather VFX for some newer modded planets!",
     "license": "MIT"

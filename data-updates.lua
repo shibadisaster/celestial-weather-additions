@@ -413,8 +413,7 @@ if mods["Muria"] and settings.startup["shibadisaster-cwa-enable-muria-changes"].
         muria_dust.animation.filename = "__celestial-weather__/graphics/entity/sand-particles.png"
         data.extend({muria_dust})
 
-        local muria_weather_dust = table.deepcopy(cluster_particles)
-        muria_weather_dust.cluster_count = 2
+        local muria_weather_dust = table.deepcopy(direct_particles)
         muria_weather_dust.action_delivery.source_effects.smoke_name= "muria_dust"
         muria_weather_dust.action_delivery.source_effects.speed = {-0.11, 0.0}
         muria_weather_dust.action_delivery.source_effects.speed_multiplier = 1.0
@@ -640,7 +639,7 @@ local cubium_effects = table.deepcopy(data.raw["planet"]["cubium"].player_effect
 if true then
     local cubium_cloud_a = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
     cubium_cloud_a.name = "cubium_cloud_a"
-    cubium_cloud_a.color = {59.0/255.0 * 0.5, 36.0/255.0 * 0.5, 107.0/255.0 * 0.5, 1.0 * 0.5}
+    cubium_cloud_a.color = {59.0/255.0 * 0.25, 36.0/255.0 * 0.25, 107.0/255.0 * 0.25, 1.0 * 0.25}
     cubium_cloud_a.animation.filename = "__celestial-weather-additions__/graphics/vfx/cloud-c.png"
     cubium_cloud_a.animation.frame_count = 1
     cubium_cloud_a.animation.size = 512
@@ -663,7 +662,7 @@ if true then
 
     local cubium_cloud_b = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
     cubium_cloud_b.name = "cubium_cloud_b"
-    cubium_cloud_b.color = {47.0/255.0 * 0.5, 63.0/255.0 * 0.5, 119.0/255.0 * 0.5, 1.0 * 0.5}
+    cubium_cloud_b.color = {47.0/255.0 * 0.25, 63.0/255.0 * 0.25, 119.0/255.0 * 0.25, 1.0 * 0.25}
     cubium_cloud_b.animation.filename = "__celestial-weather-additions__/graphics/vfx/cloud-a.png"
     cubium_cloud_b.animation.frame_count = 1
     cubium_cloud_b.animation.size = 512
@@ -1044,4 +1043,144 @@ if true then
 
     data.raw["planet"]["panglia"].ticks_between_player_effects = 1
     data.raw["planet"]["panglia"].player_effects = panglia_effects
+end
+
+
+
+
+
+------ KHEMIA ------
+if true then
+    local khemia_effects = table.deepcopy(data.raw["planet"]["alchemy-planet"].player_effects) or {}
+
+
+    if true then
+        local khemia_dust = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
+        khemia_dust.name = "khemia_dust"
+        khemia_dust.color = {1.0, 0.875, 0.75}
+        khemia_dust.animation.filename = "__celestial-weather__/graphics/entity/sand-particles.png"
+        data.extend({khemia_dust})
+
+        local khemia_weather_dust = table.deepcopy(cluster_particles)
+        khemia_weather_dust.cluster_count = 2
+        khemia_weather_dust.action_delivery.source_effects.smoke_name= "khemia_dust"
+        khemia_weather_dust.action_delivery.source_effects.speed = {0.0, -0.32}
+        khemia_weather_dust.action_delivery.source_effects.speed_multiplier = 1.0
+
+        table.insert(khemia_effects, khemia_weather_dust)
+    end
+
+
+    if true then
+        local khemia_sparks = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
+        khemia_sparks.name = "khemia_sparks"
+        khemia_sparks.color = {1.0, 0.25, 1.0}
+        khemia_sparks.start_scale = 0.25
+        khemia_sparks.end_scale = 0.25
+        khemia_sparks.duration = 60
+        khemia_sparks.fade_in_duration = 20
+        khemia_sparks.fade_away_duration = 20
+        khemia_sparks.render_layer = "smoke"
+        khemia_sparks.animation.filename = "__celestial-weather-additions__/graphics/vfx/star-a.png"
+        khemia_sparks.animation.frame_count = 1
+        khemia_sparks.animation.line_length = 1
+        khemia_sparks.animation.size = 512
+        khemia_sparks.animation.blend_mode = "additive"
+        data:extend({khemia_sparks})
+
+        local khemia_weather_sparks = table.deepcopy(direct_particles)
+        khemia_weather_sparks.action_delivery.source_effects.smoke_name = "khemia_sparks"
+        khemia_weather_sparks.action_delivery.source_effects.speed = {0.0, -0.16}
+        khemia_weather_sparks.action_delivery.source_effects.speed_multiplier = 1.0
+        khemia_weather_sparks.action_delivery.source_effects.repeat_count = 1
+        khemia_weather_sparks.action_delivery.source_effects.probability = 0.2
+
+        table.insert(khemia_effects, khemia_weather_sparks)
+    end
+
+
+    if true then
+        local khemia_sparks_small = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
+        khemia_sparks_small.name = "khemia_sparks_small"
+        khemia_sparks_small.color = {1.0, 0.25, 1.0}
+        khemia_sparks_small.start_scale = 0.1
+        khemia_sparks_small.end_scale = 0.1
+        khemia_sparks_small.duration = 60
+        khemia_sparks_small.fade_in_duration = 20
+        khemia_sparks_small.fade_away_duration = 20
+        khemia_sparks_small.render_layer = "smoke"
+        khemia_sparks_small.animation.filename = "__celestial-weather-additions__/graphics/vfx/star-a.png"
+        khemia_sparks_small.animation.frame_count = 1
+        khemia_sparks_small.animation.line_length = 1
+        khemia_sparks_small.animation.size = 512
+        khemia_sparks_small.animation.blend_mode = "additive"
+        data:extend({khemia_sparks_small})
+
+        local khemia_weather_sparks_small = table.deepcopy(direct_particles)
+        khemia_weather_sparks_small.action_delivery.source_effects.smoke_name = "khemia_sparks_small"
+        khemia_weather_sparks_small.action_delivery.source_effects.speed = {0.0, -0.19}
+        khemia_weather_sparks_small.action_delivery.source_effects.speed_multiplier = 1.0
+        khemia_weather_sparks_small.action_delivery.source_effects.repeat_count = 1
+        khemia_weather_sparks_small.action_delivery.source_effects.probability = 0.2
+
+        table.insert(khemia_effects, khemia_weather_sparks_small)
+    end
+
+
+    if true then
+        local khemia_sparks_large = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
+        khemia_sparks_large.name = "khemia_sparks_large"
+        khemia_sparks_large.color = {1.0, 0.25, 1.0}
+        khemia_sparks_large.start_scale = 0.4
+        khemia_sparks_large.end_scale = 0.4
+        khemia_sparks_large.duration = 60
+        khemia_sparks_large.fade_in_duration = 20
+        khemia_sparks_large.fade_away_duration = 20
+        khemia_sparks_large.render_layer = "smoke"
+        khemia_sparks_large.animation.filename = "__celestial-weather-additions__/graphics/vfx/star-a.png"
+        khemia_sparks_large.animation.frame_count = 1
+        khemia_sparks_large.animation.line_length = 1
+        khemia_sparks_large.animation.size = 512
+        khemia_sparks_large.animation.blend_mode = "additive"
+        data:extend({khemia_sparks_large})
+
+        local khemia_weather_sparks_large = table.deepcopy(direct_particles)
+        khemia_weather_sparks_large.action_delivery.source_effects.smoke_name = "khemia_sparks_large"
+        khemia_weather_sparks_large.action_delivery.source_effects.speed = {0.0, -0.16}
+        khemia_weather_sparks_large.action_delivery.source_effects.speed_multiplier = 1.0
+        khemia_weather_sparks_large.action_delivery.source_effects.repeat_count = 1
+        khemia_weather_sparks_large.action_delivery.source_effects.probability = 0.2
+
+        table.insert(khemia_effects, khemia_weather_sparks_large)
+    end
+
+    
+    if true then
+        local khemia_cloud_a = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
+        khemia_cloud_a.name = "khemia_cloud_a"
+        khemia_cloud_a.color = {255.0/255.0 * 0.25, 63.0/255.0 * 0.25, 255.0/255.0 * 0.25, 1.0 * 0.25}
+        khemia_cloud_a.animation.filename = "__celestial-weather-additions__/graphics/vfx/cloud-c.png"
+        khemia_cloud_a.animation.frame_count = 1
+        khemia_cloud_a.animation.size = 512
+        khemia_cloud_a.animation.blend_mode = "additive"
+        khemia_cloud_a.start_scale = 3.0
+        khemia_cloud_a.end_scale = 5.0
+        khemia_cloud_a.duration = 300
+        khemia_cloud_a.fade_in_duration = 150
+        khemia_cloud_a.fade_away_duration = 150
+        data:extend({khemia_cloud_a})
+
+        local khemia_weather_cloud_a = table.deepcopy(direct_particles)
+        khemia_weather_cloud_a.action_delivery.source_effects.smoke_name = "khemia_cloud_a"
+        khemia_weather_cloud_a.action_delivery.source_effects.speed = {0.0, -0.04}
+        khemia_weather_cloud_a.action_delivery.source_effects.speed_multiplier = 1.0
+        khemia_weather_cloud_a.action_delivery.source_effects.repeat_count = 1
+        khemia_weather_cloud_a.action_delivery.source_effects.probability = 0.1
+
+        table.insert(khemia_effects, khemia_weather_cloud_a)
+    end
+
+
+    data.raw["planet"]["alchemy-planet"].ticks_between_player_effects = 1
+    data.raw["planet"]["alchemy-planet"].player_effects = khemia_effects
 end
