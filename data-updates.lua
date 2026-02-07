@@ -95,18 +95,22 @@ if mods["rubia"] and settings.startup["shibadisaster-cwa-enable-rubia-changes"].
 
 
     -- add overlay fog
-    -- local rubia_fog = table.deepcopy(fog)
-    -- rubia_fog.color1 = {0.822, 0.700, 0.564, 0.5}
-    -- rubia_fog.color2 = {0.822, 0.700, 0.564, 0.5}
-    -- rubia_fog.tick_factor = 0.003
-    -- rubia_fog.detail_noise_texture.filename = "__celestial-weather__/graphics/entity/dense-clouds.png"
+    -- fog cannot be affected by wind afaik, so we have to remove this sowwy!
+    -- if true then
+    --     local rubia_fog = table.deepcopy(fog)
+    --     rubia_fog.color1 = {0.822, 0.700, 0.564, 0.5}
+    --     rubia_fog.color2 = {0.822, 0.700, 0.564, 0.5}
+    --     rubia_fog.tick_factor = 0.003
+    --     rubia_fog.detail_noise_texture.filename = "__celestial-weather__/graphics/entity/dense-clouds.png"
 
-    -- data.raw["planet"]["rubia"].surface_render_parameters["fog"] = rubia_fog
+    --     data.raw["planet"]["rubia"].surface_render_parameters["fog"] = rubia_fog
+    -- end
+
 
     if settings.startup["shibadisaster-cwa-rubia-enable-clouds"].value then
         local rubia_clouds = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
         rubia_clouds.name = "rubia_clouds"
-        rubia_clouds.color = {0.622, 0.500, 0.364, 0.5}
+        rubia_clouds.color = {0.300, 0.250, 0.180, 0.25}
         rubia_clouds.start_scale = 4.0
         rubia_clouds.end_scale = 6.0
         rubia_clouds.duration = 60
@@ -131,7 +135,7 @@ if mods["rubia"] and settings.startup["shibadisaster-cwa-enable-rubia-changes"].
 
         local rubia_clouds_b = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
         rubia_clouds_b.name = "rubia_clouds_b"
-        rubia_clouds_b.color = {0.310, 0.250, 0.180, 0.25}
+        rubia_clouds_b.color = {0.150, 0.125, 0.090, 0.125}
         rubia_clouds_b.start_scale = 5.0
         rubia_clouds_b.end_scale = 3.0
         rubia_clouds_b.duration = 60
@@ -1343,7 +1347,7 @@ if true then
         local pelagos_fog = table.deepcopy(fog)
         pelagos_fog.color1 = {192.0/255.0, 192.0/255.0, 255.0/255.0}
         pelagos_fog.color2 = {192.0/255.0, 192.0/255.0, 255.0/255.0}
-        pelagos_fog.tick_factor = 0.000005
+        pelagos_fog.tick_factor = 0.000001
         pelagos_fog.detail_noise_texture.filename = "__celestial-weather-additions__/graphics/vfx/caustics-fog.png"
         pelagos_fog.fog_type = "gleba"
 
