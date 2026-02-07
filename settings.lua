@@ -171,3 +171,253 @@ data:extend({
         order = "d2"
     }
 })
+
+data:extend({
+    {
+        type = "bool-setting",
+        name = "shibadisaster-cwa-enable-cubium-changes",
+        setting_type = "startup",
+        default_value = true,
+        order = "e0"
+    }
+})
+
+data:extend({
+    {
+        type = "bool-setting",
+        name = "shibadisaster-cwa-cubium-enable-clouds",
+        setting_type = "startup",
+        default_value = true,
+        order = "e1"
+    }
+})
+
+data:extend({
+    {
+        type = "bool-setting",
+        name = "shibadisaster-cwa-cubium-enable-sparks",
+        setting_type = "startup",
+        default_value = true,
+        order = "e2"
+    }
+})
+
+data:extend({
+    {
+        type = "bool-setting",
+        name = "shibadisaster-cwa-enable-rabbasca-changes",
+        setting_type = "startup",
+        default_value = true,
+        order = "f0"
+    }
+})
+
+data:extend({
+    {
+        type = "bool-setting",
+        name = "shibadisaster-cwa-rabbasca-enable-clouds",
+        setting_type = "startup",
+        default_value = true,
+        order = "f1"
+    }
+})
+
+data:extend({
+    {
+        type = "bool-setting",
+        name = "shibadisaster-cwa-rabbasca-enable-sparks",
+        setting_type = "startup",
+        default_value = true,
+        order = "f2"
+    }
+})
+
+data:extend({
+    {
+        type = "bool-setting",
+        name = "shibadisaster-cwa-rabbasca-enable-fog",
+        setting_type = "startup",
+        default_value = true,
+        order = "f3"
+    }
+})
+
+data:extend({
+    {
+        type = "bool-setting",
+        name = "shibadisaster-cwa-rabbasca-enable-dust",
+        setting_type = "startup",
+        default_value = true,
+        order = "f4"
+    }
+})
+
+data:extend({
+    {
+        type = "bool-setting",
+        name = "shibadisaster-cwa-enable-panglia-changes",
+        setting_type = "startup",
+        default_value = true,
+        order = "g0"
+    }
+})
+
+data:extend({
+    {
+        type = "bool-setting",
+        name = "shibadisaster-cwa-panglia-enable-clouds",
+        setting_type = "startup",
+        default_value = true,
+        order = "g1"
+    }
+})
+
+data:extend({
+    {
+        type = "bool-setting",
+        name = "shibadisaster-cwa-panglia-enable-sparks",
+        setting_type = "startup",
+        default_value = true,
+        order = "g2"
+    }
+})
+
+data:extend({
+    {
+        type = "bool-setting",
+        name = "shibadisaster-cwa-panglia-enable-dust",
+        setting_type = "startup",
+        default_value = true,
+        order = "g3"
+    }
+})
+
+data:extend({
+    {
+        type = "bool-setting",
+        name = "shibadisaster-cwa-enable-igrys-changes",
+        setting_type = "startup",
+        default_value = true,
+        order = "h0"
+    }
+})
+
+data:extend({
+    {
+        type = "bool-setting",
+        name = "shibadisaster-cwa-igrys-enable-clouds",
+        setting_type = "startup",
+        default_value = true,
+        order = "h1"
+    }
+})
+
+data:extend({
+    {
+        type = "bool-setting",
+        name = "shibadisaster-cwa-igrys-enable-sparkles",
+        setting_type = "startup",
+        default_value = true,
+        order = "h2"
+    }
+})
+
+data:extend({
+    {
+        type = "bool-setting",
+        name = "shibadisaster-cwa-igrys-enable-dust",
+        setting_type = "startup",
+        default_value = true,
+        order = "h3"
+    }
+})
+
+data:extend({
+    {
+        type = "bool-setting",
+        name = "shibadisaster-cwa-enable-khemia-changes",
+        setting_type = "startup",
+        default_value = true,
+        order = "i0"
+    }
+})
+
+data:extend({
+    {
+        type = "bool-setting",
+        name = "shibadisaster-cwa-khemia-enable-clouds",
+        setting_type = "startup",
+        default_value = true,
+        order = "i1"
+    }
+})
+
+data:extend({
+    {
+        type = "bool-setting",
+        name = "shibadisaster-cwa-khemia-enable-sparkles",
+        setting_type = "startup",
+        default_value = true,
+        order = "i2"
+    }
+})
+
+data:extend({
+    {
+        type = "bool-setting",
+        name = "shibadisaster-cwa-khemia-enable-fog",
+        setting_type = "startup",
+        default_value = true,
+        order = "i3"
+    }
+})
+
+data:extend({
+    {
+        type = "bool-setting",
+        name = "shibadisaster-cwa-khemia-enable-dust",
+        setting_type = "startup",
+        default_value = true,
+        order = "i4"
+    }
+})
+
+data:extend({
+    {
+        type = "bool-setting",
+        name = "shibadisaster-cwa-enable-pelagos-changes",
+        setting_type = "startup",
+        default_value = true,
+        order = "j0"
+    }
+})
+
+data:extend({
+    {
+        type = "bool-setting",
+        name = "shibadisaster-cwa-pelagos-enable-tropical-recolor",
+        setting_type = "startup",
+        default_value = true,
+        order = "j1"
+    }
+})
+
+data:extend({
+    {
+        type = "bool-setting",
+        name = "shibadisaster-cwa-pelagos-enable-clouds",
+        setting_type = "startup",
+        default_value = true,
+        order = "j2"
+    }
+})
+
+data:extend({
+    {
+        type = "bool-setting",
+        name = "shibadisaster-cwa-pelagos-enable-water-ripples",
+        setting_type = "startup",
+        default_value = true,
+        order = "j3"
+    }
+})

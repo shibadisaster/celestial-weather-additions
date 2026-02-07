@@ -20,5 +20,7 @@
         "?alchemy-khemia"
     ],
     "description": "Addon for Celestial Weather that adds more weather VFX for some newer modded planets!",
-    "license": "MIT"
+    "license": "MIT",
+    "space_travel_required": true,
+    "expansion_shaders_required": true
 }
