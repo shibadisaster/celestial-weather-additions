@@ -167,15 +167,36 @@ end
 
 ------ VESTA ------
 if mods["skewer_planet_vesta"] and settings.startup["shibadisaster-cwa-enable-vesta-changes"].value then
-    local vesta_fog = table.deepcopy(fog)
-    vesta_fog.color1 = settings.startup["shibadisaster-cwa-vesta-fog-color"].value
-    vesta_fog.color2 = settings.startup["shibadisaster-cwa-vesta-fog-color"].value
-    vesta_fog.tick_factor = 0.00003
-    vesta_fog.detail_noise_texture.filename = "__celestial-weather__/graphics/entity/dense-clouds.png"
 
-    data.raw["planet"]["vesta"].surface_render_parameters["fog"] = vesta_fog
-    data.raw["planet"]["vesta"].surface_render_parameters["clouds"] = nil
 
+    if true then
+        local vesta_fog = table.deepcopy(fog)
+        vesta_fog.color1 = settings.startup["shibadisaster-cwa-vesta-fog-color"].value
+        vesta_fog.color2 = settings.startup["shibadisaster-cwa-vesta-fog-color"].value
+        vesta_fog.tick_factor = 0.000005
+        vesta_fog.detail_noise_texture.filename = "__celestial-weather__/graphics/entity/dense-clouds.png"
+        vesta_fog.fog_type = "gleba"
+
+        data.raw["planet"]["vesta"].surface_render_parameters["fog"] = vesta_fog
+        data.raw["planet"]["vesta"].surface_render_parameters["clouds"] = nil
+
+        data.raw["tile"]["dust-flat-vesta"].lowland_fog = false
+        data.raw["tile"]["dust-crests-vesta"].lowland_fog = false
+        data.raw["tile"]["dust-lumpy-vesta"].lowland_fog = false
+        data.raw["tile"]["dust-patchy-vesta"].lowland_fog = false
+        data.raw["tile"]["ice-rough-vesta"].lowland_fog = false
+        data.raw["tile"]["ice-smooth-vesta"].lowland_fog = false
+
+        data.raw["tile"]["ammoniacal-ocean-vesta-pink"].lowland_fog = true
+        data.raw["tile"]["ammoniacal-ocean-vesta-lime"].lowland_fog = true
+        data.raw["tile"]["ammoniacal-ocean-vesta-yellow"].lowland_fog = true
+        data.raw["tile"]["ammoniacal-ocean-vesta-yellow-ransom"].lowland_fog = true
+        data.raw["tile"]["ammoniacal-ocean-vesta-red"].lowland_fog = true
+        data.raw["tile"]["ammoniacal-ocean-vesta-red-ransom"].lowland_fog = true
+        data.raw["tile"]["ammoniacal-ocean-vesta-tritium"].lowland_fog = true
+        data.raw["tile"]["ammoniacal-ocean-vesta-deuterium"].lowland_fog = true
+    end
+    
 
     -- note to self/whoever is reading this: since vesta didn't have existing player_effects, we can just add to player_effects like normal
     local vesta_effects = table.deepcopy(data.raw["planet"]["vesta"].player_effects) or {}

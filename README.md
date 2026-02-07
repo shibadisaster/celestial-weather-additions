@@ -6,8 +6,8 @@ more weather VFX for some newer modded planets! Originally made for a personal
 playthrough but I decided to upload it :3
 
 This mod is intended to be highly customizable in the same way the base
-Celestial Weather mod is. Almost every parameter can be turned on or off in mod
-settings. Currently adds the following VFX to modded planets:
+Celestial Weather mod is. Almost every effect/change can be turned on or off in
+mod settings. Currently adds the following VFX to modded planets:
 
 - Rubia's wind effects are much more intense and particles move much faster to
   make them more representative of the 300km/h wind speed

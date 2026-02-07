@@ -45,7 +45,7 @@ data:extend({
         type = "color-setting",
         name = "shibadisaster-cwa-vesta-fog-color",
         setting_type = "startup",
-        default_value = {0.682, 0.500, 0.635, 1.0},
+        default_value = {242.0/255.0, 189.0/255.0, 219.0/255.0, 1.0},
         order = "b1"
     }
 })
