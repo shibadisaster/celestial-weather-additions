@@ -366,9 +366,9 @@ if mods["Muria"] and settings.startup["shibadisaster-cwa-enable-muria-changes"].
         muria_cloud_a.animation.size = 512
         muria_cloud_a.start_scale = 3.0
         muria_cloud_a.end_scale = 5.0
-        muria_cloud_a.duration = 240
-        muria_cloud_a.fade_in_duration = 60
-        muria_cloud_a.fade_away_duration = 60
+        muria_cloud_a.duration = 720
+        muria_cloud_a.fade_in_duration = 180
+        muria_cloud_a.fade_away_duration = 180
         data:extend({muria_cloud_a})
 
         local muria_weather_cloud_a = table.deepcopy(direct_particles)
@@ -388,9 +388,9 @@ if mods["Muria"] and settings.startup["shibadisaster-cwa-enable-muria-changes"].
         muria_cloud_b.animation.size = 512
         muria_cloud_b.start_scale = 3.0
         muria_cloud_b.end_scale = 5.0
-        muria_cloud_b.duration = 240
-        muria_cloud_b.fade_in_duration = 60
-        muria_cloud_b.fade_away_duration = 60
+        muria_cloud_b.duration = 720
+        muria_cloud_b.fade_in_duration = 180
+        muria_cloud_b.fade_away_duration = 180
         data:extend({muria_cloud_b})
 
         local muria_weather_cloud_b = table.deepcopy(direct_particles)
@@ -480,14 +480,14 @@ if true then
     rabbasca_cloud_a.animation.blend_mode = "additive"
     rabbasca_cloud_a.start_scale = 3.0
     rabbasca_cloud_a.end_scale = 5.0
-    rabbasca_cloud_a.duration = 120
-    rabbasca_cloud_a.fade_in_duration = 40
-    rabbasca_cloud_a.fade_away_duration = 40
+    rabbasca_cloud_a.duration = 480
+    rabbasca_cloud_a.fade_in_duration = 160
+    rabbasca_cloud_a.fade_away_duration = 160
     data:extend({rabbasca_cloud_a})
 
     local rabbasca_weather_cloud_a = table.deepcopy(direct_particles)
     rabbasca_weather_cloud_a.action_delivery.source_effects.smoke_name = "rabbasca_cloud_a"
-    rabbasca_weather_cloud_a.action_delivery.source_effects.speed = {-0.16, 0.04}
+    rabbasca_weather_cloud_a.action_delivery.source_effects.speed = {-0.04, 0.01}
     rabbasca_weather_cloud_a.action_delivery.source_effects.speed_multiplier = 1.0
     rabbasca_weather_cloud_a.action_delivery.source_effects.repeat_count = 1
     rabbasca_weather_cloud_a.action_delivery.source_effects.probability = 0.1
@@ -504,14 +504,14 @@ if true then
     rabbasca_cloud_b.animation.blend_mode = "additive"
     rabbasca_cloud_b.start_scale = 3.0
     rabbasca_cloud_b.end_scale = 5.0
-    rabbasca_cloud_b.duration = 120
-    rabbasca_cloud_b.fade_in_duration = 40
-    rabbasca_cloud_b.fade_away_duration = 40
+    rabbasca_cloud_b.duration = 480
+    rabbasca_cloud_b.fade_in_duration = 160
+    rabbasca_cloud_b.fade_away_duration = 160
     data:extend({rabbasca_cloud_b})
 
     local rabbasca_weather_cloud_b = table.deepcopy(direct_particles)
     rabbasca_weather_cloud_b.action_delivery.source_effects.smoke_name = "rabbasca_cloud_b"
-    rabbasca_weather_cloud_b.action_delivery.source_effects.speed = {-0.21, -0.03}
+    rabbasca_weather_cloud_b.action_delivery.source_effects.speed = {-0.05, -0.01}
     rabbasca_weather_cloud_b.action_delivery.source_effects.speed_multiplier = 1.0
     rabbasca_weather_cloud_b.action_delivery.source_effects.repeat_count = 1
     rabbasca_weather_cloud_b.action_delivery.source_effects.probability = 0.1
@@ -524,8 +524,8 @@ if true then
     local rabbasca_sparks = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
     rabbasca_sparks.name = "rabbasca_sparks"
     rabbasca_sparks.color = {1.0, 0.5, 1.0}
-    rabbasca_sparks.start_scale = 0.25
-    rabbasca_sparks.end_scale = 0.25
+    rabbasca_sparks.start_scale = 0.15
+    rabbasca_sparks.end_scale = 0.15
     rabbasca_sparks.duration = 60
     rabbasca_sparks.fade_in_duration = 30
     rabbasca_sparks.fade_away_duration = 30
@@ -582,8 +582,8 @@ if true then
     local rabbasca_sparks_large = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
     rabbasca_sparks_large.name = "rabbasca_sparks_large"
     rabbasca_sparks_large.color = {1.0, 0.5, 1.0}
-    rabbasca_sparks_large.start_scale = 0.5
-    rabbasca_sparks_large.end_scale = 0.5
+    rabbasca_sparks_large.start_scale = 0.2
+    rabbasca_sparks_large.end_scale = 0.2
     rabbasca_sparks_large.duration = 30
     rabbasca_sparks_large.fade_in_duration = 15
     rabbasca_sparks_large.fade_away_duration = 15
@@ -689,8 +689,8 @@ if true then
     local cubium_sparks_small = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
     cubium_sparks_small.name = "cubium_sparks_small"
     cubium_sparks_small.color = {47.0/255.0 * 1.0, 63.0/255.0 * 1.0, 119.0/255.0 * 1.0, 1.0 * 1.0}
-    cubium_sparks_small.start_scale = 0.2
-    cubium_sparks_small.end_scale = 0.3
+    cubium_sparks_small.start_scale = 0.1
+    cubium_sparks_small.end_scale = 0.2
     cubium_sparks_small.duration = 120
     cubium_sparks_small.fade_in_duration = 40
     cubium_sparks_small.fade_away_duration = 40
@@ -708,9 +708,38 @@ if true then
     cubium_weather_sparks_small.action_delivery.source_effects.speed = {0.2, 0.0}
     cubium_weather_sparks_small.action_delivery.source_effects.speed_multiplier = 1.0
     cubium_weather_sparks_small.action_delivery.source_effects.repeat_count = 1
-    cubium_weather_sparks_small.action_delivery.source_effects.probability = 1.0
+    cubium_weather_sparks_small.action_delivery.source_effects.probability = 0.5
 
     table.insert(cubium_effects, cubium_weather_sparks_small)
+end
+
+
+if true then
+    local cubium_sparks_large = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
+    cubium_sparks_large.name = "cubium_sparks_large"
+    cubium_sparks_large.color = {47.0/255.0 * 1.0, 63.0/255.0 * 1.0, 119.0/255.0 * 1.0, 1.0 * 1.0}
+    cubium_sparks_large.start_scale = 0.2
+    cubium_sparks_large.end_scale = 0.3
+    cubium_sparks_large.duration = 120
+    cubium_sparks_large.fade_in_duration = 40
+    cubium_sparks_large.fade_away_duration = 40
+    cubium_sparks_large.render_layer = "smoke"
+    cubium_sparks_large.animation.filename = "__celestial-weather-additions__/graphics/vfx/pointy-spark-a.png"
+    cubium_sparks_large.animation.frame_count = 100
+    cubium_sparks_large.animation.line_length = 10
+    cubium_sparks_large.animation.size = math.floor(2048 / 10)
+    cubium_sparks_large.animation.animation_speed = 20.0
+    cubium_sparks_large.animation.blend_mode = "additive"
+    data:extend({cubium_sparks_large})
+
+    local cubium_weather_sparks_large = table.deepcopy(direct_particles)
+    cubium_weather_sparks_large.action_delivery.source_effects.smoke_name = "cubium_sparks_large"
+    cubium_weather_sparks_large.action_delivery.source_effects.speed = {0.1, 0.0}
+    cubium_weather_sparks_large.action_delivery.source_effects.speed_multiplier = 1.0
+    cubium_weather_sparks_large.action_delivery.source_effects.repeat_count = 1
+    cubium_weather_sparks_large.action_delivery.source_effects.probability = 0.5
+
+    table.insert(cubium_effects, cubium_weather_sparks_large)
 end
 
 
@@ -789,7 +818,6 @@ if true then
         igrys_sparks.animation.frame_count = 1
         igrys_sparks.animation.line_length = 1
         igrys_sparks.animation.size = 512
-        igrys_sparks.animation.blend_mode = "additive"
         data:extend({igrys_sparks})
 
         local igrys_weather_sparks = table.deepcopy(direct_particles)
@@ -817,7 +845,6 @@ if true then
         igrys_sparks_small.animation.frame_count = 1
         igrys_sparks_small.animation.line_length = 1
         igrys_sparks_small.animation.size = 512
-        igrys_sparks_small.animation.blend_mode = "additive"
         data:extend({igrys_sparks_small})
 
         local igrys_weather_sparks_small = table.deepcopy(direct_particles)
@@ -981,20 +1008,19 @@ if true then
         panglia_cloud_a.animation.filename = "__celestial-weather-additions__/graphics/vfx/cloud-a.png"
         panglia_cloud_a.animation.frame_count = 1
         panglia_cloud_a.animation.size = 512
-        panglia_cloud_a.animation.blend_mode = "additive"
         panglia_cloud_a.start_scale = 3.0
         panglia_cloud_a.end_scale = 5.0
-        panglia_cloud_a.duration = 300
-        panglia_cloud_a.fade_in_duration = 60
-        panglia_cloud_a.fade_away_duration = 60
+        panglia_cloud_a.duration = 480
+        panglia_cloud_a.fade_in_duration = 160
+        panglia_cloud_a.fade_away_duration = 160
         data:extend({panglia_cloud_a})
 
         local panglia_weather_cloud_a = table.deepcopy(direct_particles)
         panglia_weather_cloud_a.action_delivery.source_effects.smoke_name = "panglia_cloud_a"
-        panglia_weather_cloud_a.action_delivery.source_effects.speed = {0.0, -0.06}
+        panglia_weather_cloud_a.action_delivery.source_effects.speed = {0.0, -0.03}
         panglia_weather_cloud_a.action_delivery.source_effects.speed_multiplier = 1.0
         panglia_weather_cloud_a.action_delivery.source_effects.repeat_count = 1
-        panglia_weather_cloud_a.action_delivery.source_effects.probability = 0.1
+        panglia_weather_cloud_a.action_delivery.source_effects.probability = 0.025
 
         table.insert(panglia_effects, panglia_weather_cloud_a)
 
@@ -1005,20 +1031,19 @@ if true then
         panglia_cloud_b.animation.filename = "__celestial-weather-additions__/graphics/vfx/cloud-b.png"
         panglia_cloud_b.animation.frame_count = 1
         panglia_cloud_b.animation.size = 512
-        panglia_cloud_b.animation.blend_mode = "additive"
         panglia_cloud_b.start_scale = 3.0
         panglia_cloud_b.end_scale = 5.0
-        panglia_cloud_b.duration = 300
-        panglia_cloud_b.fade_in_duration = 60
-        panglia_cloud_b.fade_away_duration = 60
+        panglia_cloud_b.duration = 480
+        panglia_cloud_b.fade_in_duration = 160
+        panglia_cloud_b.fade_away_duration = 160
         data:extend({panglia_cloud_b})
 
         local panglia_weather_cloud_b = table.deepcopy(direct_particles)
         panglia_weather_cloud_b.action_delivery.source_effects.smoke_name = "panglia_cloud_b"
-        panglia_weather_cloud_b.action_delivery.source_effects.speed = {0.0, -0.08}
+        panglia_weather_cloud_b.action_delivery.source_effects.speed = {0.0, -0.04}
         panglia_weather_cloud_b.action_delivery.source_effects.speed_multiplier = 1.0
         panglia_weather_cloud_b.action_delivery.source_effects.repeat_count = 1
-        panglia_weather_cloud_b.action_delivery.source_effects.probability = 0.1
+        panglia_weather_cloud_b.action_delivery.source_effects.probability = 0.025
 
         table.insert(panglia_effects, panglia_weather_cloud_b)
     end
@@ -1158,15 +1183,15 @@ if true then
     if true then
         local khemia_cloud_a = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
         khemia_cloud_a.name = "khemia_cloud_a"
-        khemia_cloud_a.color = {255.0/255.0 * 0.1, 63.0/255.0 * 0.1, 127.0/255.0 * 0.1, 1.0 * 0.1}
+        khemia_cloud_a.color = {255.0/255.0 * 0.2, 128.0/255.0 * 0.2, 192.0/255.0 * 0.2, 1.0 * 0.2}
         khemia_cloud_a.animation.filename = "__celestial-weather-additions__/graphics/vfx/cloud-c.png"
         khemia_cloud_a.animation.frame_count = 1
         khemia_cloud_a.animation.size = 512
         khemia_cloud_a.start_scale = 3.0
         khemia_cloud_a.end_scale = 5.0
         khemia_cloud_a.duration = 300
-        khemia_cloud_a.fade_in_duration = 150
-        khemia_cloud_a.fade_away_duration = 150
+        khemia_cloud_a.fade_in_duration = 100
+        khemia_cloud_a.fade_away_duration = 100
         data:extend({khemia_cloud_a})
 
         local khemia_weather_cloud_a = table.deepcopy(direct_particles)
@@ -1174,7 +1199,7 @@ if true then
         khemia_weather_cloud_a.action_delivery.source_effects.speed = {0.0, -0.04}
         khemia_weather_cloud_a.action_delivery.source_effects.speed_multiplier = 1.0
         khemia_weather_cloud_a.action_delivery.source_effects.repeat_count = 1
-        khemia_weather_cloud_a.action_delivery.source_effects.probability = 0.03
+        khemia_weather_cloud_a.action_delivery.source_effects.probability = 0.05
 
         table.insert(khemia_effects, khemia_weather_cloud_a)
     end
@@ -1183,15 +1208,15 @@ if true then
     if true then
         local khemia_cloud_b = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
         khemia_cloud_b.name = "khemia_cloud_b"
-        khemia_cloud_b.color = {255.0/255.0 * 0.1, 63.0/255.0 * 0.1, 127.0/255.0 * 0.1, 1.0 * 0.1}
+        khemia_cloud_b.color = {255.0/255.0 * 0.2, 128.0/255.0 * 0.2, 192.0/255.0 * 0.2, 1.0 * 0.2}
         khemia_cloud_b.animation.filename = "__celestial-weather-additions__/graphics/vfx/cloud-a.png"
         khemia_cloud_b.animation.frame_count = 1
         khemia_cloud_b.animation.size = 512
         khemia_cloud_b.start_scale = 3.0
         khemia_cloud_b.end_scale = 5.0
         khemia_cloud_b.duration = 300
-        khemia_cloud_b.fade_in_duration = 150
-        khemia_cloud_b.fade_away_duration = 150
+        khemia_cloud_b.fade_in_duration = 100
+        khemia_cloud_b.fade_away_duration = 100
         data:extend({khemia_cloud_b})
 
         local khemia_weather_cloud_a = table.deepcopy(direct_particles)
@@ -1199,9 +1224,21 @@ if true then
         khemia_weather_cloud_a.action_delivery.source_effects.speed = {0.0, -0.03}
         khemia_weather_cloud_a.action_delivery.source_effects.speed_multiplier = 1.0
         khemia_weather_cloud_a.action_delivery.source_effects.repeat_count = 1
-        khemia_weather_cloud_a.action_delivery.source_effects.probability = 0.03
+        khemia_weather_cloud_a.action_delivery.source_effects.probability = 0.05
 
         table.insert(khemia_effects, khemia_weather_cloud_a)
+    end
+
+
+    if true then
+        local khemia_fog = table.deepcopy(fog)
+        khemia_fog.color1 = {255.0/255.0, 128.0/255.0, 192.0/255.0}
+        khemia_fog.color2 = {255.0/255.0, 128.0/255.0, 192.0/255.0}
+        khemia_fog.tick_factor = 0.00003
+        khemia_fog.detail_noise_texture.filename = "__celestial-weather__/graphics/entity/dense-clouds.png"
+
+        data.raw["planet"]["alchemy-planet"].surface_render_parameters = data.raw["planet"]["alchemy-planet"].surface_render_parameters or {}
+        data.raw["planet"]["alchemy-planet"].surface_render_parameters.fog = khemia_fog
     end
 
 
@@ -1243,8 +1280,8 @@ if true then
         pelagos_cloud_a.start_scale = 3.0
         pelagos_cloud_a.end_scale = 5.0
         pelagos_cloud_a.duration = 600
-        pelagos_cloud_a.fade_in_duration = 300
-        pelagos_cloud_a.fade_away_duration = 300
+        pelagos_cloud_a.fade_in_duration = 150
+        pelagos_cloud_a.fade_away_duration = 150
         data:extend({pelagos_cloud_a})
 
         local pelagos_weather_cloud_a = table.deepcopy(direct_particles)
@@ -1266,8 +1303,8 @@ if true then
         pelagos_cloud_b.start_scale = 3.0
         pelagos_cloud_b.end_scale = 5.0
         pelagos_cloud_b.duration = 600
-        pelagos_cloud_b.fade_in_duration = 300
-        pelagos_cloud_b.fade_away_duration = 300
+        pelagos_cloud_b.fade_in_duration = 150
+        pelagos_cloud_b.fade_away_duration = 150
         data:extend({pelagos_cloud_b})
 
         local pelagos_weather_cloud_b = table.deepcopy(direct_particles)
@@ -1278,6 +1315,21 @@ if true then
         pelagos_weather_cloud_b.action_delivery.source_effects.probability = 0.05
 
         table.insert(pelagos_effects, pelagos_weather_cloud_b)
+    end
+
+    
+    if true then
+        local pelagos_fog = table.deepcopy(fog)
+        pelagos_fog.color1 = {192.0/255.0, 192.0/255.0, 255.0/255.0}
+        pelagos_fog.color2 = {192.0/255.0, 192.0/255.0, 255.0/255.0}
+        pelagos_fog.tick_factor = 0.000005
+        pelagos_fog.detail_noise_texture.filename = "__celestial-weather-additions__/graphics/vfx/caustics-fog.png"
+        pelagos_fog.fog_type = "gleba"
+
+        data.raw["planet"]["pelagos"].surface_render_parameters = data.raw["planet"]["pelagos"].surface_render_parameters or {}
+        data.raw["planet"]["pelagos"].surface_render_parameters.fog = pelagos_fog
+
+        data.raw["tile"]["pelagos-deepsea"].lowland_fog = true
     end
 
 
