@@ -1029,15 +1029,15 @@ if true then
     if true then
         local panglia_cloud_a = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
         panglia_cloud_a.name = "panglia_cloud_a"
-        panglia_cloud_a.color = {191.0/255.0 * 0.1, 255.0/255.0 * 0.1, 126.0/255.0 * 0.1, 1.0 * 0.1}
+        panglia_cloud_a.color = {191.0/255.0 * 0.05, 255.0/255.0 * 0.05, 126.0/255.0 * 0.05, 1.0 * 0.05}
         panglia_cloud_a.animation.filename = "__celestial-weather-additions__/graphics/vfx/cloud-a.png"
         panglia_cloud_a.animation.frame_count = 1
         panglia_cloud_a.animation.size = 512
         panglia_cloud_a.start_scale = 3.0
         panglia_cloud_a.end_scale = 5.0
         panglia_cloud_a.duration = 480
-        panglia_cloud_a.fade_in_duration = 160
-        panglia_cloud_a.fade_away_duration = 160
+        panglia_cloud_a.fade_in_duration = 60
+        panglia_cloud_a.fade_away_duration = 60
         data:extend({panglia_cloud_a})
 
         local panglia_weather_cloud_a = table.deepcopy(direct_particles)
@@ -1052,15 +1052,15 @@ if true then
 
         local panglia_cloud_b = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
         panglia_cloud_b.name = "panglia_cloud_b"
-        panglia_cloud_b.color = {191.0/255.0 * 0.1, 255.0/255.0 * 0.1, 126.0/255.0 * 0.1, 1.0 * 0.1}
+        panglia_cloud_b.color = {191.0/255.0 * 0.05, 255.0/255.0 * 0.05, 126.0/255.0 * 0.05, 1.0 * 0.05}
         panglia_cloud_b.animation.filename = "__celestial-weather-additions__/graphics/vfx/cloud-b.png"
         panglia_cloud_b.animation.frame_count = 1
         panglia_cloud_b.animation.size = 512
         panglia_cloud_b.start_scale = 3.0
         panglia_cloud_b.end_scale = 5.0
         panglia_cloud_b.duration = 480
-        panglia_cloud_b.fade_in_duration = 160
-        panglia_cloud_b.fade_away_duration = 160
+        panglia_cloud_b.fade_in_duration = 30
+        panglia_cloud_b.fade_away_duration = 30
         data:extend({panglia_cloud_b})
 
         local panglia_weather_cloud_b = table.deepcopy(direct_particles)
