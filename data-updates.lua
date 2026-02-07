@@ -161,7 +161,7 @@ if mods["rubia"] and settings.startup["shibadisaster-cwa-enable-rubia-changes"].
     end
 
 
-    if true then
+    if settings.startup["shibadisaster-cwa-rubia-enable-additional-dust"].value then
         local rubia_dust = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
         rubia_dust.name = "rubia_dust"
         rubia_dust.color = {0.900, 0.831, 0.755, 1.0}
@@ -199,7 +199,7 @@ end
 if mods["skewer_planet_vesta"] and settings.startup["shibadisaster-cwa-enable-vesta-changes"].value then
 
 
-    if true then
+    if settings.startup["shibadisaster-cwa-vesta-enable-fog"].value then
         local vesta_fog = table.deepcopy(fog)
         vesta_fog.color1 = settings.startup["shibadisaster-cwa-vesta-fog-color"].value
         vesta_fog.color2 = settings.startup["shibadisaster-cwa-vesta-fog-color"].value
@@ -233,97 +233,108 @@ if mods["skewer_planet_vesta"] and settings.startup["shibadisaster-cwa-enable-ve
 
     -- note to self: okay! so i think i get colors now, by premultiplied alpha it means {r, g, b, a} should be {ar, ag, ab, a}
     -- vesta thick clouds
-    local vesta_thick_clouds = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
-    vesta_thick_clouds.name = "vesta_thick_clouds"
-    vesta_thick_clouds.color = settings.startup["shibadisaster-cwa-vesta-thick-cloud-color"].value
-    vesta_thick_clouds.start_scale = 4.0
-    vesta_thick_clouds.end_scale = 4.0
-    vesta_thick_clouds.duration = 240 * settings.startup["shibadisaster-cwa-vesta-cloud-duration-multiplier"].value
-    vesta_thick_clouds.fade_in_duration = 120 * settings.startup["shibadisaster-cwa-vesta-cloud-duration-multiplier"].value
-    vesta_thick_clouds.fade_away_duration = 120 * settings.startup["shibadisaster-cwa-vesta-cloud-duration-multiplier"].value
-    vesta_thick_clouds.render_layer = "air-entity-info-icon"
-    vesta_thick_clouds.animation.filename = "__celestial-weather-additions__/graphics/vfx/diffuse-cloud.png"
-    vesta_thick_clouds.animation.frame_count = 1
-    vesta_thick_clouds.animation.size = 512
-    data:extend({vesta_thick_clouds})
+    if settings.startup["shibadisaster-cwa-vesta-enable-thick-clouds"].value then
+        local vesta_thick_clouds = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
+        vesta_thick_clouds.name = "vesta_thick_clouds"
+        vesta_thick_clouds.color = settings.startup["shibadisaster-cwa-vesta-thick-cloud-color"].value
+        vesta_thick_clouds.start_scale = 4.0
+        vesta_thick_clouds.end_scale = 4.0
+        vesta_thick_clouds.duration = 240 * settings.startup["shibadisaster-cwa-vesta-cloud-duration-multiplier"].value
+        vesta_thick_clouds.fade_in_duration = 120 * settings.startup["shibadisaster-cwa-vesta-cloud-duration-multiplier"].value
+        vesta_thick_clouds.fade_away_duration = 120 * settings.startup["shibadisaster-cwa-vesta-cloud-duration-multiplier"].value
+        vesta_thick_clouds.render_layer = "air-entity-info-icon"
+        vesta_thick_clouds.animation.filename = "__celestial-weather-additions__/graphics/vfx/diffuse-cloud.png"
+        vesta_thick_clouds.animation.frame_count = 1
+        vesta_thick_clouds.animation.size = 512
+        data:extend({vesta_thick_clouds})
 
-    local vesta_thick_clouds_white_a = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
-    vesta_thick_clouds_white_a.name = "vesta_clouds_white_a"
-    vesta_thick_clouds_white_a.color = settings.startup["shibadisaster-cwa-vesta-cloud-color"].value
-    vesta_thick_clouds_white_a.start_scale = 3.0
-    vesta_thick_clouds_white_a.end_scale = 4.0
-    vesta_thick_clouds_white_a.duration = 240 * settings.startup["shibadisaster-cwa-vesta-cloud-duration-multiplier"].value
-    vesta_thick_clouds_white_a.fade_in_duration = 60 * settings.startup["shibadisaster-cwa-vesta-cloud-duration-multiplier"].value
-    vesta_thick_clouds_white_a.fade_away_duration = 60 * settings.startup["shibadisaster-cwa-vesta-cloud-duration-multiplier"].value
-    vesta_thick_clouds_white_a.render_layer = "floor"
-    vesta_thick_clouds_white_a.animation.filename = "__celestial-weather-additions__/graphics/vfx/cloud-a.png"
-    vesta_thick_clouds_white_a.animation.frame_count = 1
-    vesta_thick_clouds_white_a.animation.size = 512
-    data:extend({vesta_thick_clouds_white_a})
+        local vesta_weather_thick_clouds = table.deepcopy(direct_particles)
+        vesta_weather_thick_clouds.action_delivery.source_effects.smoke_name = "vesta_thick_clouds"
+        vesta_weather_thick_clouds.action_delivery.source_effects.speed = {0.0, 0.0}
+        vesta_weather_thick_clouds.action_delivery.source_effects.speed_multiplier = 0.0
+        vesta_weather_thick_clouds.action_delivery.source_effects.probability = 0.6
+        vesta_weather_thick_clouds.action_delivery.source_effects.movement_slow_down_factor = 0.0
 
-    local vesta_thick_clouds_white_b = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
-    vesta_thick_clouds_white_b.name = "vesta_clouds_white_b"
-    vesta_thick_clouds_white_b.color = settings.startup["shibadisaster-cwa-vesta-cloud-color"].value
-    vesta_thick_clouds_white_b.start_scale = 3.0
-    vesta_thick_clouds_white_b.end_scale = 4.0
-    vesta_thick_clouds_white_b.duration = 240 * settings.startup["shibadisaster-cwa-vesta-cloud-duration-multiplier"].value
-    vesta_thick_clouds_white_b.fade_in_duration = 60 * settings.startup["shibadisaster-cwa-vesta-cloud-duration-multiplier"].value
-    vesta_thick_clouds_white_b.fade_away_duration = 60 * settings.startup["shibadisaster-cwa-vesta-cloud-duration-multiplier"].value
-    vesta_thick_clouds_white_b.render_layer = "smoke"
-    vesta_thick_clouds_white_b.animation.filename = "__celestial-weather-additions__/graphics/vfx/cloud-b.png"
-    vesta_thick_clouds_white_b.animation.frame_count = 1
-    vesta_thick_clouds_white_b.animation.size = 512
-    data:extend({vesta_thick_clouds_white_b})
-
-    local vesta_thick_clouds_white_c = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
-    vesta_thick_clouds_white_c.name = "vesta_clouds_white_c"
-    vesta_thick_clouds_white_c.color = settings.startup["shibadisaster-cwa-vesta-cloud-color"].value
-    vesta_thick_clouds_white_c.start_scale = 3.0
-    vesta_thick_clouds_white_c.end_scale = 4.0
-    vesta_thick_clouds_white_c.duration = 240 * settings.startup["shibadisaster-cwa-vesta-cloud-duration-multiplier"].value
-    vesta_thick_clouds_white_c.fade_in_duration = 60 * settings.startup["shibadisaster-cwa-vesta-cloud-duration-multiplier"].value
-    vesta_thick_clouds_white_c.fade_away_duration = 60 * settings.startup["shibadisaster-cwa-vesta-cloud-duration-multiplier"].value
-    vesta_thick_clouds_white_c.render_layer = "air-entity-info-icon"
-    vesta_thick_clouds_white_c.animation.filename = "__celestial-weather-additions__/graphics/vfx/cloud-c.png"
-    vesta_thick_clouds_white_c.animation.frame_count = 1
-    vesta_thick_clouds_white_c.animation.size = 512
-    data:extend({vesta_thick_clouds_white_c})
-
-
-    local vesta_weather_thick_clouds = table.deepcopy(direct_particles)
-    vesta_weather_thick_clouds.action_delivery.source_effects.smoke_name = "vesta_thick_clouds"
-    vesta_weather_thick_clouds.action_delivery.source_effects.speed = {0.0, 0.0}
-    vesta_weather_thick_clouds.action_delivery.source_effects.speed_multiplier = 0.0
-    vesta_weather_thick_clouds.action_delivery.source_effects.probability = 0.4
-    vesta_weather_thick_clouds.action_delivery.source_effects.movement_slow_down_factor = 0.0
-
-    local vesta_weather_thick_clouds_white_a = table.deepcopy(direct_particles)
-    vesta_weather_thick_clouds_white_a.action_delivery.source_effects.smoke_name = "vesta_clouds_white_a"
-    vesta_weather_thick_clouds_white_a.action_delivery.source_effects.speed = {0.0, 0.0}
-    vesta_weather_thick_clouds_white_a.action_delivery.source_effects.speed_multiplier = 0.0
-    vesta_weather_thick_clouds_white_a.action_delivery.source_effects.probability = 0.0005
-    vesta_weather_thick_clouds_white_a.action_delivery.source_effects.movement_slow_down_factor = 0.0
-
-    local vesta_weather_thick_clouds_white_b = table.deepcopy(direct_particles)
-    vesta_weather_thick_clouds_white_b.action_delivery.source_effects.smoke_name = "vesta_clouds_white_b"
-    vesta_weather_thick_clouds_white_b.action_delivery.source_effects.speed = {0.0, 0.0}
-    vesta_weather_thick_clouds_white_b.action_delivery.source_effects.speed_multiplier = 0.0
-    vesta_weather_thick_clouds_white_b.action_delivery.source_effects.probability = 0.0005
-    vesta_weather_thick_clouds_white_b.action_delivery.source_effects.movement_slow_down_factor = 0.0
-
-    table.insert(vesta_effects, vesta_weather_thick_clouds)
-    table.insert(vesta_effects, vesta_weather_thick_clouds_white_a)
-    table.insert(vesta_effects, vesta_weather_thick_clouds_white_b)
-
-    if not settings.startup["shibadisaster-cwa-vesta-reduce-cloud-cover"].value then
-        local vesta_weather_thick_clouds_white_c = table.deepcopy(direct_particles)
-        vesta_weather_thick_clouds_white_c.action_delivery.source_effects.smoke_name = "vesta_clouds_white_c"
-        vesta_weather_thick_clouds_white_c.action_delivery.source_effects.speed = {0.0, 0.0}
-        vesta_weather_thick_clouds_white_c.action_delivery.source_effects.speed_multiplier = 0.0
-        vesta_weather_thick_clouds_white_c.action_delivery.source_effects.probability = 0.0005
-        vesta_weather_thick_clouds_white_c.action_delivery.source_effects.movement_slow_down_factor = 0.0
-        table.insert(vesta_effects, vesta_weather_thick_clouds_white_c)
+        table.insert(vesta_effects, vesta_weather_thick_clouds)
     end
+
+    if settings.startup["shibadisaster-cwa-vesta-enable-clouds"].value then
+        local vesta_thick_clouds_white_a = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
+        vesta_thick_clouds_white_a.name = "vesta_clouds_white_a"
+        vesta_thick_clouds_white_a.color = settings.startup["shibadisaster-cwa-vesta-cloud-color"].value
+        vesta_thick_clouds_white_a.start_scale = 3.0
+        vesta_thick_clouds_white_a.end_scale = 4.0
+        vesta_thick_clouds_white_a.duration = 120 * settings.startup["shibadisaster-cwa-vesta-cloud-duration-multiplier"].value
+        vesta_thick_clouds_white_a.fade_in_duration = 40 * settings.startup["shibadisaster-cwa-vesta-cloud-duration-multiplier"].value
+        vesta_thick_clouds_white_a.fade_away_duration = 40 * settings.startup["shibadisaster-cwa-vesta-cloud-duration-multiplier"].value
+        vesta_thick_clouds_white_a.render_layer = "floor"
+        vesta_thick_clouds_white_a.animation.filename = "__celestial-weather-additions__/graphics/vfx/cloud-a.png"
+        vesta_thick_clouds_white_a.animation.frame_count = 1
+        vesta_thick_clouds_white_a.animation.size = 512
+        data:extend({vesta_thick_clouds_white_a})
+
+        local vesta_thick_clouds_white_b = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
+        vesta_thick_clouds_white_b.name = "vesta_clouds_white_b"
+        vesta_thick_clouds_white_b.color = settings.startup["shibadisaster-cwa-vesta-cloud-color"].value
+        vesta_thick_clouds_white_b.start_scale = 3.0
+        vesta_thick_clouds_white_b.end_scale = 4.0
+        vesta_thick_clouds_white_b.duration = 240 * settings.startup["shibadisaster-cwa-vesta-cloud-duration-multiplier"].value
+        vesta_thick_clouds_white_b.fade_in_duration = 80 * settings.startup["shibadisaster-cwa-vesta-cloud-duration-multiplier"].value
+        vesta_thick_clouds_white_b.fade_away_duration = 80 * settings.startup["shibadisaster-cwa-vesta-cloud-duration-multiplier"].value
+        vesta_thick_clouds_white_b.render_layer = "smoke"
+        vesta_thick_clouds_white_b.animation.filename = "__celestial-weather-additions__/graphics/vfx/cloud-b.png"
+        vesta_thick_clouds_white_b.animation.frame_count = 1
+        vesta_thick_clouds_white_b.animation.size = 512
+        data:extend({vesta_thick_clouds_white_b})
+
+        local vesta_thick_clouds_white_c = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
+        vesta_thick_clouds_white_c.name = "vesta_clouds_white_c"
+        vesta_thick_clouds_white_c.color = settings.startup["shibadisaster-cwa-vesta-cloud-color"].value
+        vesta_thick_clouds_white_c.start_scale = 3.0
+        vesta_thick_clouds_white_c.end_scale = 4.0
+        vesta_thick_clouds_white_c.duration = 480 * settings.startup["shibadisaster-cwa-vesta-cloud-duration-multiplier"].value
+        vesta_thick_clouds_white_c.fade_in_duration = 160 * settings.startup["shibadisaster-cwa-vesta-cloud-duration-multiplier"].value
+        vesta_thick_clouds_white_c.fade_away_duration = 160 * settings.startup["shibadisaster-cwa-vesta-cloud-duration-multiplier"].value
+        vesta_thick_clouds_white_c.render_layer = "air-entity-info-icon"
+        vesta_thick_clouds_white_c.animation.filename = "__celestial-weather-additions__/graphics/vfx/cloud-c.png"
+        vesta_thick_clouds_white_c.animation.frame_count = 1
+        vesta_thick_clouds_white_c.animation.size = 512
+        data:extend({vesta_thick_clouds_white_c})
+
+        local vesta_weather_thick_clouds_white_a = table.deepcopy(direct_particles)
+        vesta_weather_thick_clouds_white_a.action_delivery.source_effects.smoke_name = "vesta_clouds_white_a"
+        vesta_weather_thick_clouds_white_a.action_delivery.source_effects.speed = {0.0, 0.0}
+        vesta_weather_thick_clouds_white_a.action_delivery.source_effects.speed_multiplier = 0.0
+        vesta_weather_thick_clouds_white_a.action_delivery.source_effects.probability = 0.1
+        vesta_weather_thick_clouds_white_a.action_delivery.source_effects.movement_slow_down_factor = 0.0
+
+        local vesta_weather_thick_clouds_white_b = table.deepcopy(direct_particles)
+        vesta_weather_thick_clouds_white_b.action_delivery.source_effects.smoke_name = "vesta_clouds_white_b"
+        vesta_weather_thick_clouds_white_b.action_delivery.source_effects.speed = {0.0, 0.0}
+        vesta_weather_thick_clouds_white_b.action_delivery.source_effects.speed_multiplier = 0.0
+        vesta_weather_thick_clouds_white_b.action_delivery.source_effects.probability = 0.1
+        vesta_weather_thick_clouds_white_b.action_delivery.source_effects.movement_slow_down_factor = 0.0
+
+        
+        table.insert(vesta_effects, vesta_weather_thick_clouds_white_a)
+        table.insert(vesta_effects, vesta_weather_thick_clouds_white_b)
+
+        if not settings.startup["shibadisaster-cwa-vesta-reduce-cloud-cover"].value then
+            local vesta_weather_thick_clouds_white_c = table.deepcopy(direct_particles)
+            vesta_weather_thick_clouds_white_c.action_delivery.source_effects.smoke_name = "vesta_clouds_white_c"
+            vesta_weather_thick_clouds_white_c.action_delivery.source_effects.speed = {0.0, 0.0}
+            vesta_weather_thick_clouds_white_c.action_delivery.source_effects.speed_multiplier = 0.0
+            vesta_weather_thick_clouds_white_c.action_delivery.source_effects.probability = 0.1
+            vesta_weather_thick_clouds_white_c.action_delivery.source_effects.movement_slow_down_factor = 0.0
+
+            table.insert(vesta_effects, vesta_weather_thick_clouds_white_c)
+        end
+    end
+
+
+    
+
+    
     
 
     data.raw["planet"]["vesta"].player_effects = vesta_effects
@@ -338,8 +349,8 @@ end
 if mods["Muria"] and settings.startup["shibadisaster-cwa-enable-muria-changes"].value then
     if settings.startup["shibadisaster-cwa-muria-enable-fog"].value then
         local muria_fog = table.deepcopy(fog)
-        muria_fog.color1 = {126.0/255.0 * 0.5, 31.0/255.0 * 0.5, 91.0/255.0 * 0.5, 1.0 * 0.5}
-        muria_fog.color2 = {126.0/255.0 * 0.5, 31.0/255.0 * 0.5, 91.0/255.0 * 0.5, 1.0 * 0.5}
+        muria_fog.color1 = settings.startup["shibadisaster-cwa-muria-fog-color"].value
+        muria_fog.color2 = settings.startup["shibadisaster-cwa-muria-fog-color"].value
         muria_fog.tick_factor = 0.00003
         muria_fog.detail_noise_texture.filename = "__celestial-weather__/graphics/entity/dense-clouds.png"
 
@@ -411,7 +422,7 @@ if mods["Muria"] and settings.startup["shibadisaster-cwa-enable-muria-changes"].
     if settings.startup["shibadisaster-cwa-muria-enable-clouds"].value then
         local muria_cloud_a = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
         muria_cloud_a.name = "muria_cloud_a"
-        muria_cloud_a.color = {0.075, 0.1, 0.0, 0.15}
+        muria_cloud_a.color = settings.startup["shibadisaster-cwa-muria-cloud-color"].value
         muria_cloud_a.animation.filename = "__celestial-weather-additions__/graphics/vfx/cloud-a.png"
         muria_cloud_a.animation.frame_count = 1
         muria_cloud_a.animation.size = 512
@@ -433,7 +444,7 @@ if mods["Muria"] and settings.startup["shibadisaster-cwa-enable-muria-changes"].
 
         local muria_cloud_b = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
         muria_cloud_b.name = "muria_cloud_b"
-        muria_cloud_b.color = {0.075, 0.1, 0.0, 0.15}
+        muria_cloud_b.color = settings.startup["shibadisaster-cwa-muria-cloud-color"].value
         muria_cloud_b.animation.filename = "__celestial-weather-additions__/graphics/vfx/cloud-b.png"
         muria_cloud_b.animation.frame_count = 1
         muria_cloud_b.animation.size = 512
@@ -575,7 +586,7 @@ if mods["planet-rabbasca"] and settings.startup["shibadisaster-cwa-enable-rabbas
     if settings.startup["shibadisaster-cwa-rabbasca-enable-sparks"].value then
         local rabbasca_sparks = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
         rabbasca_sparks.name = "rabbasca_sparks"
-        rabbasca_sparks.color = {1.0, 0.5, 1.0}
+        rabbasca_sparks.color = settings.startup["shibadisaster-cwa-rabbasca-sparks-color"].value
         rabbasca_sparks.start_scale = 0.15
         rabbasca_sparks.end_scale = 0.15
         rabbasca_sparks.duration = 60
@@ -604,7 +615,7 @@ if mods["planet-rabbasca"] and settings.startup["shibadisaster-cwa-enable-rabbas
     if settings.startup["shibadisaster-cwa-rabbasca-enable-sparks"].value then
         local rabbasca_sparks_small = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
         rabbasca_sparks_small.name = "rabbasca_sparks_small"
-        rabbasca_sparks_small.color = {1.0, 0.5, 1.0}
+        rabbasca_sparks_small.color = settings.startup["shibadisaster-cwa-rabbasca-sparks-color"].value
         rabbasca_sparks_small.start_scale = 0.1
         rabbasca_sparks_small.end_scale = 0.1
         rabbasca_sparks_small.duration = 60
@@ -633,7 +644,7 @@ if mods["planet-rabbasca"] and settings.startup["shibadisaster-cwa-enable-rabbas
     if settings.startup["shibadisaster-cwa-rabbasca-enable-sparks"].value then
         local rabbasca_sparks_large = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
         rabbasca_sparks_large.name = "rabbasca_sparks_large"
-        rabbasca_sparks_large.color = {1.0, 0.5, 1.0}
+        rabbasca_sparks_large.color = settings.startup["shibadisaster-cwa-rabbasca-sparks-color"].value
         rabbasca_sparks_large.start_scale = 0.2
         rabbasca_sparks_large.end_scale = 0.2
         rabbasca_sparks_large.duration = 30
@@ -741,7 +752,7 @@ if mods["cubium"] and settings.startup["shibadisaster-cwa-enable-cubium-changes"
     if settings.startup["shibadisaster-cwa-cubium-enable-sparks"].value then
         local cubium_sparks_small = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
         cubium_sparks_small.name = "cubium_sparks_small"
-        cubium_sparks_small.color = {47.0/255.0 * 1.0, 63.0/255.0 * 1.0, 119.0/255.0 * 1.0, 1.0 * 1.0}
+        cubium_sparks_small.color = settings.startup["shibadisaster-cwa-cubium-sparks-color"].value
         cubium_sparks_small.start_scale = 0.1
         cubium_sparks_small.end_scale = 0.2
         cubium_sparks_small.duration = 120
@@ -770,7 +781,7 @@ if mods["cubium"] and settings.startup["shibadisaster-cwa-enable-cubium-changes"
     if settings.startup["shibadisaster-cwa-cubium-enable-sparks"].value then
         local cubium_sparks_large = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
         cubium_sparks_large.name = "cubium_sparks_large"
-        cubium_sparks_large.color = {47.0/255.0 * 1.0, 63.0/255.0 * 1.0, 119.0/255.0 * 1.0, 1.0 * 1.0}
+        cubium_sparks_large.color = settings.startup["shibadisaster-cwa-cubium-sparks-color"].value
         cubium_sparks_large.start_scale = 0.2
         cubium_sparks_large.end_scale = 0.3
         cubium_sparks_large.duration = 120
@@ -887,7 +898,7 @@ if mods["Igrys"] and settings.startup["shibadisaster-cwa-enable-igrys-changes"].
     if settings.startup["shibadisaster-cwa-igrys-enable-sparkles"].value then
         local igrys_sparks_small = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
         igrys_sparks_small.name = "igrys_sparks_small"
-        igrys_sparks_small.color = {1.0, 0.85, 0.5}
+        igrys_sparks_small.color = settings.startup["shibadisaster-cwa-igrys-sparkles-color"].value
         igrys_sparks_small.start_scale = 0.1
         igrys_sparks_small.end_scale = 0.1
         igrys_sparks_small.duration = 60
@@ -914,7 +925,7 @@ if mods["Igrys"] and settings.startup["shibadisaster-cwa-enable-igrys-changes"].
     if settings.startup["shibadisaster-cwa-igrys-enable-sparkles"].value then
         local igrys_sparks_large = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
         igrys_sparks_large.name = "igrys_sparks_large"
-        igrys_sparks_large.color = {1.0, 0.65, 0.5}
+        igrys_sparks_large.color = settings.startup["shibadisaster-cwa-igrys-sparkles-color"].value
         igrys_sparks_large.start_scale = 0.5
         igrys_sparks_large.end_scale = 0.5
         igrys_sparks_large.duration = 60
@@ -1154,7 +1165,7 @@ if mods["alchemy-khemia"] and settings.startup["shibadisaster-cwa-enable-khemia-
     if settings.startup["shibadisaster-cwa-khemia-enable-sparkles"].value then
         local khemia_sparks = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
         khemia_sparks.name = "khemia_sparks"
-        khemia_sparks.color = {1.0, 0.25, 0.5}
+        khemia_sparks.color = settings.startup["shibadisaster-cwa-khemia-sparkles-color"].value
         khemia_sparks.start_scale = 0.25
         khemia_sparks.end_scale = 0.25
         khemia_sparks.duration = 60
@@ -1182,7 +1193,7 @@ if mods["alchemy-khemia"] and settings.startup["shibadisaster-cwa-enable-khemia-
     if settings.startup["shibadisaster-cwa-khemia-enable-sparkles"].value then
         local khemia_sparks_small = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
         khemia_sparks_small.name = "khemia_sparks_small"
-        khemia_sparks_small.color = {1.0, 0.25, 0.5}
+        khemia_sparks_small.color = settings.startup["shibadisaster-cwa-khemia-sparkles-color"].value
         khemia_sparks_small.start_scale = 0.1
         khemia_sparks_small.end_scale = 0.1
         khemia_sparks_small.duration = 60
@@ -1210,7 +1221,7 @@ if mods["alchemy-khemia"] and settings.startup["shibadisaster-cwa-enable-khemia-
     if settings.startup["shibadisaster-cwa-khemia-enable-sparkles"].value then
         local khemia_sparks_large = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
         khemia_sparks_large.name = "khemia_sparks_large"
-        khemia_sparks_large.color = {1.0, 0.25, 0.5}
+        khemia_sparks_large.color = settings.startup["shibadisaster-cwa-khemia-sparkles-color"].value
         khemia_sparks_large.start_scale = 0.4
         khemia_sparks_large.end_scale = 0.4
         khemia_sparks_large.duration = 60
@@ -1287,8 +1298,8 @@ if mods["alchemy-khemia"] and settings.startup["shibadisaster-cwa-enable-khemia-
 
     if settings.startup["shibadisaster-cwa-khemia-enable-fog"].value then
         local khemia_fog = table.deepcopy(fog)
-        khemia_fog.color1 = {255.0/255.0, 128.0/255.0, 192.0/255.0}
-        khemia_fog.color2 = {255.0/255.0, 128.0/255.0, 192.0/255.0}
+        khemia_fog.color1 = settings.startup["shibadisaster-cwa-khemia-fog-color"].value
+        khemia_fog.color2 = settings.startup["shibadisaster-cwa-khemia-fog-color"].value
         khemia_fog.tick_factor = 0.00003
         khemia_fog.detail_noise_texture.filename = "__celestial-weather__/graphics/entity/dense-clouds.png"
 
@@ -1375,8 +1386,8 @@ if mods["pelagos"] and settings.startup["shibadisaster-cwa-enable-pelagos-change
     
     if settings.startup["shibadisaster-cwa-pelagos-enable-water-ripples"].value then
         local pelagos_fog = table.deepcopy(fog)
-        pelagos_fog.color1 = {192.0/255.0, 192.0/255.0, 255.0/255.0}
-        pelagos_fog.color2 = {192.0/255.0, 192.0/255.0, 255.0/255.0}
+        pelagos_fog.color1 = {255.0/255.0, 255.0/255.0, 255.0/255.0}
+        pelagos_fog.color2 = {255.0/255.0, 255.0/255.0, 255.0/255.0}
         pelagos_fog.tick_factor = 0.000001
         pelagos_fog.detail_noise_texture.filename = "__celestial-weather-additions__/graphics/vfx/caustics-fog.png"
         pelagos_fog.fog_type = "gleba"

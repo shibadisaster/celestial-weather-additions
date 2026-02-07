@@ -33,6 +33,16 @@ data:extend({
 data:extend({
     {
         type = "bool-setting",
+        name = "shibadisaster-cwa-rubia-enable-additional-dust",
+        setting_type = "startup",
+        default_value = true,
+        order = "a3"
+    }
+})
+
+data:extend({
+    {
+        type = "bool-setting",
         name = "shibadisaster-cwa-enable-vesta-changes",
         setting_type = "startup",
         default_value = true,
@@ -42,11 +52,31 @@ data:extend({
 
 data:extend({
     {
+        type = "bool-setting",
+        name = "shibadisaster-cwa-vesta-enable-fog",
+        setting_type = "startup",
+        default_value = true,
+        order = "b1"
+    }
+})
+
+data:extend({
+    {
         type = "color-setting",
         name = "shibadisaster-cwa-vesta-fog-color",
         setting_type = "startup",
         default_value = {242.0/255.0, 189.0/255.0, 219.0/255.0, 1.0},
-        order = "b1"
+        order = "b2"
+    }
+})
+
+data:extend({
+    {
+        type = "bool-setting",
+        name = "shibadisaster-cwa-vesta-enable-thick-clouds",
+        setting_type = "startup",
+        default_value = true,
+        order = "b3"
     }
 })
 
@@ -56,7 +86,17 @@ data:extend({
         name = "shibadisaster-cwa-vesta-thick-cloud-color",
         setting_type = "startup",
         default_value = {0.839, 0.757, 0.824, 0.5},
-        order = "b2"
+        order = "b4"
+    }
+})
+
+data:extend({
+    {
+        type = "bool-setting",
+        name = "shibadisaster-cwa-vesta-enable-clouds",
+        setting_type = "startup",
+        default_value = true,
+        order = "b5"
     }
 })
 
@@ -66,7 +106,7 @@ data:extend({
         name = "shibadisaster-cwa-vesta-cloud-color",
         setting_type = "startup",
         default_value = {0.173, 0.173, 0.173, 0.086},
-        order = "b3"
+        order = "b6"
     }
 })
 
@@ -76,7 +116,7 @@ data:extend({
         name = "shibadisaster-cwa-vesta-reduce-cloud-cover",
         setting_type = "startup",
         default_value = false,
-        order = "b4"
+        order = "b7"
     }
 })
 
@@ -88,7 +128,7 @@ data:extend({
         default_value = 1.0,
         minimum_value = 0.1,
         maximum_value = 10.0,
-        order = "b5"
+        order = "b8"
     }
 })
 
@@ -114,10 +154,10 @@ data:extend({
 
 data:extend({
     {
-        type = "bool-setting",
-        name = "shibadisaster-cwa-muria-enable-fog",
+        type = "color-setting",
+        name = "shibadisaster-cwa-muria-cloud-color",
         setting_type = "startup",
-        default_value = true,
+        default_value = {0.075, 0.1, 0.0, 0.15},
         order = "c2"
     }
 })
@@ -125,7 +165,7 @@ data:extend({
 data:extend({
     {
         type = "bool-setting",
-        name = "shibadisaster-cwa-muria-enable-spores",
+        name = "shibadisaster-cwa-muria-enable-fog",
         setting_type = "startup",
         default_value = true,
         order = "c3"
@@ -135,10 +175,30 @@ data:extend({
 data:extend({
     {
         type = "color-setting",
+        name = "shibadisaster-cwa-muria-fog-color",
+        setting_type = "startup",
+        default_value = {126.0/255.0 * 0.5, 31.0/255.0 * 0.5, 91.0/255.0 * 0.5, 1.0 * 0.5},
+        order = "c4"
+    }
+})
+
+data:extend({
+    {
+        type = "bool-setting",
+        name = "shibadisaster-cwa-muria-enable-spores",
+        setting_type = "startup",
+        default_value = true,
+        order = "c5"
+    }
+})
+
+data:extend({
+    {
+        type = "color-setting",
         name = "shibadisaster-cwa-muria-spore-color",
         setting_type = "startup",
         default_value = {0.83, 0.35, 0.52},
-        order = "c4"
+        order = "c6"
     }
 })
 
@@ -204,6 +264,16 @@ data:extend({
 
 data:extend({
     {
+        type = "color-setting",
+        name = "shibadisaster-cwa-cubium-sparks-color",
+        setting_type = "startup",
+        default_value = {47.0/255.0 * 1.0, 63.0/255.0 * 1.0, 119.0/255.0 * 1.0, 1.0 * 1.0},
+        order = "e3"
+    }
+})
+
+data:extend({
+    {
         type = "bool-setting",
         name = "shibadisaster-cwa-enable-rabbasca-changes",
         setting_type = "startup",
@@ -234,11 +304,21 @@ data:extend({
 
 data:extend({
     {
+        type = "color-setting",
+        name = "shibadisaster-cwa-rabbasca-sparks-color",
+        setting_type = "startup",
+        default_value = {1.0, 0.5, 1.0},
+        order = "f3"
+    }
+})
+
+data:extend({
+    {
         type = "bool-setting",
         name = "shibadisaster-cwa-rabbasca-enable-fog",
         setting_type = "startup",
         default_value = true,
-        order = "f3"
+        order = "f4"
     }
 })
 
@@ -248,7 +328,7 @@ data:extend({
         name = "shibadisaster-cwa-rabbasca-enable-dust",
         setting_type = "startup",
         default_value = true,
-        order = "f4"
+        order = "f5"
     }
 })
 
@@ -324,11 +404,21 @@ data:extend({
 
 data:extend({
     {
+        type = "color-setting",
+        name = "shibadisaster-cwa-igrys-sparkles-color",
+        setting_type = "startup",
+        default_value = {1.0, 0.75, 0.5},
+        order = "h3"
+    }
+})
+
+data:extend({
+    {
         type = "bool-setting",
         name = "shibadisaster-cwa-igrys-enable-dust",
         setting_type = "startup",
         default_value = true,
-        order = "h3"
+        order = "h4"
     }
 })
 
@@ -364,11 +454,31 @@ data:extend({
 
 data:extend({
     {
+        type = "color-setting",
+        name = "shibadisaster-cwa-khemia-sparkles-color",
+        setting_type = "startup",
+        default_value = {1.0, 0.25, 0.5},
+        order = "i3"
+    }
+})
+
+data:extend({
+    {
         type = "bool-setting",
         name = "shibadisaster-cwa-khemia-enable-fog",
         setting_type = "startup",
         default_value = true,
-        order = "i3"
+        order = "i4"
+    }
+})
+
+data:extend({
+    {
+        type = "color-setting",
+        name = "shibadisaster-cwa-khemia-fog-color",
+        setting_type = "startup",
+        default_value = {255.0/255.0, 128.0/255.0, 192.0/255.0},
+        order = "i5"
     }
 })
 
@@ -378,7 +488,7 @@ data:extend({
         name = "shibadisaster-cwa-khemia-enable-dust",
         setting_type = "startup",
         default_value = true,
-        order = "i4"
+        order = "i6"
     }
 })
 
