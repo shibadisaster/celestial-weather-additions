@@ -69,7 +69,7 @@ local cluster_particles = {
 if mods["rubia"] and settings.startup["shibadisaster-cwa-enable-rubia-changes"].value then
     -- change rubia's built-in weather effects
     local rubia_rain_lines = data.raw["trivial-smoke"]["rubia-rain-lines"]
-    rubia_rain_lines.color = {0.822, 0.700, 0.564, 1.0}
+    rubia_rain_lines.color = {0.866, 0.775, 0.673, 1.0}
     rubia_rain_lines.start_scale = 3.5
     rubia_rain_lines.end_scale = 3.5
     rubia_rain_lines.fade_in_duration = 10
@@ -77,7 +77,7 @@ if mods["rubia"] and settings.startup["shibadisaster-cwa-enable-rubia-changes"].
     rubia_rain_lines.duration = 80
 
     local rubia_sand = data.raw["trivial-smoke"]["rubia-sand"]
-    rubia_sand.color = {0.822, 0.700, 0.564, 1.0}
+    rubia_sand.color = {0.866, 0.775, 0.673, 1.0}
     rubia_sand.start_scale = 4.0
     rubia_sand.end_scale = 4.0
     rubia_sand.fade_in_duration = 10
@@ -126,7 +126,8 @@ if mods["rubia"] and settings.startup["shibadisaster-cwa-enable-rubia-changes"].
         rubia_weather_clouds.action_delivery.source_effects.smoke_name = "rubia_clouds"
         rubia_weather_clouds.action_delivery.source_effects.speed = {0.3, 0.0}
         rubia_weather_clouds.action_delivery.source_effects.speed_multiplier = 6.25 * settings.startup["shibadisaster-cwa-rubia-particle-speed"].value
-        rubia_weather_clouds.action_delivery.source_effects.probability = 0.05
+        rubia_weather_clouds.action_delivery.source_effects.probability = 0.1
+        rubia_weather_clouds.action_delivery.source_effects.repeat_count = 2
         rubia_weather_clouds.action_delivery.source_effects.offset_deviation = {{-160, -48}, {96, 48}}
         rubia_weather_clouds.action_delivery.source_effects.movement_slow_down_factor = 0.0
 
@@ -151,11 +152,36 @@ if mods["rubia"] and settings.startup["shibadisaster-cwa-enable-rubia-changes"].
         rubia_weather_clouds_b.action_delivery.source_effects.smoke_name = "rubia_clouds_b"
         rubia_weather_clouds_b.action_delivery.source_effects.speed = {0.3, 0.0}
         rubia_weather_clouds_b.action_delivery.source_effects.speed_multiplier = 7.8 * settings.startup["shibadisaster-cwa-rubia-particle-speed"].value
-        rubia_weather_clouds_b.action_delivery.source_effects.probability = 0.01
+        rubia_weather_clouds_b.action_delivery.source_effects.probability = 0.02
+        -- rubia_weather_clouds_b.action_delivery.source_effects.repeat_count = 2
         rubia_weather_clouds_b.action_delivery.source_effects.offset_deviation = {{-160, -48}, {96, 48}}
         rubia_weather_clouds_b.action_delivery.source_effects.movement_slow_down_factor = 0.0
 
         table.insert(rubia_effects, rubia_weather_clouds_b)
+    end
+
+
+    if true then
+        local rubia_dust = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
+        rubia_dust.name = "rubia_dust"
+        rubia_dust.color = {0.866, 0.775, 0.673, 1.0}
+        rubia_dust.start_scale = 3.0
+        rubia_dust.end_scale = 3.0
+        rubia_dust.duration = 60
+        rubia_dust.fade_in_duration = 30
+        rubia_dust.fade_away_duration = 30
+        rubia_dust.animation.filename = "__celestial-weather__/graphics/entity/sand-particles.png"
+        data.extend({rubia_dust})
+
+        local rubia_weather_dust = table.deepcopy(cluster_particles)
+        rubia_weather_dust.cluster_count = 2
+        rubia_weather_dust.action_delivery.source_effects.smoke_name= "rubia_dust"
+        rubia_weather_dust.action_delivery.source_effects.speed = {0.3, 0.0}
+        rubia_weather_dust.action_delivery.source_effects.speed_multiplier = 4.3 * settings.startup["shibadisaster-cwa-rubia-particle-speed"].value
+        rubia_weather_dust.action_delivery.source_effects.offset_deviation = {{-160, -48}, {96, 48}}
+        rubia_weather_dust.action_delivery.source_effects.movement_slow_down_factor = 0.0
+
+        table.insert(rubia_effects, rubia_weather_dust)
     end
 
 
