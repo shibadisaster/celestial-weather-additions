@@ -11,7 +11,7 @@ in mod settings. Currently adds the following VFX to modded planets:
 
 ## [Rubia](https://mods.factorio.com/mod/rubia)
 
-https://imgur.com/WWT4hEX
+[![Rubia preview](https://imgur.com/WWT4hEX)]
 
 - Rubia's wind effects are much more intense and particles move much faster to
   make them more representative of the 300km/h wind speed
