@@ -1350,7 +1350,7 @@ if mods["pelagos"] and settings.startup["shibadisaster-cwa-enable-pelagos-change
 
     if settings.startup["shibadisaster-cwa-pelagos-enable-tropical-recolor"].value then
         data.raw["planet"]["pelagos"].surface_render_parameters.day_night_cycle_color_lookup = {
-            {0.00000000, "__celestial-weather-additions__/graphics/luts/tropical_pelagos_day.png"},
+            {0.00000000, "__celestial-weather-additions__/graphics/luts/tropical_pelagos_lighting.png"},
             {0.00000001, "__celestial-weather-additions__/graphics/luts/tropical_pelagos_day.png"},
             {0.25000000, "__celestial-weather-additions__/graphics/luts/tropical_pelagos_day.png"},
             {0.30000000, "__celestial-weather-additions__/graphics/luts/tropical_pelagos_dusk.png"},
