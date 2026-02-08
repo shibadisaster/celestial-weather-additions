@@ -1,6 +1,6 @@
 # Celestial Weather Additions
 
-Addon for Factorio mod
+Unofficial addon for Factorio mod
 [Celestial Weather](https://mods.factorio.com/mod/celestial-weather) that adds
 more weather VFX for some newer modded planets! Originally made for a personal
 playthrough but I decided to upload it :3

@@ -1386,9 +1386,9 @@ if mods["pelagos"] and settings.startup["shibadisaster-cwa-enable-pelagos-change
     
     if settings.startup["shibadisaster-cwa-pelagos-enable-water-ripples"].value then
         local pelagos_fog = table.deepcopy(fog)
-        pelagos_fog.color1 = {255.0/255.0, 255.0/255.0, 255.0/255.0}
-        pelagos_fog.color2 = {255.0/255.0, 255.0/255.0, 255.0/255.0}
-        pelagos_fog.tick_factor = 0.000001
+        pelagos_fog.color1 = {224.0/255.0, 224.0/255.0, 255.0/255.0}
+        pelagos_fog.color2 = {224.0/255.0, 224.0/255.0, 255.0/255.0}
+        pelagos_fog.tick_factor = 0.000005
         pelagos_fog.detail_noise_texture.filename = "__celestial-weather-additions__/graphics/vfx/caustics-fog.png"
         pelagos_fog.fog_type = "gleba"
 
