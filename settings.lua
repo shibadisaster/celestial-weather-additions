@@ -145,10 +145,20 @@ data:extend({
 data:extend({
     {
         type = "bool-setting",
+        name = "shibadisaster-cwa-muria-enable-original-rain",
+        setting_type = "startup",
+        default_value = false,
+        order = "c1"
+    }
+})
+
+data:extend({
+    {
+        type = "bool-setting",
         name = "shibadisaster-cwa-muria-enable-clouds",
         setting_type = "startup",
         default_value = true,
-        order = "c1"
+        order = "c2"
     }
 })
 
@@ -157,8 +167,8 @@ data:extend({
         type = "color-setting",
         name = "shibadisaster-cwa-muria-cloud-color",
         setting_type = "startup",
-        default_value = {0.075, 0.1, 0.0, 0.15},
-        order = "c2"
+        default_value = {8.0/255.0, 13.0/255.0, 2.0/255.0, 38.0/255.0},
+        order = "c3"
     }
 })
 
@@ -168,7 +178,7 @@ data:extend({
         name = "shibadisaster-cwa-muria-enable-fog",
         setting_type = "startup",
         default_value = true,
-        order = "c3"
+        order = "c4"
     }
 })
 
@@ -178,7 +188,7 @@ data:extend({
         name = "shibadisaster-cwa-muria-fog-color",
         setting_type = "startup",
         default_value = {126.0/255.0 * 0.5, 31.0/255.0 * 0.5, 91.0/255.0 * 0.5, 1.0 * 0.5},
-        order = "c4"
+        order = "c5"
     }
 })
 
@@ -188,7 +198,7 @@ data:extend({
         name = "shibadisaster-cwa-muria-enable-spores",
         setting_type = "startup",
         default_value = true,
-        order = "c5"
+        order = "c6"
     }
 })
 
@@ -198,7 +208,17 @@ data:extend({
         name = "shibadisaster-cwa-muria-spore-color",
         setting_type = "startup",
         default_value = {0.83, 0.35, 0.52},
-        order = "c6"
+        order = "c7"
+    }
+})
+
+data:extend({
+    {
+        type = "bool-setting",
+        name = "shibadisaster-cwa-muria-enable-dust",
+        setting_type = "startup",
+        default_value = true,
+        order = "c8"
     }
 })
 
@@ -385,10 +405,30 @@ data:extend({
 data:extend({
     {
         type = "bool-setting",
-        name = "shibadisaster-cwa-igrys-enable-clouds",
+        name = "shibadisaster-cwa-igrys-enable-fog",
         setting_type = "startup",
         default_value = true,
         order = "h1"
+    }
+})
+
+data:extend({
+    {
+        type = "color-setting",
+        name = "shibadisaster-cwa-igrys-fog-color",
+        setting_type = "startup",
+        default_value = {1.0, 1.0, 1.0},
+        order = "h2"
+    }
+})
+
+data:extend({
+    {
+        type = "bool-setting",
+        name = "shibadisaster-cwa-igrys-enable-clouds",
+        setting_type = "startup",
+        default_value = true,
+        order = "h3"
     }
 })
 
@@ -398,7 +438,7 @@ data:extend({
         name = "shibadisaster-cwa-igrys-enable-sparkles",
         setting_type = "startup",
         default_value = true,
-        order = "h2"
+        order = "h4"
     }
 })
 
@@ -408,7 +448,7 @@ data:extend({
         name = "shibadisaster-cwa-igrys-sparkles-color",
         setting_type = "startup",
         default_value = {1.0, 0.75, 0.5},
-        order = "h3"
+        order = "h5"
     }
 })
 
@@ -418,7 +458,7 @@ data:extend({
         name = "shibadisaster-cwa-igrys-enable-dust",
         setting_type = "startup",
         default_value = true,
-        order = "h4"
+        order = "h6"
     }
 })
 
@@ -477,7 +517,7 @@ data:extend({
         type = "color-setting",
         name = "shibadisaster-cwa-khemia-fog-color",
         setting_type = "startup",
-        default_value = {255.0/255.0, 128.0/255.0, 192.0/255.0},
+        default_value = {255.0/255.0, 191.0/255.0, 221.0/255.0},
         order = "i5"
     }
 })
@@ -529,5 +569,15 @@ data:extend({
         setting_type = "startup",
         default_value = true,
         order = "j3"
+    }
+})
+
+data:extend({
+    {
+        type = "bool-setting",
+        name = "shibadisaster-cwa-pelagos-larger-water-ripples",
+        setting_type = "startup",
+        default_value = false,
+        order = "j4"
     }
 })

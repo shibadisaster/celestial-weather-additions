@@ -363,7 +363,7 @@ if mods["Muria"] and settings.startup["shibadisaster-cwa-enable-muria-changes"].
     -- local muria_effects_action_delivery = {table.deepcopy(data.raw["planet"]["muria"].player_effects.action_delivery)}
     local muria_effects = {table.deepcopy(data.raw["planet"]["muria"].player_effects)} or {}
 
-    if true then muria_effects = {} end
+    if not settings.startup["shibadisaster-cwa-muria-enable-original-rain"].value then muria_effects = {} end
 
     -- acid spores
     if settings.startup["shibadisaster-cwa-muria-enable-spores"].value then
@@ -373,6 +373,7 @@ if mods["Muria"] and settings.startup["shibadisaster-cwa-enable-muria-changes"].
         muria_large_acid_spore.animation.filename = "__celestial-weather__/graphics/entity/fire-particles.png"
         muria_large_acid_spore.start_scale = 0.0
         muria_large_acid_spore.end_scale = 2.0
+        muria_large_acid_spore.movement_slow_down_factor = 1.0
         data:extend({muria_large_acid_spore})
 
         local muria_small_acid_spore = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
@@ -381,6 +382,7 @@ if mods["Muria"] and settings.startup["shibadisaster-cwa-enable-muria-changes"].
         muria_small_acid_spore.animation.filename = "__celestial-weather__/graphics/entity/fire-particles.png"
         muria_small_acid_spore.start_scale = 0.0
         muria_small_acid_spore.end_scale = 1.0
+        muria_small_acid_spore.movement_slow_down_factor = 1.0
         data:extend({muria_small_acid_spore})
 
         local muria_very_small_acid_spore = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
@@ -389,29 +391,30 @@ if mods["Muria"] and settings.startup["shibadisaster-cwa-enable-muria-changes"].
         muria_very_small_acid_spore.animation.filename = "__celestial-weather__/graphics/entity/fire-particles.png"
         muria_very_small_acid_spore.start_scale = 0.0
         muria_very_small_acid_spore.end_scale = 0.3
+        muria_very_small_acid_spore.movement_slow_down_factor = 1.0
         data:extend({muria_very_small_acid_spore})
 
 
         local muria_weather_large_acid = table.deepcopy(direct_particles)
         muria_weather_large_acid.action_delivery.source_effects.smoke_name = "muria_large_acid_spore"
-        muria_weather_large_acid.action_delivery.source_effects.speed = {-0.05, 0.0}
-        muria_weather_large_acid.action_delivery.source_effects.speed_multiplier = 5.0
+        muria_weather_large_acid.action_delivery.source_effects.speed = {-0.02, 0.0}
+        muria_weather_large_acid.action_delivery.source_effects.speed_multiplier = 2.0
         muria_weather_large_acid.action_delivery.source_effects.repeat_count = 1
-        muria_weather_large_acid.action_delivery.source_effects.probability = 0.4
+        muria_weather_large_acid.action_delivery.source_effects.probability = 1.0
 
         local muria_weather_small_acid = table.deepcopy(direct_particles)
         muria_weather_small_acid.action_delivery.source_effects.smoke_name = "muria_small_acid_spore"
-        muria_weather_small_acid.action_delivery.source_effects.speed = {-0.07, 0.0}
-        muria_weather_small_acid.action_delivery.source_effects.speed_multiplier = 5.0
+        muria_weather_small_acid.action_delivery.source_effects.speed = {-0.03, 0.0}
+        muria_weather_small_acid.action_delivery.source_effects.speed_multiplier = 2.0
         muria_weather_small_acid.action_delivery.source_effects.repeat_count = 1
-        muria_weather_small_acid.action_delivery.source_effects.probability = 0.4
+        muria_weather_small_acid.action_delivery.source_effects.probability = 1.0
 
         local muria_weather_very_small_acid = table.deepcopy(direct_particles)
         muria_weather_very_small_acid.action_delivery.source_effects.smoke_name = "muria_very_small_acid_spore"
-        muria_weather_very_small_acid.action_delivery.source_effects.speed = {-0.09, 0.0}
-        muria_weather_very_small_acid.action_delivery.source_effects.speed_multiplier = 5.0
+        muria_weather_very_small_acid.action_delivery.source_effects.speed = {-0.04, 0.0}
+        muria_weather_very_small_acid.action_delivery.source_effects.speed_multiplier = 2.0
         muria_weather_very_small_acid.action_delivery.source_effects.repeat_count = 1
-        muria_weather_very_small_acid.action_delivery.source_effects.probability = 0.4
+        muria_weather_very_small_acid.action_delivery.source_effects.probability = 1.0
 
         table.insert(muria_effects, muria_weather_large_acid)
         table.insert(muria_effects, muria_weather_small_acid)
@@ -435,8 +438,8 @@ if mods["Muria"] and settings.startup["shibadisaster-cwa-enable-muria-changes"].
 
         local muria_weather_cloud_a = table.deepcopy(direct_particles)
         muria_weather_cloud_a.action_delivery.source_effects.smoke_name = "muria_cloud_a"
-        muria_weather_cloud_a.action_delivery.source_effects.speed = {0.0, 0.0}
-        muria_weather_cloud_a.action_delivery.source_effects.speed_multiplier = 1.0
+        muria_weather_cloud_a.action_delivery.source_effects.speed = {-0.010, 0.0}
+        muria_weather_cloud_a.action_delivery.source_effects.speed_multiplier = 5.0
         muria_weather_cloud_a.action_delivery.source_effects.repeat_count = 1
         muria_weather_cloud_a.action_delivery.source_effects.probability = 0.03
 
@@ -457,8 +460,8 @@ if mods["Muria"] and settings.startup["shibadisaster-cwa-enable-muria-changes"].
 
         local muria_weather_cloud_b = table.deepcopy(direct_particles)
         muria_weather_cloud_b.action_delivery.source_effects.smoke_name = "muria_cloud_b"
-        muria_weather_cloud_b.action_delivery.source_effects.speed = {0.0, 0.0}
-        muria_weather_cloud_b.action_delivery.source_effects.speed_multiplier = 1.0
+        muria_weather_cloud_b.action_delivery.source_effects.speed = {-0.012, 0.0}
+        muria_weather_cloud_b.action_delivery.source_effects.speed_multiplier = 5.0
         muria_weather_cloud_b.action_delivery.source_effects.repeat_count = 1
         muria_weather_cloud_b.action_delivery.source_effects.probability = 0.03
 
@@ -466,18 +469,20 @@ if mods["Muria"] and settings.startup["shibadisaster-cwa-enable-muria-changes"].
     end
 
 
-    if true then
+    if settings.startup["shibadisaster-cwa-muria-enable-dust"].value then
         local muria_dust = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
         muria_dust.name = "muria_dust"
         muria_dust.color = settings.startup["shibadisaster-cwa-muria-spore-color"].value
         muria_dust.start_scale = 1.0
         muria_dust.end_scale = 1.0
         muria_dust.animation.filename = "__celestial-weather__/graphics/entity/sand-particles.png"
+        muria_dust.movement_slow_down_factor = 1.0
         data.extend({muria_dust})
 
         local muria_weather_dust = table.deepcopy(direct_particles)
         muria_weather_dust.action_delivery.source_effects.smoke_name= "muria_dust"
-        muria_weather_dust.action_delivery.source_effects.speed = {-0.11, 0.0}
+        muria_weather_dust.action_delivery.source_effects.speed = {-0.06, 0.0}
+        muria_weather_dust.action_delivery.source_effects.probability = 0.3
         muria_weather_dust.action_delivery.source_effects.speed_multiplier = 1.0
 
         table.insert(muria_effects, muria_weather_dust)
@@ -819,6 +824,21 @@ if mods["Igrys"] and settings.startup["shibadisaster-cwa-enable-igrys-changes"].
     local igrys_effects = table.deepcopy(data.raw["planet"]["igrys"].player_effects) or {}
 
 
+    if settings.startup["shibadisaster-cwa-igrys-enable-fog"].value then
+        local igrys_fog = table.deepcopy(fog)
+        igrys_fog.color1 = settings.startup["shibadisaster-cwa-igrys-fog-color"].value
+        igrys_fog.color2 = settings.startup["shibadisaster-cwa-igrys-fog-color"].value
+        igrys_fog.tick_factor = 0.000005
+        igrys_fog.detail_noise_texture.filename = "__celestial-weather-additions__/graphics/vfx/tess-fog.png"
+        igrys_fog.fog_type = "gleba"
+
+        data.raw["planet"]["igrys"].surface_render_parameters = data.raw["planet"]["igrys"].surface_render_parameters or {}
+        data.raw["planet"]["igrys"].surface_render_parameters.fog = igrys_fog
+
+        data.raw["tile"]["igrys-light-oil"].lowland_fog = true
+    end
+
+
     if settings.startup["shibadisaster-cwa-igrys-enable-clouds"].value then
         local igrys_cloud_a = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
         igrys_cloud_a.name = "igrys_cloud_a"
@@ -882,6 +902,7 @@ if mods["Igrys"] and settings.startup["shibadisaster-cwa-enable-igrys-changes"].
         igrys_sparks.animation.frame_count = 1
         igrys_sparks.animation.line_length = 1
         igrys_sparks.animation.size = 512
+        igrys_sparks.animation.blend_mode = "additive"
         data:extend({igrys_sparks})
 
         local igrys_weather_sparks = table.deepcopy(direct_particles)
@@ -909,6 +930,7 @@ if mods["Igrys"] and settings.startup["shibadisaster-cwa-enable-igrys-changes"].
         igrys_sparks_small.animation.frame_count = 1
         igrys_sparks_small.animation.line_length = 1
         igrys_sparks_small.animation.size = 512
+        igrys_sparks_small.animation.blend_mode = "additive"
         data:extend({igrys_sparks_small})
 
         local igrys_weather_sparks_small = table.deepcopy(direct_particles)
@@ -1300,11 +1322,16 @@ if mods["alchemy-khemia"] and settings.startup["shibadisaster-cwa-enable-khemia-
         local khemia_fog = table.deepcopy(fog)
         khemia_fog.color1 = settings.startup["shibadisaster-cwa-khemia-fog-color"].value
         khemia_fog.color2 = settings.startup["shibadisaster-cwa-khemia-fog-color"].value
-        khemia_fog.tick_factor = 0.00003
-        khemia_fog.detail_noise_texture.filename = "__celestial-weather__/graphics/entity/dense-clouds.png"
+        khemia_fog.tick_factor = 0.000001
+        khemia_fog.detail_noise_texture.filename = "__celestial-weather-additions__/graphics/vfx/tess-fog.png"
+        khemia_fog.fog_type = "gleba"
 
         data.raw["planet"]["alchemy-planet"].surface_render_parameters = data.raw["planet"]["alchemy-planet"].surface_render_parameters or {}
         data.raw["planet"]["alchemy-planet"].surface_render_parameters.fog = khemia_fog
+
+        data.raw["tile"]["dark-sandy-rocks"].lowland_fog = true
+        data.raw["tile"]["red-sandy-rocks"].lowland_fog = true
+        data.raw["tile"]["tan-sandy-rocks"].lowland_fog = true
     end
 
 
@@ -1390,6 +1417,9 @@ if mods["pelagos"] and settings.startup["shibadisaster-cwa-enable-pelagos-change
         pelagos_fog.color2 = {224.0/255.0, 224.0/255.0, 255.0/255.0}
         pelagos_fog.tick_factor = 0.000005
         pelagos_fog.detail_noise_texture.filename = "__celestial-weather-additions__/graphics/vfx/caustics-fog.png"
+        if settings.startup["shibadisaster-cwa-pelagos-larger-water-ripples"].value then
+            pelagos_fog.detail_noise_texture.filename = "__celestial-weather-additions__/graphics/vfx/tess-fog.png"
+        end
         pelagos_fog.fog_type = "gleba"
 
         data.raw["planet"]["pelagos"].surface_render_parameters = data.raw["planet"]["pelagos"].surface_render_parameters or {}
