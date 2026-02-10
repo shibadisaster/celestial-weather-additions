@@ -1350,7 +1350,7 @@ if mods["pelagos"] and settings.startup["shibadisaster-cwa-enable-pelagos-change
 
     if settings.startup["shibadisaster-cwa-pelagos-enable-tropical-recolor"].value then
         data.raw["planet"]["pelagos"].surface_render_parameters.day_night_cycle_color_lookup = {
-            {0.00000000, "__celestial-weather-additions__/graphics/luts/tropical_pelagos_lighting.png"},
+            {0.00000000, "__celestial-weather-additions__/graphics/luts/tropical_pelagos_day.png"},
             {0.00000001, "__celestial-weather-additions__/graphics/luts/tropical_pelagos_day.png"},
             {0.25000000, "__celestial-weather-additions__/graphics/luts/tropical_pelagos_day.png"},
             {0.30000000, "__celestial-weather-additions__/graphics/luts/tropical_pelagos_dusk.png"},
@@ -1363,7 +1363,7 @@ if mods["pelagos"] and settings.startup["shibadisaster-cwa-enable-pelagos-change
     end
 
 
-    if settings.startup["shibadisaster-cwa-pelagos-enable-clouds"].value then
+    if true then
         local pelagos_cloud_a = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
         pelagos_cloud_a.name = "pelagos_cloud_a"
         pelagos_cloud_a.color = {255.0/255.0 * 0.2, 255.0/255.0 * 0.2, 255.0/255.0 * 0.2, 1.0 * 0.2}
@@ -1441,12 +1441,12 @@ end
 -- hi amhunter :3
 if true then
     -- note for any person in the future trying to see how this was done: some planets list their effects as single player_effects so we have to enclose it in a table
-    local carna_effects = {table.deepcopy(data.raw["planet"]["carna"].player_effects)} or {}
+    local carna_effects = table.deepcopy(data.raw["planet"]["carna"].player_effects) or {}
 
     
-    if true then
-        carna_effects[1].cluster_count = 50
-    end
+    -- if true then
+    --     carna_effects[1].cluster_count = 50
+    -- end
 
 
     if true then

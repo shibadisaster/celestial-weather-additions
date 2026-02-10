@@ -547,7 +547,7 @@ data:extend({
         type = "bool-setting",
         name = "shibadisaster-cwa-pelagos-enable-tropical-recolor",
         setting_type = "startup",
-        default_value = true,
+        default_value = false,
         order = "j1"
     }
 })
