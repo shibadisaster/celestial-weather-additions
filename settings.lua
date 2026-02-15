@@ -1,3 +1,5 @@
+-- TODO: make settings disappear when relevant mod isn't loaded
+
 data:extend({
     {
         type = "bool-setting",

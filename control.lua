@@ -1,4 +1,6 @@
 local function modify_surface_visuals(surface)
+    -- checking if the mod is enabled isn't needed since no surface names will match anyway
+
     ------ PARACELSIN ------
     if surface.name == "paracelsin" then
         if settings.startup["shibadisaster-cwa-paracelsin-always-dark"].value and settings.startup["shibadisaster-cwa-enable-paracelsin-changes"].value then
@@ -9,13 +11,13 @@ local function modify_surface_visuals(surface)
 
 
     ------ RUBIA ------
-    if surface.name == "rubia" then
-        if settings.startup["shibadisaster-cwa-enable-rubia-changes"].value then
-            surface.wind_speed = 0.5
-            surface.wind_orientation = 0.25
-            surface.wind_orientation_change = 0.0
-        end
-    end
+    -- if surface.name == "rubia" then
+    --     if settings.startup["shibadisaster-cwa-enable-rubia-changes"].value then
+    --         surface.wind_speed = 0.5
+    --         surface.wind_orientation = 0.25
+    --         surface.wind_orientation_change = 0.0
+    --     end
+    -- end
 end
 
 

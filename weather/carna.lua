@@ -105,6 +105,7 @@ if true then
         table.insert(carna_effects, carna_weather_sparks_small)
     end
 
-
-    data.raw["planet"]["carna"].player_effects = carna_effects
+    if #carna_effects >= 1 then
+        data.raw["planet"]["carna"].player_effects = carna_effects
+    end
 end

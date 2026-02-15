@@ -172,7 +172,8 @@ if mods["alchemy-khemia"] and settings.startup["shibadisaster-cwa-enable-khemia-
         data.raw["tile"]["tan-sandy-rocks"].lowland_fog = true
     end
 
-
-    data.raw["planet"]["alchemy-planet"].ticks_between_player_effects = 1
-    data.raw["planet"]["alchemy-planet"].player_effects = khemia_effects
+    if #khemia_effects >= 1 then
+        data.raw["planet"]["alchemy-planet"].ticks_between_player_effects = 1
+        data.raw["planet"]["alchemy-planet"].player_effects = khemia_effects
+    end
 end

@@ -141,7 +141,8 @@ if mods["skewer_planet_vesta"] and settings.startup["shibadisaster-cwa-enable-ve
 
     
     
-
-    data.raw["planet"]["vesta"].player_effects = vesta_effects
-    data.raw["planet"]["vesta"].ticks_between_player_effects = 2
+    if #vesta_effects >= 1 then
+        data.raw["planet"]["vesta"].player_effects = vesta_effects
+        data.raw["planet"]["vesta"].ticks_between_player_effects = 2
+    end
 end

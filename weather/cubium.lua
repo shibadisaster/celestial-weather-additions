@@ -110,7 +110,8 @@ if mods["cubium"] and settings.startup["shibadisaster-cwa-enable-cubium-changes"
         table.insert(cubium_effects, cubium_weather_sparks_large)
     end
 
-
-    data.raw["planet"]["cubium"].ticks_between_player_effects = 1
-    data.raw["planet"]["cubium"].player_effects = cubium_effects
+    if #cubium_effects >= 1 then
+        data.raw["planet"]["cubium"].ticks_between_player_effects = 1
+        data.raw["planet"]["cubium"].player_effects = cubium_effects
+    end
 end

@@ -154,7 +154,8 @@ if mods["panglia_planet"] and settings.startup["shibadisaster-cwa-enable-panglia
         table.insert(panglia_effects, panglia_weather_dust)
     end
 
-
-    data.raw["planet"]["panglia"].ticks_between_player_effects = 1
-    data.raw["planet"]["panglia"].player_effects = panglia_effects
+    if #panglia_effects >= 1 then
+        data.raw["planet"]["panglia"].ticks_between_player_effects = 1
+        data.raw["planet"]["panglia"].player_effects = panglia_effects
+    end
 end

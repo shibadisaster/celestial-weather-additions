@@ -172,7 +172,8 @@ if mods["planet-rabbasca"] and settings.startup["shibadisaster-cwa-enable-rabbas
         table.insert(rabbasca_effects, rabbasca_weather_dust)
     end
 
-
-    data.raw["planet"]["rabbasca"].ticks_between_player_effects = 1
-    data.raw["planet"]["rabbasca"].player_effects = rabbasca_effects
+    if #rabbasca_effects >= 1 then
+        data.raw["planet"]["rabbasca"].ticks_between_player_effects = 1
+        data.raw["planet"]["rabbasca"].player_effects = rabbasca_effects
+    end
 end

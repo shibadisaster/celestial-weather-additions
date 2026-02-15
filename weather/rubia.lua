@@ -119,6 +119,7 @@ if mods["rubia"] and settings.startup["shibadisaster-cwa-enable-rubia-changes"].
         table.insert(rubia_effects, rubia_weather_dust)
     end
 
-
-    data.raw["planet"]["rubia"].player_effects = rubia_effects
+    if #rubia_effects >= 1 then
+        data.raw["planet"]["rubia"].player_effects = rubia_effects
+    end
 end

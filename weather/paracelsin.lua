@@ -19,4 +19,10 @@ if mods["Paracelsin"] and settings.startup["shibadisaster-cwa-enable-paracelsin-
             {0.99999999, "__celestial-weather-additions__/graphics/luts/cryovolcanic_paracelsin_night.png"}
         }
     end
+
+    local paracelsin_effects = table.deepcopy(data.raw["planet"]["paracelsin"].player_effects) or {}
+
+    if #paracelsin_effects >= 1 then
+
+    end
 end

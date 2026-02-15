@@ -143,7 +143,8 @@ if mods["Muria"] and settings.startup["shibadisaster-cwa-enable-muria-changes"].
         table.insert(muria_effects, muria_weather_dust)
     end
 
-
-    data.raw["planet"]["muria"].ticks_between_player_effects = 1
-    data.raw["planet"]["muria"].player_effects = muria_effects
+    if #muria_effects >= 1 then
+        data.raw["planet"]["muria"].ticks_between_player_effects = 1
+        data.raw["planet"]["muria"].player_effects = muria_effects
+    end
 end

@@ -171,7 +171,8 @@ if mods["Igrys"] and settings.startup["shibadisaster-cwa-enable-igrys-changes"].
         table.insert(igrys_effects, igrys_weather_dust)
     end
 
-
-    data.raw["planet"]["igrys"].ticks_between_player_effects = 1
-    data.raw["planet"]["igrys"].player_effects = igrys_effects
+    if #igrys_effects >= 1 then
+        data.raw["planet"]["igrys"].ticks_between_player_effects = 1
+        data.raw["planet"]["igrys"].player_effects = igrys_effects
+    end
 end
