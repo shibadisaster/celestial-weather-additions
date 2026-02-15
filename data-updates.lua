@@ -14,4 +14,4 @@ require("__celestial-weather-additions__.weather.igrys")
 require("__celestial-weather-additions__.weather.khemia")
 require("__celestial-weather-additions__.weather.panglia")
 require("__celestial-weather-additions__.weather.pelagos")
-require("__celestial-weather-additions__.weather.carna")
+-- require("__celestial-weather-additions__.weather.carna") -- still wip!

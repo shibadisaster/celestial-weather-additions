@@ -1,0 +1,12 @@
+---------------------------------------------------------------------------------------------------
+Version: 1.1.0
+Date: 2026-02-15
+  Bugfixes:
+    - Fixed a crash that occurs when all player effects are disabled while a planet's changes are still active
+  Scripting:
+    - Split off each planet section into a different script for organization
+---------------------------------------------------------------------------------------------------
+Version: 1.0.0
+Date: 2026-02-09
+  Features:
+    - Initial release
