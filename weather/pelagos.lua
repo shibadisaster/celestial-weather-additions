@@ -23,7 +23,7 @@ if mods["pelagos"] and settings.startup["shibadisaster-cwa-enable-pelagos-change
     if settings.startup["shibadisaster-cwa-pelagos-enable-clouds"].value then
         local pelagos_cloud_a = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
         pelagos_cloud_a.name = "pelagos_cloud_a"
-        pelagos_cloud_a.color = {255.0/255.0 * 0.2, 255.0/255.0 * 0.2, 255.0/255.0 * 0.2, 1.0 * 0.2}
+        pelagos_cloud_a.color = {255.0/255.0 * 0.1, 255.0/255.0 * 0.1, 255.0/255.0 * 0.1, 1.0 * 0.1}
         pelagos_cloud_a.animation.filename = "__celestial-weather-additions__/graphics/vfx/cloud-c.png"
         pelagos_cloud_a.animation.frame_count = 1
         pelagos_cloud_a.animation.size = 512
@@ -46,7 +46,7 @@ if mods["pelagos"] and settings.startup["shibadisaster-cwa-enable-pelagos-change
 
         local pelagos_cloud_b = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
         pelagos_cloud_b.name = "pelagos_cloud_b"
-        pelagos_cloud_b.color = {255.0/255.0 * 0.2, 255.0/255.0 * 0.2, 255.0/255.0 * 0.2, 1.0 * 0.2}
+        pelagos_cloud_b.color = {255.0/255.0 * 0.1, 255.0/255.0 * 0.1, 255.0/255.0 * 0.1, 1.0 * 0.1}
         pelagos_cloud_b.animation.filename = "__celestial-weather-additions__/graphics/vfx/cloud-b.png"
         pelagos_cloud_b.animation.frame_count = 1
         pelagos_cloud_b.animation.size = 512

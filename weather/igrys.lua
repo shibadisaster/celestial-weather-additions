@@ -84,6 +84,7 @@ if mods["Igrys"] and settings.startup["shibadisaster-cwa-enable-igrys-changes"].
         igrys_sparks.animation.line_length = 1
         igrys_sparks.animation.size = 512
         igrys_sparks.animation.blend_mode = "additive"
+        igrys_sparks.movement_slow_down_factor = 0.0
         data:extend({igrys_sparks})
 
         local igrys_weather_sparks = table.deepcopy(common_effects.direct_particles)
@@ -112,6 +113,7 @@ if mods["Igrys"] and settings.startup["shibadisaster-cwa-enable-igrys-changes"].
         igrys_sparks_small.animation.line_length = 1
         igrys_sparks_small.animation.size = 512
         igrys_sparks_small.animation.blend_mode = "additive"
+        igrys_sparks_small.movement_slow_down_factor = 0.0
         data:extend({igrys_sparks_small})
 
         local igrys_weather_sparks_small = table.deepcopy(common_effects.direct_particles)
@@ -140,6 +142,7 @@ if mods["Igrys"] and settings.startup["shibadisaster-cwa-enable-igrys-changes"].
         igrys_sparks_large.animation.line_length = 1
         igrys_sparks_large.animation.size = 512
         igrys_sparks_large.animation.blend_mode = "additive"
+        igrys_sparks_large.movement_slow_down_factor = 0.0
         data:extend({igrys_sparks_large})
 
         local igrys_weather_sparks_large = table.deepcopy(common_effects.direct_particles)
@@ -160,12 +163,13 @@ if mods["Igrys"] and settings.startup["shibadisaster-cwa-enable-igrys-changes"].
         igrys_dust.start_scale = 2.0
         igrys_dust.end_scale = 2.0
         igrys_dust.animation.filename = "__celestial-weather__/graphics/entity/sand-particles.png"
+        igrys_dust.movement_slow_down_factor = 1.0
         data.extend({igrys_dust})
 
         local igrys_weather_dust = table.deepcopy(common_effects.cluster_particles)
         igrys_weather_dust.cluster_count = 2
         igrys_weather_dust.action_delivery.source_effects.smoke_name= "igrys_dust"
-        igrys_weather_dust.action_delivery.source_effects.speed = {0.65, 0.0}
+        igrys_weather_dust.action_delivery.source_effects.speed = {0.25, 0.0}
         igrys_weather_dust.action_delivery.source_effects.speed_multiplier = 1.0
 
         table.insert(igrys_effects, igrys_weather_dust)

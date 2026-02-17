@@ -51,6 +51,7 @@ if mods["skewer_planet_vesta"] and settings.startup["shibadisaster-cwa-enable-ve
         vesta_thick_clouds.animation.filename = "__celestial-weather-additions__/graphics/vfx/diffuse-cloud.png"
         vesta_thick_clouds.animation.frame_count = 1
         vesta_thick_clouds.animation.size = 512
+        vesta_thick_clouds.animation.blend_mode = "additive"
         data:extend({vesta_thick_clouds})
 
         local vesta_weather_thick_clouds = table.deepcopy(common_effects.direct_particles)
@@ -67,22 +68,23 @@ if mods["skewer_planet_vesta"] and settings.startup["shibadisaster-cwa-enable-ve
         local vesta_thick_clouds_white_a = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
         vesta_thick_clouds_white_a.name = "vesta_clouds_white_a"
         vesta_thick_clouds_white_a.color = settings.startup["shibadisaster-cwa-vesta-cloud-color"].value
-        vesta_thick_clouds_white_a.start_scale = 3.0
-        vesta_thick_clouds_white_a.end_scale = 4.0
-        vesta_thick_clouds_white_a.duration = 120 * settings.startup["shibadisaster-cwa-vesta-cloud-duration-multiplier"].value
-        vesta_thick_clouds_white_a.fade_in_duration = 40 * settings.startup["shibadisaster-cwa-vesta-cloud-duration-multiplier"].value
-        vesta_thick_clouds_white_a.fade_away_duration = 40 * settings.startup["shibadisaster-cwa-vesta-cloud-duration-multiplier"].value
+        vesta_thick_clouds_white_a.start_scale = 2.0
+        vesta_thick_clouds_white_a.end_scale = 3.0
+        vesta_thick_clouds_white_a.duration = 240 * settings.startup["shibadisaster-cwa-vesta-cloud-duration-multiplier"].value
+        vesta_thick_clouds_white_a.fade_in_duration = 80 * settings.startup["shibadisaster-cwa-vesta-cloud-duration-multiplier"].value
+        vesta_thick_clouds_white_a.fade_away_duration = 80 * settings.startup["shibadisaster-cwa-vesta-cloud-duration-multiplier"].value
         vesta_thick_clouds_white_a.render_layer = "floor"
         vesta_thick_clouds_white_a.animation.filename = "__celestial-weather-additions__/graphics/vfx/cloud-a.png"
         vesta_thick_clouds_white_a.animation.frame_count = 1
         vesta_thick_clouds_white_a.animation.size = 512
+        vesta_thick_clouds_white_a.animation.blend_mode = "additive"
         data:extend({vesta_thick_clouds_white_a})
 
         local vesta_thick_clouds_white_b = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
         vesta_thick_clouds_white_b.name = "vesta_clouds_white_b"
         vesta_thick_clouds_white_b.color = settings.startup["shibadisaster-cwa-vesta-cloud-color"].value
-        vesta_thick_clouds_white_b.start_scale = 3.0
-        vesta_thick_clouds_white_b.end_scale = 4.0
+        vesta_thick_clouds_white_b.start_scale = 2.0
+        vesta_thick_clouds_white_b.end_scale = 3.0
         vesta_thick_clouds_white_b.duration = 240 * settings.startup["shibadisaster-cwa-vesta-cloud-duration-multiplier"].value
         vesta_thick_clouds_white_b.fade_in_duration = 80 * settings.startup["shibadisaster-cwa-vesta-cloud-duration-multiplier"].value
         vesta_thick_clouds_white_b.fade_away_duration = 80 * settings.startup["shibadisaster-cwa-vesta-cloud-duration-multiplier"].value
@@ -90,13 +92,14 @@ if mods["skewer_planet_vesta"] and settings.startup["shibadisaster-cwa-enable-ve
         vesta_thick_clouds_white_b.animation.filename = "__celestial-weather-additions__/graphics/vfx/cloud-b.png"
         vesta_thick_clouds_white_b.animation.frame_count = 1
         vesta_thick_clouds_white_b.animation.size = 512
+        vesta_thick_clouds_white_b.animation.blend_mode = "additive"
         data:extend({vesta_thick_clouds_white_b})
 
         local vesta_thick_clouds_white_c = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
         vesta_thick_clouds_white_c.name = "vesta_clouds_white_c"
         vesta_thick_clouds_white_c.color = settings.startup["shibadisaster-cwa-vesta-cloud-color"].value
-        vesta_thick_clouds_white_c.start_scale = 3.0
-        vesta_thick_clouds_white_c.end_scale = 4.0
+        vesta_thick_clouds_white_c.start_scale = 2.0
+        vesta_thick_clouds_white_c.end_scale = 3.0
         vesta_thick_clouds_white_c.duration = 480 * settings.startup["shibadisaster-cwa-vesta-cloud-duration-multiplier"].value
         vesta_thick_clouds_white_c.fade_in_duration = 160 * settings.startup["shibadisaster-cwa-vesta-cloud-duration-multiplier"].value
         vesta_thick_clouds_white_c.fade_away_duration = 160 * settings.startup["shibadisaster-cwa-vesta-cloud-duration-multiplier"].value
@@ -104,20 +107,21 @@ if mods["skewer_planet_vesta"] and settings.startup["shibadisaster-cwa-enable-ve
         vesta_thick_clouds_white_c.animation.filename = "__celestial-weather-additions__/graphics/vfx/cloud-c.png"
         vesta_thick_clouds_white_c.animation.frame_count = 1
         vesta_thick_clouds_white_c.animation.size = 512
+        vesta_thick_clouds_white_c.animation.blend_mode = "additive"
         data:extend({vesta_thick_clouds_white_c})
 
         local vesta_weather_thick_clouds_white_a = table.deepcopy(common_effects.direct_particles)
         vesta_weather_thick_clouds_white_a.action_delivery.source_effects.smoke_name = "vesta_clouds_white_a"
         vesta_weather_thick_clouds_white_a.action_delivery.source_effects.speed = {0.0, 0.0}
         vesta_weather_thick_clouds_white_a.action_delivery.source_effects.speed_multiplier = 0.0
-        vesta_weather_thick_clouds_white_a.action_delivery.source_effects.probability = 0.1
+        vesta_weather_thick_clouds_white_a.action_delivery.source_effects.probability = 0.05
         vesta_weather_thick_clouds_white_a.action_delivery.source_effects.movement_slow_down_factor = 0.0
 
         local vesta_weather_thick_clouds_white_b = table.deepcopy(common_effects.direct_particles)
         vesta_weather_thick_clouds_white_b.action_delivery.source_effects.smoke_name = "vesta_clouds_white_b"
         vesta_weather_thick_clouds_white_b.action_delivery.source_effects.speed = {0.0, 0.0}
         vesta_weather_thick_clouds_white_b.action_delivery.source_effects.speed_multiplier = 0.0
-        vesta_weather_thick_clouds_white_b.action_delivery.source_effects.probability = 0.1
+        vesta_weather_thick_clouds_white_b.action_delivery.source_effects.probability = 0.05
         vesta_weather_thick_clouds_white_b.action_delivery.source_effects.movement_slow_down_factor = 0.0
 
         
@@ -129,7 +133,7 @@ if mods["skewer_planet_vesta"] and settings.startup["shibadisaster-cwa-enable-ve
             vesta_weather_thick_clouds_white_c.action_delivery.source_effects.smoke_name = "vesta_clouds_white_c"
             vesta_weather_thick_clouds_white_c.action_delivery.source_effects.speed = {0.0, 0.0}
             vesta_weather_thick_clouds_white_c.action_delivery.source_effects.speed_multiplier = 0.0
-            vesta_weather_thick_clouds_white_c.action_delivery.source_effects.probability = 0.1
+            vesta_weather_thick_clouds_white_c.action_delivery.source_effects.probability = 0.05
             vesta_weather_thick_clouds_white_c.action_delivery.source_effects.movement_slow_down_factor = 0.0
 
             table.insert(vesta_effects, vesta_weather_thick_clouds_white_c)
@@ -143,6 +147,6 @@ if mods["skewer_planet_vesta"] and settings.startup["shibadisaster-cwa-enable-ve
     
     if #vesta_effects >= 1 then
         data.raw["planet"]["vesta"].player_effects = vesta_effects
-        data.raw["planet"]["vesta"].ticks_between_player_effects = 2
+        data.raw["planet"]["vesta"].ticks_between_player_effects = 1
     end
 end

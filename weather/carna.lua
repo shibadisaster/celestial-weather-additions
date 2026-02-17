@@ -15,9 +15,10 @@ if true then
     if true then
         local carna_fog = table.deepcopy(common_effects.fog)
         carna_fog.color1 = {0.0/255.0, 255.0/255.0, 127.0/255.0}
-        carna_fog.color2 = {0.0/255.0, 255.0/255.0, 127.0/255.0}
+        carna_fog.color2 = {255.0/255.0, 255.0/255.0, 255.0/255.0}
         carna_fog.tick_factor = 0.000005
-        carna_fog.detail_noise_texture.filename = "__celestial-weather__/graphics/entity/dense-clouds.png"
+        carna_fog.shape_noise_texture.filename = "__celestial-weather-additions__/graphics/vfx/solid.png"
+        carna_fog.detail_noise_texture.filename = "__celestial-weather-additions__/graphics/vfx/circular-fog.png"
         carna_fog.fog_type = "gleba"
 
         data.raw["planet"]["carna"].surface_render_parameters = data.raw["planet"]["carna"].surface_render_parameters or {}
@@ -31,7 +32,7 @@ if true then
     if true then
         local carna_sparks = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
         carna_sparks.name = "carna_sparks"
-        carna_sparks.color = {0.0/255.0, 255.0/255.0, 127.0/255.0}
+        carna_sparks.color = {63.0/255.0, 255.0/255.0, 255.0/255.0}
         carna_sparks.start_scale = 1.0
         carna_sparks.end_scale = 2.0
         carna_sparks.duration = 180
@@ -47,7 +48,7 @@ if true then
         carna_weather_sparks.action_delivery.source_effects.smoke_name = "carna_sparks"
         carna_weather_sparks.action_delivery.source_effects.speed = {0.0, 0.1}
         carna_weather_sparks.action_delivery.source_effects.speed_multiplier = 1.0
-        carna_weather_sparks.action_delivery.source_effects.repeat_count = 1
+        carna_weather_sparks.action_delivery.source_effects.repeat_count = 2
         carna_weather_sparks.action_delivery.source_effects.probability = 1.0
 
         table.insert(carna_effects, carna_weather_sparks)
@@ -57,7 +58,7 @@ if true then
     if true then
         local carna_sparks_large = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
         carna_sparks_large.name = "carna_sparks_large"
-        carna_sparks_large.color = {0.0/255.0, 255.0/255.0, 127.0/255.0}
+        carna_sparks_large.color = {63.0/255.0, 255.0/255.0, 159.0/255.0}
         carna_sparks_large.start_scale = 1.5
         carna_sparks_large.end_scale = 3.0
         carna_sparks_large.duration = 180
@@ -73,7 +74,7 @@ if true then
         carna_weather_sparks_large.action_delivery.source_effects.smoke_name = "carna_sparks_large"
         carna_weather_sparks_large.action_delivery.source_effects.speed = {0.0, 0.07}
         carna_weather_sparks_large.action_delivery.source_effects.speed_multiplier = 1.0
-        carna_weather_sparks_large.action_delivery.source_effects.repeat_count = 1
+        carna_weather_sparks_large.action_delivery.source_effects.repeat_count = 2
         carna_weather_sparks_large.action_delivery.source_effects.probability = 1.0
 
         table.insert(carna_effects, carna_weather_sparks_large)
@@ -83,7 +84,7 @@ if true then
     if true then
         local carna_sparks_small = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
         carna_sparks_small.name = "carna_sparks_small"
-        carna_sparks_small.color = {0.0/255.0, 255.0/255.0, 127.0/255.0}
+        carna_sparks_small.color = {63.0/255.0, 159.0/255.0, 255.0/255.0}
         carna_sparks_small.start_scale = 0.5
         carna_sparks_small.end_scale = 1.0
         carna_sparks_small.duration = 180
@@ -99,7 +100,7 @@ if true then
         carna_weather_sparks_small.action_delivery.source_effects.smoke_name = "carna_sparks_small"
         carna_weather_sparks_small.action_delivery.source_effects.speed = {0.0, 0.13}
         carna_weather_sparks_small.action_delivery.source_effects.speed_multiplier = 1.0
-        carna_weather_sparks_small.action_delivery.source_effects.repeat_count = 1
+        carna_weather_sparks_small.action_delivery.source_effects.repeat_count = 2
         carna_weather_sparks_small.action_delivery.source_effects.probability = 1.0
 
         table.insert(carna_effects, carna_weather_sparks_small)

@@ -87,7 +87,7 @@ data:extend({
         type = "color-setting",
         name = "shibadisaster-cwa-vesta-thick-cloud-color",
         setting_type = "startup",
-        default_value = {0.839, 0.757, 0.824, 0.5},
+        default_value = {48.0/255.0, 48.0/255.0, 48.0/255.0, 255.0/255.0},
         order = "b4"
     }
 })
@@ -107,7 +107,7 @@ data:extend({
         type = "color-setting",
         name = "shibadisaster-cwa-vesta-cloud-color",
         setting_type = "startup",
-        default_value = {0.173, 0.173, 0.173, 0.086},
+        default_value = {48.0/255.0, 48.0/255.0, 48.0/255.0, 255.0/255.0},
         order = "b6"
     }
 })
