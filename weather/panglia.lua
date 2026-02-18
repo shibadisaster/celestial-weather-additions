@@ -154,6 +154,22 @@ if mods["panglia_planet"] and settings.startup["shibadisaster-cwa-enable-panglia
         table.insert(panglia_effects, panglia_weather_dust)
     end
 
+
+    if true then
+        local panglia_fog = table.deepcopy(common_effects.fog)
+        panglia_fog.color1 = {127.0/255.0, 127.0/255.0, 255.0/255.0}
+        panglia_fog.color2 = {127.0/255.0, 127.0/255.0, 255.0/255.0}
+        panglia_fog.tick_factor = 0.00010
+        panglia_fog.detail_noise_texture.filename = "__celestial-weather-additions__/graphics/vfx/tess-fog.png"
+        panglia_fog.fog_type = "gleba"
+
+        data.raw["planet"]["panglia"].surface_render_parameters = data.raw["planet"]["panglia"].surface_render_parameters or {}
+        data.raw["planet"]["panglia"].surface_render_parameters.fog = panglia_fog
+
+        data.raw["tile"]["panglia_hidden_beacon_tile"].lowland_fog = true
+    end
+
+
     if #panglia_effects >= 1 then
         data.raw["planet"]["panglia"].ticks_between_player_effects = 1
         data.raw["planet"]["panglia"].player_effects = panglia_effects
