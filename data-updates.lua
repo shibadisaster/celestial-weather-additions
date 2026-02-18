@@ -9,4 +9,7 @@ require("__celestial-weather-additions__.weather.igrys")
 require("__celestial-weather-additions__.weather.khemia")
 require("__celestial-weather-additions__.weather.panglia")
 require("__celestial-weather-additions__.weather.pelagos")
-require("__celestial-weather-additions__.weather.carna") -- still wip!
+
+if mods["carna"] and settings.startup["shibadisaster-cwa-enable-carna-changes"].value then 
+    require("__celestial-weather-additions__.weather.carna") -- still wip!
+end

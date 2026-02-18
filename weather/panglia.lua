@@ -155,11 +155,13 @@ if mods["panglia_planet"] and settings.startup["shibadisaster-cwa-enable-panglia
     end
 
 
-    if true then
+    if settings.startup["shibadisaster-cwa-panglia-enable-antilinear-fog"].value then
         local panglia_fog = table.deepcopy(common_effects.fog)
-        panglia_fog.color1 = {191.0/255.0, 191.0/255.0, 255.0/255.0}
-        panglia_fog.color2 = {191.0/255.0, 191.0/255.0, 255.0/255.0}
-        panglia_fog.tick_factor = 0.00010
+        panglia_fog.color1 = settings.startup["shibadisaster-cwa-panglia-antilinear-fog-color"].value
+        panglia_fog.color2 = settings.startup["shibadisaster-cwa-panglia-antilinear-fog-color"].value
+        -- panglia_fog.color1 = {255.0/255.0, 0.0/255.0, 0.0/255.0}
+        -- panglia_fog.color2 = {255.0/255.0, 0.0/255.0, 0.0/255.0}
+        panglia_fog.tick_factor = 0.00010 * settings.startup["shibadisaster-cwa-panglia-antilinear-fog-speed-multiplier"].value
         -- panglia_fog.shape_noise_texture.filename = "__celestial-weather-additions__/graphics/vfx/solid.png"
         panglia_fog.detail_noise_texture.filename = "__celestial-weather-additions__/graphics/vfx/tess-fog.png"
         panglia_fog.fog_type = "gleba"

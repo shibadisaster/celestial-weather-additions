@@ -397,6 +397,37 @@ data:extend({
 data:extend({
     {
         type = "bool-setting",
+        name = "shibadisaster-cwa-panglia-enable-antilinear-fog",
+        setting_type = "startup",
+        default_value = true,
+        order = "g4"
+    }
+})
+
+data:extend({
+    {
+        type = "color-setting",
+        name = "shibadisaster-cwa-panglia-antilinear-fog-color",
+        setting_type = "startup",
+        default_value = {191.0/255.0, 191.0/255.0, 255.0/255.0},
+        order = "g5"
+    }
+})
+
+data:extend({
+    {
+        type = "double-setting",
+        name = "shibadisaster-cwa-panglia-antilinear-fog-speed-multiplier",
+        setting_type = "startup",
+        default_value = 1.0,
+        order = "g6"
+    }
+})
+
+
+data:extend({
+    {
+        type = "bool-setting",
         name = "shibadisaster-cwa-enable-igrys-changes",
         setting_type = "startup",
         default_value = true,
@@ -581,5 +612,56 @@ data:extend({
         setting_type = "startup",
         default_value = false,
         order = "j4"
+    }
+})
+
+
+data:extend({
+    {
+        type = "bool-setting",
+        name = "shibadisaster-cwa-enable-carna-changes",
+        setting_type = "startup",
+        default_value = true,
+        order = "k0"
+    }
+})
+
+data:extend({
+    {
+        type = "bool-setting",
+        name = "shibadisaster-cwa-carna-enable-plasma-fog",
+        setting_type = "startup",
+        default_value = true,
+        order = "k1"
+    }
+})
+
+data:extend({
+    {
+        type = "color-setting",
+        name = "shibadisaster-cwa-carna-plasma-fog-color-1",
+        setting_type = "startup",
+        default_value = {0.0/255.0, 127.0/255.0, 63.0/255.0},
+        order = "k2"
+    }
+})
+
+data:extend({
+    {
+        type = "color-setting",
+        name = "shibadisaster-cwa-carna-plasma-fog-color-2",
+        setting_type = "startup",
+        default_value = {0.0/255.0, 117.0/255.0, 58.0/255.0},
+        order = "k3"
+    }
+})
+
+data:extend({
+    {
+        type = "bool-setting",
+        name = "shibadisaster-cwa-carna-enable-sparks",
+        setting_type = "startup",
+        default_value = true,
+        order = "k4"
     }
 })
