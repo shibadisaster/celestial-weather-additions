@@ -1,9 +1,4 @@
 -- Most code here adapted from Celestial Weather mod by Varaxia!
-
-
-
-
-
 require("__celestial-weather-additions__.weather.rubia")
 require("__celestial-weather-additions__.weather.vesta")
 require("__celestial-weather-additions__.weather.muria")
