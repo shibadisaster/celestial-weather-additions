@@ -1,4 +1,15 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.2.0
+Date: 2026-02-19
+  Features:
+    - Added weather effects for Carna (WIP)
+    - Added lowland fog over antilinear zones on Panglia
+  Ease of use:
+    - Settings now only show when the relevant planet mod is enabled
+  Optimizations:
+    - Removed unused files
+    - Moved check for enabled mods to data-update to avoid requiring unnecessary scripts
+---------------------------------------------------------------------------------------------------
 Version: 1.1.0
 Date: 2026-02-15
   Bugfixes:
