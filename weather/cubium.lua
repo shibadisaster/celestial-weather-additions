@@ -1,7 +1,7 @@
 local common_effects = require("common.common-effects")
 
 ------ CUBIUM ------
-if mods["cubium"] and settings.startup["shibadisaster-cwa-enable-cubium-changes"].value then
+if true then
     local cubium_effects = table.deepcopy(data.raw["planet"]["cubium"].player_effects) or {}
 
     if settings.startup["shibadisaster-cwa-cubium-enable-clouds"].value then

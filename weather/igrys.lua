@@ -1,7 +1,7 @@
 local common_effects = require("common.common-effects")
 
 ------ IGRYS ------
-if mods["Igrys"] and settings.startup["shibadisaster-cwa-enable-igrys-changes"].value then
+if true then
     local igrys_effects = table.deepcopy(data.raw["planet"]["igrys"].player_effects) or {}
 
 

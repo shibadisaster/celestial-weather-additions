@@ -1,7 +1,7 @@
 local common_effects = require("common.common-effects")
 
 ------ RUBIA ------
-if mods["rubia"] and settings.startup["shibadisaster-cwa-enable-rubia-changes"].value then
+if true then
     -- change rubia's built-in weather effects
     local rubia_rain_lines = data.raw["trivial-smoke"]["rubia-rain-lines"]
     rubia_rain_lines.color = {0.900, 0.831, 0.755, 1.0}

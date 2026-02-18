@@ -1,7 +1,7 @@
 local common_effects = require("common.common-effects")
 
 ------ KHEMIA ------
-if mods["alchemy-khemia"] and settings.startup["shibadisaster-cwa-enable-khemia-changes"].value then
+if true then
     local khemia_effects = table.deepcopy(data.raw["planet"]["alchemy-planet"].player_effects) or {}
 
 

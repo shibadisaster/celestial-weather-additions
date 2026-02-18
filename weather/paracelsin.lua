@@ -1,7 +1,7 @@
 local common_effects = require("common.common-effects")
 
 ------ PARACELSIN ------
-if mods["Paracelsin"] and settings.startup["shibadisaster-cwa-enable-paracelsin-changes"].value then
+if true then
     if settings.startup["shibadisaster-cwa-paracelsin-ash-snow"].value then
         local paracelsin_snow = data.raw["trivial-smoke"]["pa_snow"]
         paracelsin_snow.color = {0.188, 0.188, 0.188, 1.0}

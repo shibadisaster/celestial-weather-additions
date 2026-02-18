@@ -1,7 +1,7 @@
 local common_effects = require("common.common-effects")
 
 ------ PANGLIA ------
-if mods["panglia_planet"] and settings.startup["shibadisaster-cwa-enable-panglia-changes"].value then
+if true then
     local panglia_effects = table.deepcopy(data.raw["planet"]["panglia"].player_effects) or {}
 
     if settings.startup["shibadisaster-cwa-panglia-enable-sparks"].value then

@@ -1,7 +1,7 @@
 local common_effects = require("common.common-effects")
 
 ------ RABBASCA ------
-if mods["planet-rabbasca"] and settings.startup["shibadisaster-cwa-enable-rabbasca-changes"].value then
+if true then
     local rabbasca_effects = table.deepcopy(data.raw["planet"]["rabbasca"].player_effects) or {}
 
     if settings.startup["shibadisaster-cwa-rabbasca-enable-fog"].value then

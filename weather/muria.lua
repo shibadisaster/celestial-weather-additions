@@ -1,7 +1,7 @@
 local common_effects = require("common.common-effects")
 
 ------ MURIA ------
-if mods["Muria"] and settings.startup["shibadisaster-cwa-enable-muria-changes"].value then
+if true then
     if settings.startup["shibadisaster-cwa-muria-enable-fog"].value then
         local muria_fog = table.deepcopy(common_effects.fog)
         muria_fog.color1 = settings.startup["shibadisaster-cwa-muria-fog-color"].value

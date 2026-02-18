@@ -1,7 +1,7 @@
 local common_effects = require("common.common-effects")
 
 ------ VESTA ------
-if mods["skewer_planet_vesta"] and settings.startup["shibadisaster-cwa-enable-vesta-changes"].value then
+if true then
 
 
     if settings.startup["shibadisaster-cwa-vesta-enable-fog"].value then

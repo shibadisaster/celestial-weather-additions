@@ -1,7 +1,7 @@
 local common_effects = require("common.common-effects")
 
 ------ PELAGOS ------
-if mods["pelagos"] and settings.startup["shibadisaster-cwa-enable-pelagos-changes"].value then
+if true then
     local pelagos_effects = table.deepcopy(data.raw["planet"]["pelagos"].player_effects) or {}
 
 
