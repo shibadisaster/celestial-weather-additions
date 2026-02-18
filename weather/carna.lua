@@ -14,16 +14,17 @@ if true then
 
     if true then
         local carna_fog = table.deepcopy(common_effects.fog)
-        carna_fog.color1 = {0.0/255.0, 255.0/255.0, 127.0/255.0}
-        carna_fog.color2 = {255.0/255.0, 255.0/255.0, 255.0/255.0}
-        carna_fog.tick_factor = 0.000005
+        carna_fog.color1 = {0.0/255.0, 79.0/255.0, 39.0/255.0}
+        carna_fog.color2 = {0.0/255.0, 79.0/255.0, 39.0/255.0}
+        carna_fog.tick_factor = 0.000005 --0.000005
         carna_fog.shape_noise_texture.filename = "__celestial-weather-additions__/graphics/vfx/solid.png"
-        carna_fog.detail_noise_texture.filename = "__celestial-weather-additions__/graphics/vfx/circular-fog.png"
+        carna_fog.detail_noise_texture.filename = "__celestial-weather-additions__/graphics/vfx/solid.png"
         carna_fog.fog_type = "gleba"
 
         data.raw["planet"]["carna"].surface_render_parameters = data.raw["planet"]["carna"].surface_render_parameters or {}
         data.raw["planet"]["carna"].surface_render_parameters.fog = carna_fog
 
+        data.raw["tile"]["carna-plasma-edge"].lowland_fog = true
         data.raw["tile"]["carna-plasma"].lowland_fog = true
         data.raw["tile"]["carna-plasma-bright"].lowland_fog = true
     end
