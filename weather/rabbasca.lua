@@ -20,7 +20,7 @@ if true then
         local rabbasca_cloud_a = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
         rabbasca_cloud_a.name = "rabbasca_cloud_a"
         -- rabbasca_cloud_a.color = {64.0/255.0 * 0.25, 31.0/255.0 * 0.25, 126.0/255.0 * 0.25, 1.0 * 0.25}
-        rabbasca_cloud_a.color = {34.0/255.0 * 0.5, 25.0/255.0 * 0.5, 63.0/255.0 * 0.5, 1.0 * 0.5}
+        rabbasca_cloud_a.color = {34.0/255.0 * 0.2, 25.0/255.0 * 0.2, 63.0/255.0 * 0.2, 1.0 * 0.2}
         rabbasca_cloud_a.animation.filename = "__celestial-weather-additions__/graphics/vfx/cloud-c.png"
         rabbasca_cloud_a.animation.frame_count = 1
         rabbasca_cloud_a.animation.size = 512
@@ -44,7 +44,7 @@ if true then
         local rabbasca_cloud_b = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
         rabbasca_cloud_b.name = "rabbasca_cloud_b"
         -- rabbasca_cloud_b.color = {41.0/255.0 * 0.25, 31.0/255.0 * 0.25, 126.0/255.0 * 0.25, 1.0 * 0.25}
-        rabbasca_cloud_b.color = {57.0/255.0 * 0.5, 48.0/255.0 * 0.5, 63.0/255.0 * 0.5, 1.0 * 0.5}
+        rabbasca_cloud_b.color = {57.0/255.0 * 0.2, 48.0/255.0 * 0.2, 63.0/255.0 * 0.2, 1.0 * 0.2}
         rabbasca_cloud_b.animation.filename = "__celestial-weather-additions__/graphics/vfx/cloud-a.png"
         rabbasca_cloud_b.animation.frame_count = 1
         rabbasca_cloud_b.animation.size = 512
