@@ -61,7 +61,7 @@ if true then
         pelagos_weather_cloud_b.action_delivery.source_effects.smoke_name = "pelagos_cloud_b"
         pelagos_weather_cloud_b.action_delivery.source_effects.speed = {0.01, 0.0}
         pelagos_weather_cloud_b.action_delivery.source_effects.speed_multiplier = 1.0
-        pelagos_weather_cloud_b.action_delivery.source_effects.repeat_count = 1
+        pelagos_weather_cloud_b.action_delivery.source_effects.repeat_count = 1 -- * 10
         pelagos_weather_cloud_b.action_delivery.source_effects.probability = 0.05
 
         table.insert(pelagos_effects, pelagos_weather_cloud_b)

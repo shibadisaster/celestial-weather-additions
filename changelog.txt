@@ -4,6 +4,7 @@ Date: 2026-02-19
   Features:
     - Added weather effects for Carna (WIP)
     - Added lowland fog over antilinear zones on Panglia
+    - Lowered default Vesta thick cloud opacity (and made them additive)
   Ease of use:
     - Settings now only show when the relevant planet mod is enabled
   Optimizations:
