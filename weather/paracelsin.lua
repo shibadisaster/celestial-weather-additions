@@ -4,6 +4,10 @@ local common_effects = require("common.common-effects")
 if true then
     local paracelsin_effects = {table.deepcopy(data.raw["planet"]["paracelsin"].player_effects)} or {}
 
+    if settings.startup["shibadisaster-cwa-paracelsin-remove-original-snow-effect"].value then
+        paracelsin_effects = {}
+    end
+
     if settings.startup["shibadisaster-cwa-paracelsin-ash-snow"].value then
         local ash_snow = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
         ash_snow.name = "paracelsin_ash_snow"

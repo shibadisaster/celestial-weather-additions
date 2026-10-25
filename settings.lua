@@ -256,10 +256,20 @@ if mods["Paracelsin"] then
     data:extend({
         {
             type = "bool-setting",
+            name = "shibadisaster-cwa-paracelsin-remove-original-snow-effect",
+            setting_type = "startup",
+            default_value = false,
+            order = "d2"
+        }
+    })
+
+    data:extend({
+        {
+            type = "bool-setting",
             name = "shibadisaster-cwa-paracelsin-always-dark",
             setting_type = "startup",
             default_value = true,
-            order = "d2"
+            order = "d3"
         }
     })
 end

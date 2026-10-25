@@ -1,4 +1,14 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.3.0
+Date: 2026-10-25
+  Features:
+    - Added a setting to retain/remove original Paracelsin snowfall so it can have ashfall AND snowfall
+  Compatibility:
+    - Updated to Factorio 2.1 (sorry)
+    - Removed Celestial Weather as a dependency due to it being unmaintained, moved req'd textures into here so the effects still work
+  Info:
+    - Will be rolling Celestial Weather's og effects into this soon
+---------------------------------------------------------------------------------------------------
 Version: 1.2.1
 Date: 2026-05-06
   Bugfixes:
