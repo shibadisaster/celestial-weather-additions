@@ -715,6 +715,46 @@ if true then
             order = "vulcanus0"
         }
     })
+
+    data:extend({
+        {
+            type = "bool-setting",
+            name = "shibadisaster-cwa-vulcanus-enable-ash",
+            setting_type = "startup",
+            default_value = true,
+            order = "vulcanus1"
+        }
+    })
+
+    data:extend({
+        {
+            type = "bool-setting",
+            name = "shibadisaster-cwa-vulcanus-enable-rain",
+            setting_type = "startup",
+            default_value = true,
+            order = "vulcanus2"
+        }
+    })
+
+    data:extend({
+        {
+            type = "bool-setting",
+            name = "shibadisaster-cwa-vulcanus-enable-fire",
+            setting_type = "startup",
+            default_value = true,
+            order = "vulcanus3"
+        }
+    })
+
+    -- data:extend({
+    --     {
+    --         type = "double-setting",
+    --         name = "shibadisaster-cwa-vulcanus-enable-ash",
+    --         setting_type = "startup",
+    --         default_value = 1.0,
+    --         order = "vulcanus1"
+    --     }
+    -- })
 end
 
 if true then
