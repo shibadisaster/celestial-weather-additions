@@ -1041,6 +1041,57 @@ if mods["dea-dia-system"] then
             order = "lemures0"
         }
     })
+
+        data:extend({
+        {
+            type = "bool-setting",
+            name = "shibadisaster-cwa-lemures-enable-heavy-snow",
+            setting_type = "startup",
+            default_value = true,
+            order = "lemures1"
+        }
+    })
+
+    data:extend({
+        {
+            type = "bool-setting",
+            name = "shibadisaster-cwa-lemures-heavy-snow-overwrite-original",
+            setting_type = "startup",
+            default_value = true,
+            order = "lemures2"
+        }
+    })
+
+    data:extend({
+        {
+            type = "int-setting",
+            name = "shibadisaster-cwa-lemures-heavy-snow-particle-amount",
+            setting_type = "startup",
+            default_value = 80,
+            order = "lemures3"
+        }
+    })
+
+
+    data:extend({
+        {
+            type = "double-setting",
+            name = "shibadisaster-cwa-lemures-heavy-snow-speed-multiplier",
+            setting_type = "startup",
+            default_value = 0.9,
+            order = "lemures4"
+        }
+    })
+
+    data:extend({
+        {
+            type = "bool-setting",
+            name = "shibadisaster-cwa-lemures-enable-fog",
+            setting_type = "startup",
+            default_value = true,
+            order = "lemures5"
+        }
+    })
 end
 
 if mods["metal-and-stars"] then
@@ -1051,6 +1102,57 @@ if mods["metal-and-stars"] then
             setting_type = "startup",
             default_value = true,
             order = "nix0"
+        }
+    })
+
+    data:extend({
+        {
+            type = "bool-setting",
+            name = "shibadisaster-cwa-nix-enable-heavy-snow",
+            setting_type = "startup",
+            default_value = true,
+            order = "nix1"
+        }
+    })
+
+    data:extend({
+        {
+            type = "bool-setting",
+            name = "shibadisaster-cwa-nix-heavy-snow-overwrite-original",
+            setting_type = "startup",
+            default_value = true,
+            order = "nix2"
+        }
+    })
+
+    data:extend({
+        {
+            type = "int-setting",
+            name = "shibadisaster-cwa-nix-heavy-snow-particle-amount",
+            setting_type = "startup",
+            default_value = 60,
+            order = "nix3"
+        }
+    })
+
+
+    data:extend({
+        {
+            type = "double-setting",
+            name = "shibadisaster-cwa-nix-heavy-snow-speed-multiplier",
+            setting_type = "startup",
+            default_value = 1.0,
+            order = "nix4"
+        }
+    })
+
+    data:extend({
+        {
+            type = "bool-setting",
+            name = "shibadisaster-cwa-nix-enable-fog",
+            setting_type = "startup",
+            default_value = true,
+            order = "nix5"
         }
     })
 end
