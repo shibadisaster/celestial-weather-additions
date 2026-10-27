@@ -797,6 +797,46 @@ if true then
             order = "fulgora0"
         }
     })
+
+    data:extend({
+        {
+            type = "bool-setting",
+            name = "shibadisaster-cwa-fulgora-enable-sand",
+            setting_type = "startup",
+            default_value = true,
+            order = "fulgora1"
+        }
+    })
+
+    data:extend({
+        {
+            type = "int-setting",
+            name = "shibadisaster-cwa-fulgora-sand-particle-amount",
+            setting_type = "startup",
+            default_value = 6,
+            order = "fulgora2"
+        }
+    })
+
+    data:extend({
+        {
+            type = "double-setting",
+            name = "shibadisaster-cwa-fulgora-sand-speed-multiplier",
+            setting_type = "startup",
+            default_value = 1.0,
+            order = "fulgora3"
+        }
+    })
+
+    data:extend({
+        {
+            type = "bool-setting",
+            name = "shibadisaster-cwa-fulgora-enable-fog",
+            setting_type = "startup",
+            default_value = true,
+            order = "fulgora4"
+        }
+    })
 end
 
 if true then

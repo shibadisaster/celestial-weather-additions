@@ -11,11 +11,11 @@ if settings.startup["shibadisaster-cwa-fulgora-enable-sand"].value then
     
     local fu_weather_s = table.deepcopy(common_effects.cluster_particles)
     --   fu_weather.cluster_count = settings.startup["fulgora-particle-amount"].value
-    fu_weather_s.cluster_count = 6
+    fu_weather_s.cluster_count = settings.startup["shibadisaster-cwa-fulgora-sand-particle-amount"].value
     fu_weather_s.action_delivery.source_effects.smoke_name= "fu_sand"
     fu_weather_s.action_delivery.source_effects.speed = {-0.28, 0}
     -- fu_weather.action_delivery.source_effects.speed_multiplier = settings.startup["fulgora-particle-speed"].value
-    fu_weather_s.action_delivery.source_effects.speed_multiplier = 1.0
+    fu_weather_s.action_delivery.source_effects.speed_multiplier = 1.0 * settings.startup["shibadisaster-cwa-fulgora-sand-speed-multiplier"].value
 
     table.insert(fu_effects, fu_weather_s)
 end
