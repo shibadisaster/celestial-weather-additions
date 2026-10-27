@@ -978,6 +978,57 @@ if mods["secretas"] then
             order = "frozeta0"
         }
     })
+
+    data:extend({
+        {
+            type = "bool-setting",
+            name = "shibadisaster-cwa-frozeta-enable-heavy-snow",
+            setting_type = "startup",
+            default_value = true,
+            order = "frozeta1"
+        }
+    })
+
+    data:extend({
+        {
+            type = "bool-setting",
+            name = "shibadisaster-cwa-frozeta-heavy-snow-overwrite-original",
+            setting_type = "startup",
+            default_value = true,
+            order = "frozeta2"
+        }
+    })
+
+    data:extend({
+        {
+            type = "int-setting",
+            name = "shibadisaster-cwa-frozeta-heavy-snow-particle-amount",
+            setting_type = "startup",
+            default_value = 20,
+            order = "frozeta3"
+        }
+    })
+
+
+    data:extend({
+        {
+            type = "double-setting",
+            name = "shibadisaster-cwa-frozeta-heavy-snow-speed-multiplier",
+            setting_type = "startup",
+            default_value = 1.0,
+            order = "frozeta4"
+        }
+    })
+
+    data:extend({
+        {
+            type = "bool-setting",
+            name = "shibadisaster-cwa-frozeta-enable-fog",
+            setting_type = "startup",
+            default_value = true,
+            order = "frozeta5"
+        }
+    })
 end
 
 if mods["dea-dia-system"] then
