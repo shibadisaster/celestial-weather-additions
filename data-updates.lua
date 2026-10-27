@@ -67,3 +67,72 @@ if mods["carna"] then
         require("__celestial-weather-additions__.weather.carna") -- still wip!
     end
 end
+
+
+----- OG CELESTIAL WEATHER EFFECTS -----
+if true then
+    if settings.startup["shibadisaster-cwa-enable-vulcanus-changes"].value then
+        require("__celestial-weather-additions__.weather.vulcanus")
+    end
+end
+
+if true then
+    if settings.startup["shibadisaster-cwa-enable-fulgora-changes"].value then
+        require("__celestial-weather-additions__.weather.fulgora")
+    end
+end
+
+-- not this one
+-- if true then
+--     if settings.startup["shibadisaster-cwa-enable-gleba-changes"].value then
+--         require("__celestial-weather-additions__.weather.gleba")
+--     end
+-- end
+
+if true then
+    if settings.startup["shibadisaster-cwa-enable-aquilo-changes"].value then
+        require("__celestial-weather-additions__.weather.aquilo")
+    end
+end
+
+if mods["planet-muluna"] then
+    if settings.startup["shibadisaster-cwa-enable-muluna-changes"].value then
+        require("__celestial-weather-additions__.weather.muluna")
+    end
+end
+
+if mods["Moshine"] then
+    if settings.startup["shibadisaster-cwa-enable-moshine-changes"].value then
+        require("__celestial-weather-additions__.weather.moshine")
+    end
+end
+
+if mods["corrundum"] then
+    if settings.startup["shibadisaster-cwa-enable-corrundum-changes"].value then
+        require("__celestial-weather-additions__.weather.corrundum")
+    end
+end
+
+if mods["secretas"] then
+    if settings.startup["shibadisaster-cwa-enable-frozeta-changes"].value then
+        require("__celestial-weather-additions__.weather.frozeta")
+    end
+end
+
+if mods["dea-dia-system"] then
+    if settings.startup["shibadisaster-cwa-enable-lemures-changes"].value then
+        require("__celestial-weather-additions__.weather.lemures")
+    end
+end
+
+if mods["metal-and-stars"] then
+    if settings.startup["shibadisaster-cwa-enable-nix-changes"].value then
+        require("__celestial-weather-additions__.weather.nix")
+    end
+end
+
+if mods["lignumis"] then
+    if settings.startup["shibadisaster-cwa-enable-lignumis-changes"].value then
+        require("__celestial-weather-additions__.weather.lignumis")
+    end
+end

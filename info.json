@@ -17,7 +17,14 @@
         "?Igrys",
         "?pelagos",
         "?alchemy-khemia",
-        "?carna"
+        "?carna",
+        "?planet-muluna",
+        "?Moshine",
+        "?corrundum",
+        "?secretas",
+        "?dea-dia-system",
+        "?metal-and-stars",
+        "?lignumis"
     ],
     "description": "Addon for Celestial Weather that adds more weather VFX for some newer modded planets!",
     "license": "MIT",

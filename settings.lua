@@ -704,3 +704,123 @@ if mods["carna"] then
         }
     })
 end
+
+if true then
+    data:extend({
+        {
+            type = "bool-setting",
+            name = "shibadisaster-cwa-enable-vulcanus-changes",
+            setting_type = "startup",
+            default_value = true,
+            order = "vulcanus0"
+        }
+    })
+end
+
+if true then
+    data:extend({
+        {
+            type = "bool-setting",
+            name = "shibadisaster-cwa-enable-fulgora-changes",
+            setting_type = "startup",
+            default_value = true,
+            order = "fulgora0"
+        }
+    })
+end
+
+if true then
+    data:extend({
+        {
+            type = "bool-setting",
+            name = "shibadisaster-cwa-enable-aquilo-changes",
+            setting_type = "startup",
+            default_value = true,
+            order = "aquilo0"
+        }
+    })
+end
+
+if mods["planet-muluna"] then
+    data:extend({
+        {
+            type = "bool-setting",
+            name = "shibadisaster-cwa-enable-muluna-changes",
+            setting_type = "startup",
+            default_value = true,
+            order = "muluna0"
+        }
+    })
+end
+
+if mods["Moshine"] then
+    data:extend({
+        {
+            type = "bool-setting",
+            name = "shibadisaster-cwa-enable-moshine-changes",
+            setting_type = "startup",
+            default_value = true,
+            order = "moshine0"
+        }
+    })
+end
+
+if mods["corrundum"] then
+    data:extend({
+        {
+            type = "bool-setting",
+            name = "shibadisaster-cwa-enable-corrundum-changes",
+            setting_type = "startup",
+            default_value = true,
+            order = "corrundum0"
+        }
+    })
+end
+
+if mods["secretas"] then
+    data:extend({
+        {
+            type = "bool-setting",
+            name = "shibadisaster-cwa-enable-frozeta-changes",
+            setting_type = "startup",
+            default_value = true,
+            order = "frozeta0"
+        }
+    })
+end
+
+if mods["dea-dia-system"] then
+    data:extend({
+        {
+            type = "bool-setting",
+            name = "shibadisaster-cwa-enable-lemures-changes",
+            setting_type = "startup",
+            default_value = true,
+            order = "lemures0"
+        }
+    })
+end
+
+if mods["metal-and-stars"] then
+    data:extend({
+        {
+            type = "bool-setting",
+            name = "shibadisaster-cwa-enable-nix-changes",
+            setting_type = "startup",
+            default_value = true,
+            order = "nix0"
+        }
+    })
+end
+
+if mods["lignumis"] then
+    data:extend({
+        {
+            type = "bool-setting",
+            name = "shibadisaster-cwa-enable-lignumis-changes",
+            setting_type = "startup",
+            default_value = true,
+            order = "lignumis0"
+        }
+    })
+end
