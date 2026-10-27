@@ -1026,6 +1026,76 @@ if mods["corrundum"] then
             order = "corrundum0"
         }
     })
+
+    data:extend({
+        {
+            type = "bool-setting",
+            name = "shibadisaster-cwa-corrundum-enable-sand",
+            setting_type = "startup",
+            default_value = true,
+            order = "corrundum1"
+        }
+    })
+
+    data:extend({
+        {
+            type = "int-setting",
+            name = "shibadisaster-cwa-corrundum-sand-particle-amount",
+            setting_type = "startup",
+            default_value = 8,
+            order = "corrundum2"
+        }
+    })
+
+    data:extend({
+        {
+            type = "double-setting",
+            name = "shibadisaster-cwa-corrundum-sand-speed-multiplier",
+            setting_type = "startup",
+            default_value = 1.2,
+            order = "corrundum3"
+        }
+    })
+
+    data:extend({
+        {
+            type = "bool-setting",
+            name = "shibadisaster-cwa-corrundum-enable-rain",
+            setting_type = "startup",
+            default_value = true,
+            order = "corrundum4"
+        }
+    })
+
+    data:extend({
+        {
+            type = "bool-setting",
+            name = "shibadisaster-cwa-corrundum-rain-enable-sounds",
+            setting_type = "startup",
+            default_value = true,
+            order = "corrundum5"
+        }
+    })
+
+    data:extend({
+        {
+            type = "double-setting",
+            name = "shibadisaster-cwa-corrundum-rain-speed-multiplier",
+            setting_type = "startup",
+            default_value = 2.0,
+            order = "corrundum6"
+        }
+    })
+
+    data:extend({
+        {
+            type = "bool-setting",
+            name = "shibadisaster-cwa-corrundum-enable-fog",
+            setting_type = "startup",
+            default_value = true,
+            order = "corrundum7"
+        }
+    })
 end
 
 if mods["secretas"] then
