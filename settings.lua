@@ -849,6 +849,57 @@ if true then
             order = "aquilo0"
         }
     })
+
+    data:extend({
+        {
+            type = "bool-setting",
+            name = "shibadisaster-cwa-aquilo-enable-heavy-snow",
+            setting_type = "startup",
+            default_value = true,
+            order = "aquilo1"
+        }
+    })
+
+    data:extend({
+        {
+            type = "bool-setting",
+            name = "shibadisaster-cwa-aquilo-heavy-snow-overwrite-original",
+            setting_type = "startup",
+            default_value = false,
+            order = "aquilo2"
+        }
+    })
+
+    data:extend({
+        {
+            type = "int-setting",
+            name = "shibadisaster-cwa-aquilo-heavy-snow-particle-amount",
+            setting_type = "startup",
+            default_value = 10,
+            order = "aquilo3"
+        }
+    })
+
+
+    data:extend({
+        {
+            type = "double-setting",
+            name = "shibadisaster-cwa-aquilo-heavy-snow-speed-multiplier",
+            setting_type = "startup",
+            default_value = 1.0,
+            order = "aquilo4"
+        }
+    })
+
+    data:extend({
+        {
+            type = "bool-setting",
+            name = "shibadisaster-cwa-aquilo-enable-fog",
+            setting_type = "startup",
+            default_value = true,
+            order = "aquilo5"
+        }
+    })
 end
 
 if mods["planet-muluna"] then
