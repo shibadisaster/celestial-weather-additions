@@ -912,6 +912,36 @@ if mods["planet-muluna"] then
             order = "muluna0"
         }
     })
+
+    data:extend({
+        {
+            type = "bool-setting",
+            name = "shibadisaster-cwa-muluna-enable-dust",
+            setting_type = "startup",
+            default_value = true,
+            order = "muluna1"
+        }
+    })
+
+    data:extend({
+        {
+            type = "int-setting",
+            name = "shibadisaster-cwa-muluna-dust-particle-amount",
+            setting_type = "startup",
+            default_value = 2,
+            order = "muluna2"
+        }
+    })
+
+    data:extend({
+        {
+            type = "double-setting",
+            name = "shibadisaster-cwa-muluna-dust-speed-multiplier",
+            setting_type = "startup",
+            default_value = 1.0,
+            order = "muluna3"
+        }
+    })
 end
 
 if mods["Moshine"] then
