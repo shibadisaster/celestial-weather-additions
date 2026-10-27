@@ -36,27 +36,31 @@ if settings.startup["shibadisaster-cwa-vulcanus-enable-rain"].value then
     vu_weather_r.action_delivery.source_effects.smoke_name = "vu_rain"
     vu_weather_r.action_delivery.source_effects.speed = {-0.03, 0.5}
     -- vu_weather_r.action_delivery.source_effects.speed_multiplier = settings.startup["vulcanus-rain-particle-speed"].value
-    vu_weather_r.action_delivery.source_effects.speed_multiplier = 2.5 * 1.0
+    vu_weather_r.action_delivery.source_effects.speed_multiplier = 2.5 * settings.startup["shibadisaster-cwa-vulcanus-rain-speed-multiplier"].value
     
     table.insert(vu_effects, vu_weather_r)
+
+    if settings.startup["shibadisaster-cwa-vulcanus-enable-rain-sounds"].value then
+        data.raw["planet"]["vulcanus"].persistent_ambient_sounds = data.raw["planet"]["vulcanus"].persistent_ambient_sounds or {}
+        data.raw["planet"]["vulcanus"].persistent_ambient_sounds.semi_persistent = {{
+            sound = {
+                filename = "__celestial-weather-additions__/sounds/rain.ogg", volume = 0.1
+            }
+        }}
+    end
 end
 
 
 -- SPLIT THIS OFF INTO A DIFFERENT CONDITIONAL
-local vu_fog = table.deepcopy(common_effects.fog)
-vu_fog.color1 = {0.882, 0.847, 0.478, 0.6}
-vu_fog.color2 = {0.882, 0.847, 0.478, 0.6}
-vu_fog.tick_factor = 0.0003
+if settings.startup["shibadisaster-cwa-vulcanus-enable-fog"].value then
+    local vu_fog = table.deepcopy(common_effects.fog)
+    vu_fog.color1 = {0.882, 0.847, 0.478, 0.6}
+    vu_fog.color2 = {0.882, 0.847, 0.478, 0.6}
+    vu_fog.tick_factor = 0.0003
 
-data.raw["planet"]["vulcanus"].surface_render_parameters = data.raw["planet"]["vulcanus"]["surface_render_parameters"] or {}
-data.raw["planet"]["vulcanus"].surface_render_parameters["fog"] = vu_fog
-
-data.raw["planet"]["vulcanus"].persistent_ambient_sounds = data.raw["planet"]["vulcanus"].persistent_ambient_sounds or {}
-data.raw["planet"]["vulcanus"].persistent_ambient_sounds.semi_persistent = {{
-    sound = {
-        filename = "__celestial-weather-additions__/sounds/rain.ogg", volume = 0.1
-    }
-}}
+    data.raw["planet"]["vulcanus"].surface_render_parameters = data.raw["planet"]["vulcanus"]["surface_render_parameters"] or {}
+    data.raw["planet"]["vulcanus"].surface_render_parameters["fog"] = vu_fog
+end
 
 
 if settings.startup["shibadisaster-cwa-vulcanus-enable-fire"].value then
@@ -70,7 +74,7 @@ if settings.startup["shibadisaster-cwa-vulcanus-enable-fire"].value then
     vu_weather_f.action_delivery.source_effects.smoke_name = "vu_fire"
     vu_weather_f.action_delivery.source_effects.speed = {-0.16, -0.4}
     -- vu_weather_f.action_delivery.source_effects.speed_multiplier = settings.startup["vulcanus-fire-particle-speed"].value
-    vu_weather_f.action_delivery.source_effects.speed_multiplier = 0.04 * 1.0
+    vu_weather_f.action_delivery.source_effects.speed_multiplier = 0.04 * settings.startup["shibadisaster-cwa-vulcanus-fire-particle-speed-multiplier"].value
     
     table.insert(vu_effects, vu_weather_f)
 end

@@ -729,7 +729,7 @@ if true then
     data:extend({
         {
             type = "bool-setting",
-            name = "shibadisaster-cwa-vulcanus-enable-rain",
+            name = "shibadisaster-cwa-vulcanus-enable-fog",
             setting_type = "startup",
             default_value = true,
             order = "vulcanus2"
@@ -739,22 +739,52 @@ if true then
     data:extend({
         {
             type = "bool-setting",
-            name = "shibadisaster-cwa-vulcanus-enable-fire",
+            name = "shibadisaster-cwa-vulcanus-enable-rain",
             setting_type = "startup",
             default_value = true,
             order = "vulcanus3"
         }
     })
 
-    -- data:extend({
-    --     {
-    --         type = "double-setting",
-    --         name = "shibadisaster-cwa-vulcanus-enable-ash",
-    --         setting_type = "startup",
-    --         default_value = 1.0,
-    --         order = "vulcanus1"
-    --     }
-    -- })
+    data:extend({
+        {
+            type = "bool-setting",
+            name = "shibadisaster-cwa-vulcanus-enable-rain-sounds",
+            setting_type = "startup",
+            default_value = true,
+            order = "vulcanus4"
+        }
+    })
+
+    data:extend({
+        {
+            type = "double-setting",
+            name = "shibadisaster-cwa-vulcanus-rain-speed-multiplier",
+            setting_type = "startup",
+            default_value = 1.0,
+            order = "vulcanus5"
+        }
+    })
+
+    data:extend({
+        {
+            type = "bool-setting",
+            name = "shibadisaster-cwa-vulcanus-enable-fire",
+            setting_type = "startup",
+            default_value = true,
+            order = "vulcanus6"
+        }
+    })
+
+    data:extend({
+        {
+            type = "double-setting",
+            name = "shibadisaster-cwa-vulcanus-fire-particle-speed-multiplier",
+            setting_type = "startup",
+            default_value = 1.0,
+            order = "vulcanus7"
+        }
+    })
 end
 
 if true then
