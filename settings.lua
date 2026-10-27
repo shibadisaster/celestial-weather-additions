@@ -1167,4 +1167,44 @@ if mods["lignumis"] then
             order = "lignumis0"
         }
     })
+
+    data:extend({
+        {
+            type = "bool-setting",
+            name = "shibadisaster-cwa-lignumis-enable-rain",
+            setting_type = "startup",
+            default_value = true,
+            order = "lignumis1"
+        }
+    })
+
+    data:extend({
+        {
+            type = "bool-setting",
+            name = "shibadisaster-cwa-lignumis-rain-enable-sounds",
+            setting_type = "startup",
+            default_value = true,
+            order = "lignumis2"
+        }
+    })
+
+    data:extend({
+        {
+            type = "double-setting",
+            name = "shibadisaster-cwa-lignumis-rain-speed-multiplier",
+            setting_type = "startup",
+            default_value = 1.0,
+            order = "lignumis3"
+        }
+    })
+
+    data:extend({
+        {
+            type = "bool-setting",
+            name = "shibadisaster-cwa-lignumis-enable-fog",
+            setting_type = "startup",
+            default_value = true,
+            order = "lignumis4"
+        }
+    })
 end
