@@ -954,6 +954,66 @@ if mods["Moshine"] then
             order = "moshine0"
         }
     })
+
+    data:extend({
+        {
+            type = "bool-setting",
+            name = "shibadisaster-cwa-moshine-enable-sand",
+            setting_type = "startup",
+            default_value = true,
+            order = "moshine0"
+        }
+    })
+
+    data:extend({
+        {
+            type = "double-setting",
+            name = "shibadisaster-cwa-moshine-sand-speed-multiplier",
+            setting_type = "startup",
+            default_value = 1.0,
+            order = "moshine1"
+        }
+    })
+
+    data:extend({
+        {
+            type = "bool-setting",
+            name = "shibadisaster-cwa-moshine-enable-fire",
+            setting_type = "startup",
+            default_value = true,
+            order = "moshine2"
+        }
+    })
+
+    data:extend({
+        {
+            type = "color-setting",
+            name = "shibadisaster-cwa-moshine-fire-color",
+            setting_type = "startup",
+            default_value = {1.0, 0.5, 0.25},
+            order = "moshine3"
+        }
+    })
+
+    data:extend({
+        {
+            type = "double-setting",
+            name = "shibadisaster-cwa-moshine-fire-speed-multiplier",
+            setting_type = "startup",
+            default_value = 1.0,
+            order = "moshine4"
+        }
+    })
+
+    data:extend({
+        {
+            type = "bool-setting",
+            name = "shibadisaster-cwa-moshine-enable-fog",
+            setting_type = "startup",
+            default_value = true,
+            order = "moshine5"
+        }
+    })
 end
 
 if mods["corrundum"] then
