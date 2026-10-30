@@ -5,7 +5,8 @@ fu_effects = {}
 if settings.startup["shibadisaster-cwa-fulgora-enable-sand"].value then
     local fu_sand = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
     fu_sand.name = "fu_sand"
-    fu_sand.color = {0.741, 0.616, 0.596}
+    -- fu_sand.color = {0.741, 0.616, 0.596}
+    fu_sand.color = settings.startup["shibadisaster-cwa-fulgora-sand-color"].value
     fu_sand.animation.filename = "__celestial-weather-additions__/graphics/vfx/sand-particles.png"
     data:extend({fu_sand})
     

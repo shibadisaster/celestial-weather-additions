@@ -36,7 +36,7 @@ in mod settings. Currently adds the following VFX to modded planets:
 
 ![https://tedflixapp.xyz/resources/factorio/paracelsin_t.mp4](https://tedflixapp.xyz/resources/factorio/paracelsin_t.mp4)
 
-- (DISABLED BY DEFAULT) Paracelsin, being a cryovolcanic planet, is now subject
+- Paracelsin, being a cryovolcanic planet, is now subject
   to a volcanic winter to differentiate it from other frozen planets (and to
   further justify its default 0% solar power in atmosphere), meaning it has
   black ashy snowfall and is always dark

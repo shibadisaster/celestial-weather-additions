@@ -238,7 +238,7 @@ if mods["Paracelsin"] then
             type = "bool-setting",
             name = "shibadisaster-cwa-enable-paracelsin-changes",
             setting_type = "startup",
-            default_value = false,
+            default_value = true,
             order = "d0"
         }
     })
@@ -810,11 +810,21 @@ if true then
 
     data:extend({
         {
+            type = "color-setting",
+            name = "shibadisaster-cwa-fulgora-sand-color",
+            setting_type = "startup",
+            default_value = {0.651, 0.463, 0.435},
+            order = "fulgora2"
+        }
+    })
+
+    data:extend({
+        {
             type = "int-setting",
             name = "shibadisaster-cwa-fulgora-sand-particle-amount",
             setting_type = "startup",
             default_value = 3,
-            order = "fulgora2"
+            order = "fulgora3"
         }
     })
 
@@ -824,7 +834,7 @@ if true then
             name = "shibadisaster-cwa-fulgora-sand-speed-multiplier",
             setting_type = "startup",
             default_value = 1.0,
-            order = "fulgora3"
+            order = "fulgora4"
         }
     })
 
@@ -834,7 +844,7 @@ if true then
             name = "shibadisaster-cwa-fulgora-enable-fog",
             setting_type = "startup",
             default_value = true,
-            order = "fulgora4"
+            order = "fulgora5"
         }
     })
 end
