@@ -66,28 +66,28 @@ end
 if settings.startup["shibadisaster-cwa-vulcanus-enable-fire"].value then
     local vu_fire = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
     vu_fire.name = "vu_fire"
-    vu_fire.color = {0.926, 0.407, 0.075}
+    vu_fire.color = settings.startup["shibadisaster-cwa-vulcanus-fire-color-1"].value
     vu_fire.animation.filename = "__celestial-weather-additions__/graphics/vfx/fire-particles.png"
-    vu_fire.start_scale = 0.7
-    vu_fire.end_scale = 0.7
+    vu_fire.start_scale = 0.5
+    vu_fire.end_scale = 1.0
     vu_fire.movement_slow_down_factor = 1.0
     -- vu_fire.affected_by_wind = true
     vu_fire.animation.blend_mode = "additive"
     data:extend({vu_fire})
-    
+
     vu_weather_f = table.deepcopy(common_effects.direct_particles)
     vu_weather_f.action_delivery.source_effects.smoke_name = "vu_fire"
     vu_weather_f.action_delivery.source_effects.speed = {-0.16, -0.4}
-    vu_weather_f.action_delivery.source_effects.speed_multiplier = 0.06 * settings.startup["shibadisaster-cwa-vulcanus-fire-particle-speed-multiplier"].value
+    vu_weather_f.action_delivery.source_effects.speed_multiplier = 0.10 * settings.startup["shibadisaster-cwa-vulcanus-fire-particle-speed-multiplier"].value
     vu_weather_f.action_delivery.source_effects.speed_multiplier_deviation = 0.03 * settings.startup["shibadisaster-cwa-vulcanus-fire-particle-speed-multiplier"].value
     table.insert(vu_effects, vu_weather_f)
 
     local vu_fire_near = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
     vu_fire_near.name = "vu_fire_near"
-    vu_fire_near.color = {0.926, 0.550, 0.150}
+    vu_fire_near.color = settings.startup["shibadisaster-cwa-vulcanus-fire-color-2"].value
     vu_fire_near.animation.filename = "__celestial-weather-additions__/graphics/vfx/fire-particles.png"
-    vu_fire_near.start_scale = 1.0
-    vu_fire_near.end_scale = 1.0
+    vu_fire_near.start_scale = 0.75
+    vu_fire_near.end_scale = 1.5
     vu_fire_near.movement_slow_down_factor = 1.0
     -- vu_fire_near.affected_by_wind = true
     vu_fire_near.animation.blend_mode = "additive"
@@ -96,7 +96,7 @@ if settings.startup["shibadisaster-cwa-vulcanus-enable-fire"].value then
     vu_weather_f2 = table.deepcopy(common_effects.direct_particles)
     vu_weather_f2.action_delivery.source_effects.smoke_name = "vu_fire_near"
     vu_weather_f2.action_delivery.source_effects.speed = {0.2, -0.8}
-    vu_weather_f2.action_delivery.source_effects.speed_multiplier = 0.06 * settings.startup["shibadisaster-cwa-vulcanus-fire-particle-speed-multiplier"].value
+    vu_weather_f2.action_delivery.source_effects.speed_multiplier = 0.10 * settings.startup["shibadisaster-cwa-vulcanus-fire-particle-speed-multiplier"].value
     vu_weather_f2.action_delivery.source_effects.speed_multiplier_deviation = 0.03 * settings.startup["shibadisaster-cwa-vulcanus-fire-particle-speed-multiplier"].value
     table.insert(vu_effects, vu_weather_f2)
 end

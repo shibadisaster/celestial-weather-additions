@@ -785,6 +785,28 @@ if true then
             order = "vulcanus7"
         }
     })
+
+    data:extend({
+        {
+            type = "color-setting",
+            name = "shibadisaster-cwa-vulcanus-fire-color-1",
+            setting_type = "startup",
+            default_value = {1.000, 0.400, 0.150},
+            order = "vulcanus8"
+        }
+    })
+
+    data:extend({
+        {
+            type = "color-setting",
+            name = "shibadisaster-cwa-vulcanus-fire-color-2",
+            setting_type = "startup",
+            default_value = {1.000, 0.600, 0.150},
+            order = "vulcanus9"
+        }
+    })
+
+    
 end
 
 if true then
