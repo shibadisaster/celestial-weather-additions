@@ -712,7 +712,7 @@ if true then
             name = "shibadisaster-cwa-enable-vulcanus-changes",
             setting_type = "startup",
             default_value = true,
-            order = "vulcanus0"
+            order = "vulcanus00"
         }
     })
 
@@ -722,7 +722,17 @@ if true then
             name = "shibadisaster-cwa-vulcanus-enable-ash",
             setting_type = "startup",
             default_value = true,
-            order = "vulcanus1"
+            order = "vulcanus01"
+        }
+    })
+
+    data:extend({
+        {
+            type = "double-setting",
+            name = "shibadisaster-cwa-vulcanus-ash-particle-speed-multiplier",
+            setting_type = "startup",
+            default_value = 1.0,
+            order = "vulcanus02"
         }
     })
 
@@ -732,7 +742,7 @@ if true then
             name = "shibadisaster-cwa-vulcanus-enable-fog",
             setting_type = "startup",
             default_value = true,
-            order = "vulcanus2"
+            order = "vulcanus03"
         }
     })
 
@@ -742,7 +752,7 @@ if true then
             name = "shibadisaster-cwa-vulcanus-enable-rain",
             setting_type = "startup",
             default_value = true,
-            order = "vulcanus3"
+            order = "vulcanus04"
         }
     })
 
@@ -752,7 +762,7 @@ if true then
             name = "shibadisaster-cwa-vulcanus-enable-rain-sounds",
             setting_type = "startup",
             default_value = true,
-            order = "vulcanus4"
+            order = "vulcanus05"
         }
     })
 
@@ -762,7 +772,7 @@ if true then
             name = "shibadisaster-cwa-vulcanus-rain-speed-multiplier",
             setting_type = "startup",
             default_value = 1.0,
-            order = "vulcanus5"
+            order = "vulcanus06"
         }
     })
 
@@ -772,7 +782,7 @@ if true then
             name = "shibadisaster-cwa-vulcanus-enable-fire",
             setting_type = "startup",
             default_value = true,
-            order = "vulcanus6"
+            order = "vulcanus07"
         }
     })
 
@@ -782,7 +792,7 @@ if true then
             name = "shibadisaster-cwa-vulcanus-fire-particle-speed-multiplier",
             setting_type = "startup",
             default_value = 1.0,
-            order = "vulcanus7"
+            order = "vulcanus08"
         }
     })
 
@@ -792,7 +802,7 @@ if true then
             name = "shibadisaster-cwa-vulcanus-fire-color-1",
             setting_type = "startup",
             default_value = {1.000, 0.400, 0.150},
-            order = "vulcanus8"
+            order = "vulcanus09"
         }
     })
 
@@ -802,7 +812,7 @@ if true then
             name = "shibadisaster-cwa-vulcanus-fire-color-2",
             setting_type = "startup",
             default_value = {1.000, 0.600, 0.150},
-            order = "vulcanus9"
+            order = "vulcanus10"
         }
     })
 

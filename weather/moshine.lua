@@ -29,10 +29,10 @@ if settings.startup["shibadisaster-cwa-moshine-enable-fire"].value then
     local mo_fire = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
     mo_fire.name = "mo_fire"
     mo_fire.color = settings.startup["shibadisaster-cwa-moshine-fire-color"].value
-    mo_fire.animation.filename = "__celestial-weather-additions__/graphics/vfx/fire-particles.png"
+    -- mo_fire.animation.filename = "__celestial-weather-additions__/graphics/vfx/fire-particles.png"
     mo_fire.animation.blend_mode = "additive"
-    mo_fire.start_scale = 1.0
-    mo_fire.end_scale = 2.0
+    mo_fire.start_scale = 0.7
+    mo_fire.end_scale = 1.4
     mo_fire.movement_slow_down_factor = 1.0
     data:extend({mo_fire})
     
@@ -46,10 +46,10 @@ if settings.startup["shibadisaster-cwa-moshine-enable-fire"].value then
     local mo_fire_near = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
     mo_fire_near.name = "mo_fire_near"
     mo_fire_near.color = settings.startup["shibadisaster-cwa-moshine-fire-color"].value
-    mo_fire_near.animation.filename = "__celestial-weather-additions__/graphics/vfx/fire-particles.png"
+    -- mo_fire_near.animation.filename = "__celestial-weather-additions__/graphics/vfx/fire-particles.png"
     mo_fire_near.animation.blend_mode = "additive"
-    mo_fire_near.start_scale = 1.5
-    mo_fire_near.end_scale = 3.0
+    mo_fire_near.start_scale = 1.0
+    mo_fire_near.end_scale = 2.0
     mo_fire_near.movement_slow_down_factor = 1.0
     data:extend({mo_fire_near})
 
