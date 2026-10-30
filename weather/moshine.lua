@@ -10,12 +10,18 @@ if settings.startup["shibadisaster-cwa-moshine-enable-sand"].value then
     data:extend({mo_sand})
 
     local mo_weather_s = table.deepcopy(common_effects.cluster_particles)
-    mo_weather_s.cluster_count = 6
+    mo_weather_s.cluster_count = settings.startup["shibadisaster-cwa-moshine-sand-particle-amount"].value
     mo_weather_s.action_delivery.source_effects.smoke_name= "mo_sand"
-    mo_weather_s.action_delivery.source_effects.speed = {-0.32, 0}
+    mo_weather_s.action_delivery.source_effects.speed = {-0.32, 0.04}
     mo_weather_s.action_delivery.source_effects.speed_multiplier = 1.0 * settings.startup["shibadisaster-cwa-moshine-sand-speed-multiplier"].value
-
     table.insert(mo_effects, mo_weather_s)
+
+    local mo_weather_s2 = table.deepcopy(common_effects.cluster_particles)
+    mo_weather_s2.cluster_count = settings.startup["shibadisaster-cwa-moshine-sand-particle-amount"].value
+    mo_weather_s2.action_delivery.source_effects.smoke_name= "mo_sand"
+    mo_weather_s2.action_delivery.source_effects.speed = {-0.43, -0.08}
+    mo_weather_s2.action_delivery.source_effects.speed_multiplier = 1.0 * settings.startup["shibadisaster-cwa-moshine-sand-speed-multiplier"].value
+    table.insert(mo_effects, mo_weather_s2)
 end
 
 
@@ -24,13 +30,34 @@ if settings.startup["shibadisaster-cwa-moshine-enable-fire"].value then
     mo_fire.name = "mo_fire"
     mo_fire.color = settings.startup["shibadisaster-cwa-moshine-fire-color"].value
     mo_fire.animation.filename = "__celestial-weather-additions__/graphics/vfx/fire-particles.png"
+    mo_fire.animation.blend_mode = "additive"
+    mo_fire.start_scale = 1.0
+    mo_fire.end_scale = 2.0
+    mo_fire.movement_slow_down_factor = 1.0
     data:extend({mo_fire})
     
     mo_weather_f = table.deepcopy(common_effects.direct_particles)
     mo_weather_f.action_delivery.source_effects.smoke_name = "mo_fire"
-    mo_weather_f.action_delivery.source_effects.speed = {-0.16, -0.4}
-    mo_weather_f.action_delivery.source_effects.speed_multiplier = 0.04 * settings.startup["shibadisaster-cwa-moshine-fire-speed-multiplier"].value
-    
+    mo_weather_f.action_delivery.source_effects.speed = {-0.48, -0.4}
+    mo_weather_f.action_delivery.source_effects.speed_multiplier = 0.10 * settings.startup["shibadisaster-cwa-moshine-fire-speed-multiplier"].value
+    mo_weather_f.action_delivery.source_effects.speed_multiplier_deviation = 0.05 * settings.startup["shibadisaster-cwa-moshine-fire-speed-multiplier"].value
+    table.insert(mo_effects, mo_weather_f)
+
+    local mo_fire_near = table.deepcopy(data.raw["trivial-smoke"]["aquilo-snow-smoke"])
+    mo_fire_near.name = "mo_fire_near"
+    mo_fire_near.color = settings.startup["shibadisaster-cwa-moshine-fire-color"].value
+    mo_fire_near.animation.filename = "__celestial-weather-additions__/graphics/vfx/fire-particles.png"
+    mo_fire_near.animation.blend_mode = "additive"
+    mo_fire_near.start_scale = 1.5
+    mo_fire_near.end_scale = 3.0
+    mo_fire_near.movement_slow_down_factor = 1.0
+    data:extend({mo_fire_near})
+
+    mo_weather_f2 = table.deepcopy(common_effects.direct_particles)
+    mo_weather_f2.action_delivery.source_effects.smoke_name = "mo_fire_near"
+    mo_weather_f2.action_delivery.source_effects.speed = {-0.48, -0.4}
+    mo_weather_f2.action_delivery.source_effects.speed_multiplier = 0.15 * settings.startup["shibadisaster-cwa-moshine-fire-speed-multiplier"].value
+    mo_weather_f2.action_delivery.source_effects.speed_multiplier_deviation = 0.075 * settings.startup["shibadisaster-cwa-moshine-fire-speed-multiplier"].value
     table.insert(mo_effects, mo_weather_f)
 end
 

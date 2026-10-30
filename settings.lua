@@ -967,11 +967,21 @@ if mods["Moshine"] then
 
     data:extend({
         {
+            type = "int-setting",
+            name = "shibadisaster-cwa-moshine-sand-particle-amount",
+            setting_type = "startup",
+            default_value = 2,
+            order = "moshine1"
+        }
+    })
+
+    data:extend({
+        {
             type = "double-setting",
             name = "shibadisaster-cwa-moshine-sand-speed-multiplier",
             setting_type = "startup",
             default_value = 1.0,
-            order = "moshine1"
+            order = "moshine2"
         }
     })
 
@@ -981,7 +991,7 @@ if mods["Moshine"] then
             name = "shibadisaster-cwa-moshine-enable-fire",
             setting_type = "startup",
             default_value = true,
-            order = "moshine2"
+            order = "moshine3"
         }
     })
 
@@ -991,7 +1001,7 @@ if mods["Moshine"] then
             name = "shibadisaster-cwa-moshine-fire-color",
             setting_type = "startup",
             default_value = {1.0, 0.5, 0.25},
-            order = "moshine3"
+            order = "moshine4"
         }
     })
 
@@ -1001,7 +1011,7 @@ if mods["Moshine"] then
             name = "shibadisaster-cwa-moshine-fire-speed-multiplier",
             setting_type = "startup",
             default_value = 1.0,
-            order = "moshine4"
+            order = "moshine5"
         }
     })
 
@@ -1011,7 +1021,7 @@ if mods["Moshine"] then
             name = "shibadisaster-cwa-moshine-enable-fog",
             setting_type = "startup",
             default_value = true,
-            order = "moshine5"
+            order = "moshine6"
         }
     })
 end
