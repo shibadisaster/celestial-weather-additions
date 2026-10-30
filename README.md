@@ -1,6 +1,6 @@
 # Celestial Weather Additions
 
-OFFICIAL extension/replacement for [Celestial Weather](https://mods.factorio.com/mod/celestial-weather) that reimplements the original Celestial Weather effects along with new weather effects for modded planets!
+OFFICIAL extension/replacement for [Celestial Weather](https://mods.factorio.com/mod/celestial-weather) that reimplements the original Celestial Weather effects along with new weather effects for modded planets! :3
 
 Permission from Varaxia to subsume the original mod: ![https://lite.sharx.fyi/factorio/permission.png](https://lite.sharx.fyi/factorio/permission.png)
 
