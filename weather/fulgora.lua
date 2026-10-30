@@ -13,11 +13,23 @@ if settings.startup["shibadisaster-cwa-fulgora-enable-sand"].value then
     --   fu_weather.cluster_count = settings.startup["fulgora-particle-amount"].value
     fu_weather_s.cluster_count = settings.startup["shibadisaster-cwa-fulgora-sand-particle-amount"].value
     fu_weather_s.action_delivery.source_effects.smoke_name= "fu_sand"
-    fu_weather_s.action_delivery.source_effects.speed = {-0.28, 0}
+    fu_weather_s.action_delivery.source_effects.speed = {-0.28, 0.04}
     -- fu_weather.action_delivery.source_effects.speed_multiplier = settings.startup["fulgora-particle-speed"].value
     fu_weather_s.action_delivery.source_effects.speed_multiplier = 1.0 * settings.startup["shibadisaster-cwa-fulgora-sand-speed-multiplier"].value
+    fu_weather_s.action_delivery.source_effects.speed_multiplier_deviation = 0.5 * settings.startup["shibadisaster-cwa-fulgora-sand-speed-multiplier"].value
 
     table.insert(fu_effects, fu_weather_s)
+
+    local fu_weather_s2 = table.deepcopy(common_effects.cluster_particles)
+    --   fu_weather.cluster_count = settings.startup["fulgora-particle-amount"].value
+    fu_weather_s2.cluster_count = settings.startup["shibadisaster-cwa-fulgora-sand-particle-amount"].value
+    fu_weather_s2.action_delivery.source_effects.smoke_name= "fu_sand"
+    fu_weather_s2.action_delivery.source_effects.speed = {-0.28, -0.04}
+    -- fu_weather.action_delivery.source_effects.speed_multiplier = settings.startup["fulgora-particle-speed"].value
+    fu_weather_s2.action_delivery.source_effects.speed_multiplier = 1.0 * settings.startup["shibadisaster-cwa-fulgora-sand-speed-multiplier"].value
+    fu_weather_s2.action_delivery.source_effects.speed_multiplier_deviation = 0.5 * settings.startup["shibadisaster-cwa-fulgora-sand-speed-multiplier"].value
+
+    table.insert(fu_effects, fu_weather_s2)
 end
 
 

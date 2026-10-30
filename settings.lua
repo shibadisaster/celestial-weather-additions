@@ -813,7 +813,7 @@ if true then
             type = "int-setting",
             name = "shibadisaster-cwa-fulgora-sand-particle-amount",
             setting_type = "startup",
-            default_value = 6,
+            default_value = 3,
             order = "fulgora2"
         }
     })
