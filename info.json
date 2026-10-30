@@ -1,6 +1,6 @@
 {
     "name": "celestial-weather-additions",
-    "version": "1.3.0",
+    "version": "2.0.0",
     "title": "Celestial Weather Additions",
     "author": "shibadisaster",
     "factorio_version": "2.1",
@@ -24,7 +24,10 @@
         "?secretas",
         "?dea-dia-system",
         "?metal-and-stars",
-        "?lignumis"
+        "?lignumis",
+        "! celestial-weather",
+        "! celestial-weather-updated",
+        "! celestial-weather-next"
     ],
     "description": "Addon for Celestial Weather that adds more weather VFX for some newer modded planets!",
     "license": "MIT",

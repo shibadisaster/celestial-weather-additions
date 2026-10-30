@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.0.0
+Date: 2026-10-28
+  Major Features:
+    - Reimplemented original Celestial Weather mod effects since the mod is unupdated for 2.1
+  Compatibility:
+    - Marked Celestial Weather, Celestial Weather Updated, and Celestial Weather Next as incompatibilities (sorry, this is to avoid redundancy)
+---------------------------------------------------------------------------------------------------
 Version: 1.3.0
 Date: 2026-10-25
   Features:

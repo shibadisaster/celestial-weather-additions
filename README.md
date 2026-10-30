@@ -1,9 +1,11 @@
 # Celestial Weather Additions
 
-Unofficial addon for Factorio mod
-[Celestial Weather](https://mods.factorio.com/mod/celestial-weather) that adds
-more weather VFX for some newer modded planets! Originally made for a personal
-playthrough but I decided to upload it :3
+OFFICIAL extension/replacement for
+[Celestial Weather](https://mods.factorio.com/mod/celestial-weather) that
+reimplements the original Celestial Weather effects along with new weather
+effects for modded planets!
+
+Permission from Varaxia to subsume the original mod: 
 
 This mod is intended to be highly customizable in the same way the base
 Celestial Weather mod is. Almost every effect/change can be modified or toggled
@@ -21,7 +23,7 @@ in mod settings. Currently adds the following VFX to modded planets:
 ![https://tedflixapp.xyz/resources/factorio/vesta_t.mp4](https://tedflixapp.xyz/resources/factorio/vesta_t.mp4)
 
 - Vesta has more pronounced fog and clouds in order to make the boundary of the
-  sea of clouds look more diffuse and less abrupt
+  sea of clouds look more diffuse
 
 ## [Muria](https://mods.factorio.com/mod/Muria)
 
